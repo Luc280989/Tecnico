@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Informáticos - Lucas Teixeira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('background.jpg') repeat;
+            background-size: 900px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.45);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2A8AD4;
+            box-shadow: 0 5px 20px rgba(42, 138, 212, 0.4);
+        }
+
+        h1 {
+            color: #2A8AD4;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-cta {
+            background: #25D366 !important;
+            color: white !important;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            font-size: 1.2rem;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .contact-cta svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .services-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #2A8AD4;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #2A8AD4;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #2A8AD4;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 138, 212, 0.3);
+        }
+
+        .service-number {
+            display: inline-block;
+            background: #2A8AD4;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .pricing-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .price-highlight {
+            font-size: 3.5rem;
+            color: #2A8AD4;
+            font-weight: bold;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #2A8AD4 0%, #1e7ab8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(42, 138, 212, 0.3);
+            padding: 20px;
+            border: 3px solid #2A8AD4;
+            border-radius: 15px;
+            display: inline-block;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(42, 138, 212, 0.4);
+        }
+
+        .price-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .price-item {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .payment-info {
+            background: #2A8AD4;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            font-weight: 500;
+            max-width: 700px;
+        }
+
+        .area-section {
+            background: url('sampa.jpg') center/cover no-repeat;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 1;
+        }
+
+        .area-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .area-badge {
+            display: inline-block;
+            background: #2A8AD4;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .testimonials-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #2A8AD415 0%, #2A8AD415 100%);
+            border: 2px solid #2A8AD4;
+            padding: 25px;
+            border-radius: 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 180px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #2A8AD4;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .footer-cta {
+            display: inline-block;
+            margin-top: 15px;
+            color: #2A8AD4;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta:hover {
+            color: #1e7ab8;
+        }
+
+        footer {
+            text-align: center;
+            color: #2A8AD4;
+            padding: 20px;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .price-highlight {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="EU.png" alt="Lucas Teixeira" class="profile-img">
+                <h1>Lucas Teixeira</h1>
+                <p class="subtitle">Técnico em Informática</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#2A8AD4"/>
+                        </svg>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Felipe+Laborde+Auras+99+Pq+Doroteia+São+Paulo+SP" target="_blank" style="color: #333; text-decoration: none;">Rua Felipe Laborde Auras, 99 - Pq. Doroteia - São Paulo - SP</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#2A8AD4"/>
+                        </svg>
+                        <a href="mailto:lucasteixeira2809@gmail.com" style="color: #333; text-decoration: none;">lucasteixeira2809@gmail.com</a>
+                    </div>
+                    <a href="https://wa.me/5511996077963" target="_blank" class="contact-cta">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Me contrate agora!
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section class="services-section">
+            <h2 class="section-title">Meus Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Limpeza, troca de pasta térmica e higienização.')">
+                    <span class="service-number">1</span>
+                    <h3>Limpeza e Manutenção</h3>
+                    <p>Limpeza completa, troca de pasta térmica e higienização do seu equipamento.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Formatação (Windows 10, 11 ou Linux).')">
+                    <span class="service-number">2</span>
+                    <h3>Formatação</h3>
+                    <p>Formatação para qualquer sistema: Windows 10, Windows 11 ou Linux.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Upgrades de hardware.')">
+                    <span class="service-number">3</span>
+                    <h3>Upgrades</h3>
+                    <p>Melhoria de desempenho com upgrades de hardware personalizados.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Montagem e manutenção de PC Gamer ou Notebook.')">
+                    <span class="service-number">4</span>
+                    <h3>Manutenção de PC Gamer e Notebooks</h3>
+                    <p>Montagem e manutenção de PCs gamers e notebooks.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Expansão de Rede Wifi na residência.')">
+                    <span class="service-number">5</span>
+                    <h3>Expansão de Rede Wifi</h3>
+                    <p>Expansão de rede Wifi na sua residência para melhor cobertura.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Instalação de internet segura para crianças.')">
+                    <span class="service-number">6</span>
+                    <h3>Internet Segura Para Crianças</h3>
+                    <p>Instalação de internet segura para crianças.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <h2 class="section-title">Investimento</h2>
+            <div class="price-highlight">R$ 350,00</div>
+            <p style="font-size: 1.1rem; color: #666;">Valor fixo por serviço</p>
+            <div class="price-details">
+                <div class="price-item">✓ Visita inclusa</div>
+                <div class="price-item">✓ Retirada do equipamento</div>
+                <div class="price-item">✓ Devolução em casa</div>
+            </div>
+            <div class="payment-info">
+                💳 Pagamento: 50% antes do serviço + 50% após conclusão. Somente PIX ou dinheiro.
+            </div>
+            <a href="https://wa.me/5511996077963" class="whatsapp-btn" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Agendar pelo WhatsApp
+            </a>
+        </section>
+
+        <section class="area-section">
+            <h2 class="section-title">Área de Atuação</h2>
+            <div class="area-badge">
+                <svg style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                São Paulo Capital
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2 class="section-title">O que dizem meus clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Atendimento excelente e profissional muito competente! Meu PC gamer me atende bem nos jogos que me interessam e não apresenta lags ou bugs. Compraria denovo."</p>
+                    <p class="testimonial-author">- Mateus Teixeira</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Estava travado o meu notebook e sobrecarregado. Foi feita a limpeza, o backup, a troca da pasta térmica e de brinde instalou o Mario rsrs. Depois do trabalho ficou muito leve, rápido e zerado. Ficou parecendo novo. Recomendo demais o serviço desse profissional."</p>
+                    <p class="testimonial-author">- Camila Navarro</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Meu notebook pareceu outro depois da formatação e troca de HD para SSD, e o preço foi muito justo! Recomendo."</p>
+                    <p class="testimonial-author">- Fernando Oliveira</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Lucas Teixeira - Serviços Informáticos | São Paulo - SP</p>
+            <a href="https://wa.me/5511996077963?text=Olá! Gostaria de ter um site como esse para o meu negócio." target="_blank" class="footer-cta">Quer um site como esse? Tenha um agora!</a>
+        </footer>
+    </div>
+
+    <script>
+        // Função para abrir WhatsApp com mensagem personalizada
+        function openWhatsApp(message) {
+            const phoneNumber = '5511996077963';
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Animação suave ao rolar a página
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animação de entrada para os cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
