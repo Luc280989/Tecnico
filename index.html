@@ -93,6 +93,9 @@
             border-radius: 30px;
             font-size: 0.95rem;
             transition: transform 0.3s ease;
+            justify-content: center;
+            flex: 1;
+            min-height: 50px;
         }
 
         .contact-item:hover {
@@ -163,12 +166,13 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #f4f8fb 100%);
             padding: 25px;
             border-radius: 15px;
             transition: all 0.3s ease;
             border-left: 4px solid #2A8AD4;
             cursor: pointer;
+            width: 100%;
         }
 
         .service-card:hover {
@@ -405,6 +409,10 @@
 
             .price-highlight {
                 font-size: 2.5rem;
+            }
+
+            .price-item {
+                max-width: none;
             }
         }
     </style>
