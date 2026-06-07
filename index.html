@@ -339,12 +339,30 @@
         }
 
         .pricing-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
+            position: relative;
+        }
+
+        .price-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .price-bg-image {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 170px;
+            height: auto;
+            z-index: 0;
+            opacity: 0.3;
+            pointer-events: none;
         }
 
         .price-highlight {
@@ -352,18 +370,17 @@
             color: #2A8AD4;
             font-weight: 800;
             margin: 25px 0;
-            background: linear-gradient(135deg, #2A8AD4 0%, #1e7ab8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 4px 20px rgba(42, 138, 212, 0.3);
-            padding: 25px 40px;
-            border: 3px solid #2A8AD4;
+            padding: 15px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             display: inline-block;
-            background-color: white;
-            box-shadow: 0 10px 30px rgba(42, 138, 212, 0.4);
+            background: rgba(255, 255, 255, 0.25);
             letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
 
         .price-details {
@@ -549,6 +566,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .price-bg-image {
+                right: -80px;
+            }
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
@@ -679,7 +700,10 @@
 
         <section class="pricing-section">
             <h2 class="section-title">Investimento</h2>
-            <div class="price-highlight">R$ 350,00</div>
+            <div class="price-container">
+                <img src="pc.png" alt="PC" class="price-bg-image">
+                <div class="price-highlight">R$ 350,00</div>
+            </div>
             <p style="font-size: 1.1rem; color: #666;">Valor fixo por serviço</p>
             <div class="price-details">
                 <div class="price-item">✓ Visita inclusa</div>
