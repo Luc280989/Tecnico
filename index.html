@@ -88,12 +88,15 @@
             color: #2A8AD4;
             font-size: 2.5rem;
             margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
             font-size: 1.2rem;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
         .contact-info {
@@ -118,9 +121,18 @@
             min-height: 50px;
         }
 
+        .contact-item:focus,
+        .contact-cta:focus,
+        .whatsapp-btn:focus,
+        .footer-cta:focus {
+            outline: 3px solid #2A8AD4;
+            outline-offset: 2px;
+        }
+
         .contact-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #e9ecef;
         }
 
         .contact-cta {
@@ -141,6 +153,7 @@
         .contact-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            background: #20bd5a !important;
         }
 
         .contact-cta svg {
@@ -151,6 +164,97 @@
         .contact-icon {
             width: 20px;
             height: 20px;
+        }
+
+        .about-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .about-item {
+            min-width: 0;
+        }
+
+        .about-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #2A8AD4;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .diploma-preview {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .diploma-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .diploma-preview::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #f8f9fa);
+        }
+
+        .about-item h3 {
+            color: #2A8AD4;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .about-item p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .company-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            min-height: 120px;
+        }
+
+        .company-list img {
+            max-width: 100%;
+            max-height: 60px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .company-list img:hover {
+            transform: scale(1.05);
         }
 
         .services-section {
@@ -167,6 +271,8 @@
             font-size: 2rem;
             margin-bottom: 30px;
             position: relative;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .section-title::after {
@@ -193,11 +299,23 @@
             border-left: 4px solid #2A8AD4;
             cursor: pointer;
             width: 100%;
+            color: #333;
+        }
+
+        .service-card:focus {
+            outline: 3px solid #2A8AD4;
+            outline-offset: 2px;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.6;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(42, 138, 212, 0.3);
+            background: linear-gradient(135deg, #e8f0f7 0%, #d9e8f5 100%);
         }
 
         .service-number {
@@ -215,8 +333,9 @@
 
         .service-card h3 {
             color: #333;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
 
         .pricing-section {
@@ -231,19 +350,20 @@
         .price-highlight {
             font-size: 3.5rem;
             color: #2A8AD4;
-            font-weight: bold;
-            margin: 20px 0;
+            font-weight: 800;
+            margin: 25px 0;
             background: linear-gradient(135deg, #2A8AD4 0%, #1e7ab8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 0 4px 20px rgba(42, 138, 212, 0.3);
-            padding: 20px;
+            padding: 25px 40px;
             border: 3px solid #2A8AD4;
             border-radius: 15px;
             display: inline-block;
             background-color: white;
             box-shadow: 0 10px 30px rgba(42, 138, 212, 0.4);
+            letter-spacing: -1px;
         }
 
         .price-details {
@@ -381,6 +501,7 @@
         .whatsapp-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            background: #20bd5a;
         }
 
         .footer-cta {
@@ -394,6 +515,7 @@
 
         .footer-cta:hover {
             color: #1e7ab8;
+            text-decoration: none;
         }
 
         footer {
@@ -418,8 +540,13 @@
             }
 
             .services-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .about-content {
                 grid-template-columns: 1fr;
+            }
+
+            .company-list {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .contact-info {
@@ -466,6 +593,37 @@
                 </div>
             </div>
         </header>
+
+        <section class="about-section">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <a href="Diploma.pdf" target="_blank" class="about-item" style="text-decoration: none; display: block; cursor: pointer;">
+                    <h3>Formação</h3>
+                    <p><strong>Redes de Computadores</strong></p>
+                    <p>Universidade Cruzeiro do Sul - 2023</p>
+                    <div class="diploma-preview">
+                        <img src="diploma.png" alt="Preview do Diploma">
+                    </div>
+                </a>
+                <div class="about-item">
+                    <h3>Empresas em que Trabalhei</h3>
+                    <div class="company-list">
+                        <img src="Sociedade Harmonia de Tenis.png" alt="Sociedade Harmonia de Tênis">
+                        <img src="TecBan.png" alt="TecBan">
+                        <img src="it2b.png" alt="IT2B">
+                        <img src="rede santa catarina.png" alt="Rede Santa Catarina">
+                    </div>
+                </div>
+                <div class="about-item">
+                    <h3>Interesses e Atuação</h3>
+                    <p>Trabalho desde 2016 em projetos de T.I e sou apaixonado por:</p>
+                    <p>• Programação</p>
+                    <p>• Cybersegurança</p>
+                    <p>• Hardware</p>
+                    <p>• Networking</p>
+                </div>
+            </div>
+        </section>
 
         <section class="services-section">
             <h2 class="section-title">Meus Serviços</h2>
@@ -561,6 +719,9 @@
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
                 <a href="https://www.google.com/maps/search/?api=1&query=Rua+Felipe+Laborde+Auras+99+Pq+Doroteia+São+Paulo+SP" target="_blank" style="color: #2A8AD4; text-decoration: none;">Rua Felipe Laborde Auras, 99 - Pq. Doroteia - São Paulo - SP</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #666; line-height: 1.5;">
+                Não acesso arquivos pessoais. Conte com o profissionalismo e ética de quem atua na área a mais de 10 anos e já trabalhou em algumas das maiores empresas do país.
             </p>
             <a href="https://wa.me/5511996077963?text=Olá! Gostaria de ter um site como esse para o meu negócio." target="_blank" class="footer-cta">Quer um site como esse? Tenha um agora!</a>
         </footer>
