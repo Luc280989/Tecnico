@@ -38,6 +38,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -354,6 +358,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .price-container {
@@ -589,6 +594,12 @@
 
             .price-item {
                 max-width: none;
+            }
+
+            .contact-cta {
+                width: 100%;
+                justify-content: center;
+                padding: 15px 20px;
             }
         }
     </style>
