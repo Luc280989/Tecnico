@@ -68,7 +68,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 90px 20px 20px 20px;
         }
 
         header {
@@ -150,6 +150,231 @@
         .social-icon svg {
             width: 20px;
             height: 20px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.75;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: explode 0.4s ease-out forwards;
+            z-index: 10000;
+        }
+
+        .circuit-line {
+            position: fixed;
+            pointer-events: none;
+            background: linear-gradient(90deg, #2A8AD4, #00D4FF);
+            height: 2px;
+            transform-origin: left center;
+            animation: drawCircuit 0.6s ease-out forwards;
+            z-index: 10000;
+            box-shadow: 0 0 5px #00D4FF, 0 0 10px #2A8AD4;
+        }
+
+        .circuit-node {
+            position: fixed;
+            pointer-events: none;
+            border: 2px solid #00D4FF;
+            background: rgba(42, 138, 212, 0.3);
+            animation: pulseNode 0.32s ease-out forwards;
+            z-index: 10000;
+            box-shadow: 0 0 8px #00D4FF;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes drawCircuit {
+            0% {
+                width: 0;
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                width: var(--length);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseNode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #2A8AD4;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover {
+            color: #1a6ba8;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2A8AD4;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+            margin-left: auto;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #2A8AD4;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu .nav-link {
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                display: none;
+            }
+
+            .hamburger-btn {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
         }
 
         .contact-item {
@@ -610,6 +835,10 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 90px 20px 20px 20px;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -678,7 +907,34 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <nav class="nav-bar">
+        <a href="#" class="nav-logo">
+            <img src="favicon-32x32.png" alt="Logo" class="nav-logo-img" onclick="createExplosion(event)">
+        </a>
+        <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-container">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#servicos" class="nav-link">Meus Serviços</a>
+            <a href="#investimento" class="nav-link">Investimento</a>
+            <a href="#depoimentos" class="nav-link">Depoimentos</a>
+            <a href="#sobre-mim" class="nav-link">Sobre Mim</a>
+            <a href="#area-atuacao" class="nav-link">Área de Atuação</a>
+        </div>
+        <div class="mobile-menu">
+            <a href="#home" class="nav-link" onclick="toggleMenu()">Home</a>
+            <a href="#servicos" class="nav-link" onclick="toggleMenu()">Meus Serviços</a>
+            <a href="#investimento" class="nav-link" onclick="toggleMenu()">Investimento</a>
+            <a href="#depoimentos" class="nav-link" onclick="toggleMenu()">Depoimentos</a>
+            <a href="#sobre-mim" class="nav-link" onclick="toggleMenu()">Sobre Mim</a>
+            <a href="#area-atuacao" class="nav-link" onclick="toggleMenu()">Área de Atuação</a>
+        </div>
+    </nav>
+
+    <div class="container" id="home">
         <header>
             <div class="profile-section">
                 <img src="EU.png" alt="Lucas Teixeira - Técnico em Informática em São Paulo" class="profile-img">
@@ -723,7 +979,7 @@
             </div>
         </header>
 
-        <section class="services-section">
+        <section class="services-section" id="servicos">
             <h2 class="section-title">Meus Serviços</h2>
             <div class="services-grid">
                 <div class="service-card" onclick="openWhatsApp('Olá! Gostaria de agendar um serviço de Limpeza, troca de pasta térmica e higienização.')">
@@ -767,7 +1023,7 @@
             </div>
         </section>
 
-        <section class="pricing-section">
+        <section class="pricing-section" id="investimento">
             <h2 class="section-title">Investimento</h2>
             <div class="price-container">
                 <img src="pc.png" alt="PC" class="price-bg-image">
@@ -793,7 +1049,7 @@
             </a>
         </section>
 
-        <section class="testimonials-section">
+        <section class="testimonials-section" id="depoimentos">
             <h2 class="section-title">O que dizem meus clientes</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -822,7 +1078,7 @@
             </div>
         </section>
 
-        <section class="about-section">
+        <section class="about-section" id="sobre-mim">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-content">
                 <a href="Diploma.pdf" target="_blank" class="about-item" style="text-decoration: none; display: block; cursor: pointer;">
@@ -861,7 +1117,7 @@
             </div>
         </section>
 
-        <section class="area-section">
+        <section class="area-section" id="area-atuacao">
             <h2 class="section-title">Área de Atuação</h2>
             <div class="area-badge">
                 <svg style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -893,6 +1149,89 @@
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             window.open(whatsappUrl, '_blank');
+        }
+
+        // Função para alternar o menu hambúrguer no mobile
+        function toggleMenu() {
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Função para criar explosão tecnológica ao clicar no favicon
+        function createExplosion(event) {
+            event.preventDefault();
+            const x = event.clientX;
+            const y = event.clientY;
+            const circuitCount = 12;
+
+            for (let i = 0; i < circuitCount; i++) {
+                // Criar linha de circuito
+                const line = document.createElement('div');
+                line.classList.add('circuit-line');
+                
+                const angle = (Math.PI * 2 * i) / circuitCount;
+                const length = Math.random() * 80 + 40;
+                const tx = Math.cos(angle) * length;
+                const ty = Math.sin(angle) * length;
+                const rotation = angle * (180 / Math.PI);
+
+                line.style.left = `${x}px`;
+                line.style.top = `${y}px`;
+                line.style.setProperty('--length', `${length}px`);
+                line.style.transform = `rotate(${rotation}deg)`;
+
+                document.body.appendChild(line);
+
+                // Criar nó de circuito na extremidade
+                setTimeout(() => {
+                    const node = document.createElement('div');
+                    node.classList.add('circuit-node');
+                    
+                    const nodeSize = Math.random() * 6 + 4;
+                    node.style.width = `${nodeSize}px`;
+                    node.style.height = `${nodeSize}px`;
+                    node.style.left = `${x + tx}px`;
+                    node.style.top = `${y + ty}px`;
+
+                    document.body.appendChild(node);
+
+                    setTimeout(() => {
+                        node.remove();
+                    }, 320);
+                }, 120);
+
+                setTimeout(() => {
+                    line.remove();
+                }, 600);
+            }
+
+            // Criar algumas partículas extras para efeito
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 4 + 2;
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 60 + 30;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.background = '#00D4FF';
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                particle.style.setProperty('--tx', `${tx}px`);
+                particle.style.setProperty('--ty', `${ty}px`);
+
+                document.body.appendChild(particle);
+
+                setTimeout(() => {
+                    particle.remove();
+                }, 400);
+            }
         }
 
         // Animação suave ao rolar a página
