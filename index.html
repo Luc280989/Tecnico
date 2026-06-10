@@ -61,7 +61,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.75);
             z-index: -1;
         }
 
@@ -414,14 +414,14 @@
             align-items: center;
             gap: 8px;
             background: #f8f9fa;
-            padding: 10px 20px;
+            padding: 15px 70px;
             border-radius: 30px;
-            font-size: 0.95rem;
+            font-size: 1.2rem;
+            font-weight: bold;
             transition: transform 0.3s ease;
             justify-content: center;
-            flex: 1;
             min-height: 50px;
-            min-width: 300px;
+            min-width: 350px;
         }
 
         .contact-item:focus,
@@ -439,7 +439,7 @@
         }
 
         .contact-cta {
-            background: #25D366 !important;
+            background: #128C7E !important;
             color: white !important;
             padding: 15px 40px;
             border-radius: 30px;
@@ -449,7 +449,7 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 5px 20px rgba(18, 140, 126, 0.4);
             font-size: 1.2rem;
             white-space: nowrap;
             min-width: 300px;
@@ -457,8 +457,8 @@
 
         .contact-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-            background: #20bd5a !important;
+            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.5);
+            background: #0D6E5F !important;
         }
 
         .contact-cta svg {
@@ -467,8 +467,8 @@
         }
 
         .contact-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
 
         .about-section {
@@ -498,6 +498,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .diploma-preview {
@@ -644,7 +645,7 @@
         }
 
         .pricing-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
@@ -672,9 +673,9 @@
         }
 
         .price-highlight {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #2A8AD4;
-            font-weight: 800;
+            font-weight: 500;
             margin: 25px 0;
             padding: 15px 25px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -811,11 +812,158 @@
             padding-top: 15px;
         }
 
+        .testimonial-client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .client-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2A8AD4;
+        }
+
+        .client-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .client-name {
+            font-weight: bold;
+            color: #2A8AD4;
+        }
+
+        .client-neighborhood {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(238, 90, 90, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .why-hire-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .why-hire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .why-hire-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .why-hire-item:hover {
+            background: #e9ecef;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-hire-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .why-hire-text {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .credentials-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .credentials-section .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .trust-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #2A8AD4;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .trust-box h3 {
+            color: #2A8AD4;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .trust-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .trust-item svg {
+            width: 18px;
+            height: 18px;
+            color: #2A8AD4;
+        }
+
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #25D366;
+            background: #128C7E;
             color: white;
             padding: 15px 40px;
             border-radius: 30px;
@@ -824,7 +972,7 @@
             font-weight: bold;
             margin-top: 20px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 5px 20px rgba(18, 140, 126, 0.4);
             white-space: nowrap;
             min-width: 300px;
             justify-content: center;
@@ -837,8 +985,8 @@
 
         .whatsapp-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-            background: #20bd5a;
+            box-shadow: 0 8px 25px rgba(18, 140, 126, 0.5);
+            background: #0D6E5F;
         }
 
         .footer-cta {
@@ -975,27 +1123,21 @@
                 <img src="EU.png" alt="Lucas Teixeira - Técnico em Informática em São Paulo" class="profile-img">
                 <h1><img src="L.png" alt="L" class="letter-img">ucas&nbsp;<img src="T.png" alt="T" class="letter-img"><span class="name-second-line">eixeira</span></h1>
                 <p class="subtitle">Técnico em Informática em São Paulo - SP</p>
+                <p class="subtitle" style="font-weight: normal; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <img src="diamante.png" alt="Diamante" style="width: 18px; height: 18px;">
+                    Soluções tecnológicas para sua casa e escritório com garantia e preço justo.
+                </p>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/@lucasteixeirainformatica" target="_blank" class="social-icon" aria-label="YouTube">
                         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
                     </a>
-                    <!--<a href="https://www.facebook.com/profile.php?id=61574140928124&locale=pt_BR" target="_blank" class="social-icon" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>-->
                     <a href="https://github.com/Luc280989" target="_blank" class="social-icon" aria-label="GitHub">
                         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </a>
-                    <!--<a href="https://www.instagram.com/lucasteixeira2809/" target="_blank" class="social-icon" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                        </svg>
-                    </a>-->
                     <a href="mailto:lucasteixeira2809@gmail.com" class="social-icon" aria-label="E-mail">
                         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -1011,9 +1153,9 @@
                     </a>
                     <a href="https://wa.me/5511996077963?text=Olá%20Lucas!%20Preciso%20dos%20seus%20serviços%20com%20urgência." target="_blank" class="contact-cta">
                         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Me contrate agora!
+                        Atendimento em até 24 horas
                     </a>
                 </div>
             </div>
@@ -1060,26 +1202,79 @@
                     </svg>
                     Me contrate agora!
                 </a>
+                </div>
+        </section>
+
+        <section class="why-hire-section" id="por-que-me-contratar">
+            <h2 class="section-title">Por que me contratar?</h2>
+            <div class="why-hire-grid">
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">Atendimento em domicílio</span>
+                </div>
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">Retiro e devolvo seu equipamento em casa</span>
+                </div>
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">Serviço com garantia</span>
+                </div>
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">Orçamento sem compromisso</span>
+                </div>
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">Experiência desde 2016</span>
+                </div>
+                <div class="why-hire-item">
+                    <span class="why-hire-icon">✅</span>
+                    <span class="why-hire-text">50% do pagamento somente após demonstração do serviço</span>
+                </div>
             </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://wa.me/5511996077963?text=Olá%20Lucas!%20Preciso%20dos%20seus%20serviços%20com%20urgência." target="_blank" class="contact-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Agendar atendimento
+                </a>
+             </div>
         </section>
 
         <section class="pricing-section" id="investimento">
             <h2 class="section-title">Investimento</h2>
-            <div class="price-container">
+            <div class="price-container" style="margin-bottom: 0px;">
                 <img src="pc.png" alt="PC" class="price-bg-image">
-                <div class="price-highlight">R$ 350,00*</div>
+                <div class="price-highlight">Serviços a partir de R$ 350*</div>
             </div>
-            <p style="font-size: 1.1rem; color: #666;">Valor fixo por serviço</p>
-            <div class="price-details">
-                <div class="price-item">✓ Visita inclusa</div>
-                <div class="price-item">✓ Retirada no local</div>
-                <div class="price-item">✓ Devolução em casa</div>
-            </div>
-            <div class="payment-info">
+            <div class="payment-info" style="margin: 20px auto;">
                 💳 Pagamento: 50% antes do serviço + 50% após conclusão. Somente PIX ou dinheiro.
             </div>
-            <div class="disclaimer-box">
+            <div class="disclaimer-box" style="margin: 20px auto 0px auto; font-size: 0.95rem; color: #333; font-weight: 500;">
                 *Preço apenas referente ao serviço. Não inclui custos com equipamentos para sua residência ou peças para seu PC que por ventura sejam necessários.
+            </div>
+            <div style="margin: 20px auto 30px auto; background: #f8f9fa; padding: 25px; border-radius: 15px; border-left: 4px solid #2A8AD4; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: #2A8AD4; font-size: 1.3rem; margin-bottom: 15px; text-align: center;">Garantia do Serviço:</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; text-align: left;">
+                    <div style="padding: 10px;">
+                        <strong style="color: #333;">Internet Segura:</strong><br>
+                        <span style="color: #333; font-size: 0.95rem; font-weight: 500;">Garantia ilimitada</span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <strong style="color: #333;">Consertos:</strong><br>
+                        <span style="color: #333; font-size: 0.95rem; font-weight: 500;">3 meses de garantia</span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <strong style="color: #333;">Upgrades e Montagem:</strong><br>
+                        <span style="color: #333; font-size: 0.95rem; font-weight: 500;">6 meses de garantia</span>
+                    </div>
+                    <div style="padding: 10px;">
+                        <strong style="color: #333;">Expansão de Redes Wi-Fi:</strong><br>
+                        <span style="color: #333; font-size: 0.95rem; font-weight: 500;">1 ano de garantia</span>
+                    </div>
+                </div>
             </div>
             <a href="https://wa.me/5511996077963" class="whatsapp-btn" target="_blank">
                 <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1095,17 +1290,35 @@
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">"Atendimento excelente e profissional muito competente! Meu PC gamer me atende bem nos jogos que me interessam e não apresenta lags ou bugs. Compraria de novo."</p>
-                    <p class="testimonial-author">- Mateus Teixeira</p>
+                    <div class="testimonial-client-info">
+                        <img src="Mateus Teixeira.jpeg" alt="Mateus Teixeira" class="client-photo">
+                        <div class="client-details">
+                            <span class="client-name">Mateus Teixeira</span>
+                            <span class="client-neighborhood">Pq. Doroteia</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">"Estava travado o meu notebook e sobrecarregado. Foi feita a limpeza, o backup, a troca da pasta térmica e de brinde instalou o Mario rsrs. Depois do trabalho ficou muito leve, rápido e zerado. Ficou parecendo novo. Recomendo demais o serviço desse profissional."</p>
-                    <p class="testimonial-author">- Camila Navarro</p>
+                    <div class="testimonial-client-info">
+                        <img src="Camila Navarro.png" alt="Camila Navarro" class="client-photo">
+                        <div class="client-details">
+                            <span class="client-name">Camila Navarro</span>
+                            <span class="client-neighborhood">Interlagos</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">"Meu notebook pareceu outro depois da formatação e troca de HD para SSD, e o preço foi muito justo! Recomendo."</p>
-                    <p class="testimonial-author">- Fernando Oliveira</p>
+                    <div class="testimonial-client-info">
+                        <img src="Fernando Oliveira.png" alt="Fernando Oliveira" class="client-photo">
+                        <div class="client-details">
+                            <span class="client-name">Fernando Oliveira</span>
+                            <span class="client-neighborhood">Pq. Doroteia</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
@@ -1113,9 +1326,9 @@
                     <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    Me contrate agora!
+                    Fale comigo agora
                 </a>
-            </div>
+             </div>
         </section>
 
         <section class="about-section" id="sobre-mim">
@@ -1130,15 +1343,6 @@
                     </div>
                 </a>
                 <div class="about-item">
-                    <h3>Empresas em que Trabalhei</h3>
-                    <div class="company-list">
-                        <img src="Sociedade Harmonia de Tenis.png" alt="Sociedade Harmonia de Tênis">
-                        <img src="TecBan.png" alt="TecBan">
-                        <img src="it2b.png" alt="IT2B">
-                        <img src="rede santa catarina.png" alt="Rede Santa Catarina">
-                    </div>
-                </div>
-                <div class="about-item">
                     <h3>Interesses e Atuação</h3>
                     <p>Trabalho desde 2016 em projetos de T.I e sou apaixonado por:</p>
                     <p>• Programação</p>
@@ -1146,15 +1350,24 @@
                     <p>• Hardware</p>
                     <p>• Networking</p>
                 </div>
+                <div class="about-item">
+                    <h3>Experiência em empresas como:</h3>
+                    <div class="company-list">
+                        <img src="Sociedade Harmonia de Tenis.png" alt="Sociedade Harmonia de Tênis">
+                        <img src="TecBan.png" alt="TecBan">
+                        <img src="it2b.png" alt="IT2B">
+                        <img src="rede santa catarina.png" alt="Rede Santa Catarina">
+                    </div>
+                </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
                 <a href="https://wa.me/5511996077963?text=Olá%20Lucas!%20Preciso%20dos%20seus%20serviços%20com%20urgência." target="_blank" class="contact-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    Me contrate agora!
+                    Solicitar orçamento
                 </a>
-            </div>
+             </div>
         </section>
 
         <section class="area-section" id="area-atuacao">
@@ -1168,14 +1381,14 @@
         </section>
 
         <footer>
-            <p>© 2024 Lucas Teixeira - Serviços Informáticos</p>
+            <p>© 2024 Lucas Teixeira - Serviços Informáticos - CPF 38033465840</p>
             <p style="margin-top: 10px;">
                 <svg style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;" viewBox="0 0 24 24" fill="#2A8AD4" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
                 <a href="https://www.google.com/maps/search/?api=1&query=Rua+Felipe+Laborde+Auras+99+Pq+Doroteia+São+Paulo+SP" target="_blank" style="color: #2A8AD4; text-decoration: none;">Rua Felipe Laborde Auras, 99 - Pq. Doroteia - São Paulo - SP - CEP 04474-320</a>
             </p>
-            <p style="margin-top: 15px; font-size: 0.85rem; color: #666; line-height: 1.5;">
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #444; line-height: 1.5;">
                 Não acesso arquivos pessoais. Conte com o profissionalismo e ética de quem atua na área a mais de 10 anos e já trabalhou em algumas das maiores empresas do país.
             </p>
             <a href="https://wa.me/5511996077963?text=Olá! Gostaria de ter um site como esse para o meu negócio." target="_blank" class="footer-cta">Quer um site como esse? Tenha um agora!</a>
