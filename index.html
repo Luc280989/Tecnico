@@ -418,14 +418,15 @@
             align-items: center;
             gap: 8px;
             background: #f8f9fa;
-            padding: 15px 70px;
+            padding: clamp(12px, 2vw, 15px) clamp(20px, 5vw, 70px);
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: bold;
             transition: transform 0.3s ease;
             justify-content: center;
-            min-height: 50px;
-            min-width: 350px;
+            min-height: clamp(45px, 6vw, 50px);
+            min-width: auto;
+            max-width: 100%;
             white-space: nowrap;
         }
 
@@ -446,19 +447,20 @@
         .contact-cta {
             background: #128C7E !important;
             color: white !important;
-            padding: 15px 40px;
+            padding: clamp(12px, 2vw, 15px) clamp(20px, 5vw, 40px);
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: clamp(8px, 2vw, 10px);
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(18, 140, 126, 0.4);
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             white-space: nowrap;
-            min-width: 300px;
+            min-width: auto;
+            max-width: 100%;
         }
 
         .contact-cta:hover {
@@ -827,8 +829,9 @@
         }
 
         .client-photo {
-            width: 50px;
-            height: 50px;
+            width: clamp(40px, 5vw, 50px);
+            height: clamp(40px, 5vw, 50px);
+            aspect-ratio: 1/1;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #2A8AD4;
@@ -974,19 +977,20 @@
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: clamp(8px, 2vw, 10px);
             background: #128C7E;
             color: white;
-            padding: 15px 40px;
+            padding: clamp(12px, 2vw, 15px) clamp(20px, 5vw, 40px);
             border-radius: 30px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: bold;
             margin-top: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(18, 140, 126, 0.4);
             white-space: nowrap;
-            min-width: 300px;
+            min-width: auto;
+            max-width: 100%;
             justify-content: center;
         }
 
