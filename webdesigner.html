@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Designer Freelancer | Sites Profissionais</title>
+    <title>LT.design | Sites Profissionais de Alta Conversão</title>
+    <!-- Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
@@ -17,21 +19,18 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans">
 
+    <!-- NAV BAR -->
     <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-wider uppercase">LT<span class="text-purple-500">.Design</span></a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#sobre" class="hover:text-purple-400 transition">Sobre</a>
-                <a href="#servicos" class="hover:text-purple-400 transition">Serviços</a>
-                <a href="#portfolio" class="hover:text-purple-400 transition">Portfólio</a>
-            </nav>
+            <a href="#" class="text-xl font-bold tracking-wider uppercase">LT<span class="text-purple-500">.design</span></a>
             <a href="https://wa.me/5511996077963?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+site." target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-purple-600/20">
                 <i class="fab fa-whatsapp mr-2"></i>Contratar
             </a>
         </div>
     </header>
 
-    <section class="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[70vh] flex items-center justify-center px-6 overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08),transparent_60%)]"></div>
         <div class="max-w-4xl text-center z-10">
             <span class="text-purple-400 text-sm font-semibold tracking-widest uppercase bg-purple-950/50 border border-purple-900/50 px-4 py-1.5 rounded-full">Web Design de Alta Conversão</span>
@@ -42,145 +41,109 @@
                 Criação de landing pages, sites institucionais e portfólios focados em velocidade, design moderno e, acima de tudo, resultados para o seu negócio.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://wa.me/5511996077963?text=Ol%C3%A1%21+Quero+impulsionar+meu+neg%C3%B3cio+com+um+novo+site." target="_blank" class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-bold transition transform hover:-translate-y-0.5 shadow-xl shadow-purple-600/20 text-center">
-                    Solicitar Orçamento Grátis
-                </a>
-                <a href="#portfolio" class="w-full sm:w-auto border border-slate-800 hover:border-slate-700 bg-slate-900/50 text-slate-300 px-8 py-4 rounded-xl font-bold transition text-center">
-                    Ver Projetos
+                <a href="#orcamento" class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-bold transition transform hover:-translate-y-0.5 shadow-xl shadow-purple-600/20 text-center">
+                    Iniciar Meu Projeto
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-24 border-t border-slate-900 bg-slate-900/20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Design estratégico que vende. <br>Sem enrolação.</h2>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
-                        Muito mais do que apenas "sites bonitos", desenvolvo interfaces focadas na jornada do seu cliente. Unindo estética refinada, otimização de performance (SEO) e usabilidade para garantir que seus visitantes se transformem em compradores.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 text-purple-500"><i class="fas fa-check-circle"></i></div>
-                            <div><strong>Design Exclusivo:</strong> Nada de templates genéricos. O design é pensado para a sua marca.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 text-purple-500"><i class="fas fa-check-circle"></i></div>
-                            <div><strong>100% Responsivo:</strong> Perfeito no celular, tablet e computador.</div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 text-purple-500"><i class="fas fa-check-circle"></i></div>
-                            <div><strong>Foco em Conversão:</strong> Estruturas validadas para capturar leads e gerar vendas.</div>
-                        </div>
+    <!-- SEÇÃO TEXTAREA / ORÇAMENTO -->
+    <section id="orcamento" class="py-24 border-t border-slate-900 bg-slate-900/20 relative">
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <div class="bg-gradient-to-br from-slate-900 to-purple-950/40 p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Simule seu Projeto</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label for="ideia-site" class="block text-base font-medium text-slate-200 mb-3">
+                            Como você quer seu site?
+                        </label>
+                        <textarea id="ideia-site" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-purple-500 transition resize-none" placeholder="Ex: Preciso de uma Landing Page para meu negócio de manutenção de computadores, com foco em atendimento local e botão de WhatsApp..."></textarea>
                     </div>
-                </div>
-                <div class="bg-gradient-to-br from-slate-900 to-purple-950/40 p-8 rounded-3xl border border-slate-800 relative">
-                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Por que me escolher?</h3>
-                    <p class="text-slate-400 text-sm mb-6">
-                        Com experiência em transformar códigos e layouts em ferramentas de negócios, entrego projetos no prazo com suporte contínuo pós-entrega.
-                    </p>
-                    <div class="border-t border-slate-800 pt-6 grid grid-cols-2 gap-4">
-                        <div>
-                            <span class="block text-3xl font-bold text-white">100%</span>
-                            <span class="text-xs text-slate-400">Projetos Sob Medida</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-bold text-white">&lt; 2s</span>
-                            <span class="text-xs text-slate-400">Foco em Carregamento</span>
-                        </div>
+                    
+                    <div class="text-center">
+                        <button onclick="enviarWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition transform hover:-translate-y-0.5 shadow-xl shadow-green-600/20 inline-flex items-center justify-center gap-3">
+                            <i class="fab fa-whatsapp text-2xl"></i> Enviar Ideia para o WhatsApp
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="py-24 border-t border-slate-900">
+    <!-- PORTFÓLIO (TRÊS SITES) -->
+    <section id="portfolio" class="py-24 border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Serviços Especializados</h2>
-            <p class="text-slate-400 max-w-xl mx-auto mb-16">Soluções digitais prontas para escalar a sua presença no mercado.</p>
+            <h2 class="text-3xl font-bold mb-4">Portfólio de Projetos</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-16">Conheça alguns dos últimos trabalhos desenvolvidos com foco em performance e estética.</p>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-900/40 border border-slate-900 p-8 rounded-2xl text-left hover:border-purple-900/50 transition group">
-                    <div class="w-12 h-12 bg-purple-950 text-purple-400 flex items-center justify-center rounded-xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
-                        <i class="fas fa-rocket text-xl"></i>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
+                <!-- Projeto 1 -->
+                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
+                    <div class="h-48 bg-gradient-to-tr from-purple-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
+                        <i class="fas fa-laptop-code text-4xl opacity-50"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Landing Pages</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Páginas de vendas de alta conversão para campanhas de tráfego pago (Google Ads/Meta Ads). Direto ao ponto.</p>
-                </div>
-                <div class="bg-slate-900/40 border border-slate-900 p-8 rounded-2xl text-left hover:border-purple-900/50 transition group">
-                    <div class="w-12 h-12 bg-purple-950 text-purple-400 flex items-center justify-center rounded-xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
-                        <i class="fas fa-building text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Sites Institucionais</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">A vitrine digital perfeita para sua empresa. Credibilidade, autoridade e apresentação impecável dos seus serviços.</p>
-                </div>
-                <div class="bg-slate-900/40 border border-slate-900 p-8 rounded-2xl text-left hover:border-purple-900/50 transition group">
-                    <div class="w-12 h-12 bg-purple-950 text-purple-400 flex items-center justify-center rounded-xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
-                        <i class="fas fa-palette text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Redesign de Sites</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Seu site atual está antigo ou lento? Eu reformulo a identidade visual e atualizo a tecnologia para os padrões atuais.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 border-t border-slate-900 bg-slate-900/10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Projetos Recentes</h2>
-            <p class="text-slate-400 max-w-xl mx-auto mb-16">Uma amostra do cuidado técnico e visual aplicado em cada projeto.</p>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800">
-                    <div class="h-64 bg-gradient-to-tr from-purple-900/40 to-slate-800 flex items-center justify-center text-slate-500">
-                        <i class="fas fa-laptop-code text-5xl opacity-40"></i>
-                    </div>
-                    <div class="p-6 text-left">
+                    <div class="p-6">
                         <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Landing Page</span>
-                        <h3 class="text-lg font-bold mt-1 mb-2">Plataforma de SaaS / Tecnologia</h3>
-                        <p class="text-slate-400 text-sm">Página focada em capturar leads qualificados com design futurista e limpo.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2">Landing Page de Alta Conversão</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Desenvolvida sob medida para campanhas de tráfego pago, otimizada para carregamento instantâneo em celulares.</p>
                     </div>
                 </div>
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-800">
-                    <div class="h-64 bg-gradient-to-tr from-blue-900/40 to-slate-800 flex items-center justify-center text-slate-500">
-                        <i class="fas fa-store text-5xl opacity-40"></i>
+                <!-- Projeto 2 -->
+                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
+                    <div class="h-48 bg-gradient-to-tr from-blue-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
+                        <i class="fas fa-building text-4xl opacity-50"></i>
                     </div>
-                    <div class="p-6 text-left">
+                    <div class="p-6">
                         <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Site Institucional</span>
-                        <h3 class="text-lg font-bold mt-1 mb-2">E-commerce de Moda Premium</h3>
-                        <p class="text-slate-400 text-sm">Experiência visual rica focada na apresentação de produtos de alto padrão.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2">Plataforma Corporativa</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Website completo focado em autoridade de marca, com arquitetura de SEO planejada para o Google.</p>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
+                    <div class="h-48 bg-gradient-to-tr from-emerald-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
+                        <i class="fas fa-store text-4xl opacity-50"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Portfólio Premium</span>
+                        <h3 class="text-lg font-bold mt-1 mb-2">Catálogo Digital de Serviços</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Estrutura minimalista e elegante voltada para profissionais que desejam destacar seus trabalhos visuais.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 border-t border-slate-900 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(168,85,247,0.05),transparent_50%)]"></div>
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl font-extrabold mb-6">Pronto para tirar o seu projeto do papel?</h2>
-            <p class="text-slate-400 text-lg mb-10">
-                Fale diretamente comigo para entender como posso ajudar a posicionar o seu negócio no topo. O orçamento é rápido e sem compromisso.
-            </p>
-            <div class="inline-flex flex-col items-center">
-                <a href="https://wa.me/5511996077963?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+meu+site+novo." target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition transform hover:-translate-y-1 shadow-2xl shadow-green-600/20 inline-flex items-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl"></i> Me Chame no WhatsApp
-                </a>
-                <span class="text-xs text-slate-500 mt-4 tracking-wider uppercase">Clique acima ou mande mensagem para: (11) 99607-7963</span>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="border-t border-slate-900/60 py-8 bg-slate-950">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-            <div>&copy; 2026 LT.Design. Todos os direitos reservados.</div>
+            <div>&copy; 2026 LT.design. Todos os direitos reservados.</div>
             <div class="flex space-x-6">
-                <span>Criado por um Web Designer para Web Designers</span>
+                <span>Design focado em Performance e Conversão</span>
             </div>
         </div>
     </footer>
+
+    <!-- SCRIPT PARA ENVIAR WHATSAPP COM O TEXTO DA TEXTAREA -->
+    <script>
+        function enviarWhatsApp() {
+            const texto = document.getElementById('ideia-site').value;
+            const numero = "5511996077963";
+            
+            // Se o usuário não digitar nada, envia uma mensagem padrão limpa
+            let mensagem = "Olá! Gostaria de fazer um orçamento de site.";
+            if (texto.trim() !== "") {
+                mensagem = "Olá! Tenho uma ideia para o meu site:\n\n" + texto;
+            }
+            
+            const urlEncoded = encodeURIComponent(mensagem);
+            const urlFinal = `https://wa.me/${numero}?text=${urlEncoded}`;
+            
+            window.open(urlFinal, '_blank');
+        }
+    </script>
 
 </body>
 </html>
