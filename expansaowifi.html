@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LT.WifiMelhor | Sinal de Wi-Fi Forte e Estável em Toda a Casa</title>
+    <meta name="description" content="Elimine os pontos cegos de Wi-Fi na sua casa. Sinal forte e estável em todos os cômodos com análise técnica especializada em São Paulo e arredores.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #25D366; /* Verde WhatsApp */
+            --imperial-blue: #002FA7; /* Azul Imperial */
+            --dark: #1a1a1a; /* Preto para o LT e textos firmes */
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
+        
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
+        
+        /* Header */
+        header { background: var(--white); border-bottom: 1px solid #eaeaea; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.4rem; display: flex; align-items: center; gap: 5px; }
+        .logo .lt { color: var(--dark); }
+        .logo .wm { color: var(--imperial-blue); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); text-align: center; padding: 60px 0; }
+        .hero h1 { font-size: 2.5rem; color: var(--dark); margin-bottom: 20px; font-weight: 700; }
+        .hero h1 span { color: var(--imperial-blue); }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: #444; }
+        
+        /* Badge de Localização */
+        .badge-info { 
+            display: inline-block; background: var(--white); padding: 10px 20px; 
+            border-radius: 30px; font-weight: 600; font-size: 0.9rem; 
+            color: var(--imperial-blue); border: 1px solid #ddd; margin-bottom: 20px;
+        }
+        
+        /* Botão CTA Principal */
+        .cta-btn { 
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--primary); color: var(--white); 
+            text-decoration: none; padding: 18px 35px; font-size: 1.2rem; 
+            font-weight: 700; border-radius: 50px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s; 
+        }
+        .cta-btn:hover { transform: scale(1.03); }
+        
+        /* Seção das Dores */
+        .pain-section { background: var(--white); text-align: center; }
+        .pain-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--dark); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: var(--light); padding: 30px; border-radius: 10px; border-left: 5px solid #ffaa00; text-align: left; }
+        .card h3 { margin-bottom: 10px; color: var(--dark); }
+        
+        /* Como Funciona - Duas Visitas */
+        .solution-section { background: #f9fbfd; text-align: center; border-top: 1px solid #eaeaea; }
+        .solution-section h2 { font-size: 2rem; margin-bottom: 20px; }
+        .step { background: var(--white); padding: 25px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: left; }
+        .step-num { background: var(--imperial-blue); color: var(--white); width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; margin-right: 10px; }
+
+        /* Vantagens */
+        .benefits { background: var(--white); }
+        .benefit-item { display: flex; align-items: center; margin-bottom: 15px; text-align: left; font-size: 1.1rem; }
+        .benefit-item::before { content: "✓"; color: var(--primary); font-weight: bold; font-size: 1.5rem; margin-right: 15px; }
+
+        /* Card de Pagamento Inteligente */
+        .price-box { 
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%); 
+            border: 2px solid var(--imperial-blue); padding: 40px; 
+            border-radius: 15px; margin: 40px auto 0; max-width: 580px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .price-box h3 { font-size: 1.1rem; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+        .price-box .price { font-size: 2rem; font-weight: 700; color: var(--imperial-blue); margin: 15px 0; }
+        .price-box p { font-size: 1rem; color: #444; font-weight: 600; margin-bottom: 25px; line-height: 1.5; }
+
+        /* Rodapé */
+        footer { background: #111; color: var(--white); text-align: center; padding: 30px 0; font-size: 0.9rem; }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .cta-btn { font-size: 1rem; width: 100%; text-align: center; }
+            .header-wrap { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-wrap">
+            <div class="logo">📶 <span class="lt">LT</span><span class="wm">.WifiMelhor</span></div>
+            <div><a href="https://wa.me/5511996077963?text=Olá!%20Vi%20o%20site%20da%20LT.WifiMelhor%20e%20gostaria%20de%20melhorar%20o%20Wi-Fi%20da%20minha%20casa." class="cta-btn" style="padding: 10px 20px; font-size: 0.9rem;">Falar com Especialista</a></div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge-info">📍 Atendendo São Paulo e Arredores</div>
+            <h1>Sinal de Wi-Fi Forte, Estável e Sem Quedas em <span>Todos os Cômodos</span> da sua Casa</h1>
+            <p>Chega de internet que trava no quarto, na varanda ou no escritório. Desenvolvemos o projeto ideal de expansão de sinal por meio de uma análise técnica qualificada.</p>
+            <a href="https://wa.me/5511996077963?text=Olá!%20Gostaria%20de%20agendar%20uma%20análise%20técnica%20com%20a%20LT.WifiMelhor." class="cta-btn">📶 Agendar Minha Análise Técnica</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE ALERTA -->
+    <section class="pain-section">
+        <div class="container">
+            <h2>Por que a sua internet vive caindo ou ficando lenta?</h2>
+            <p style="max-width: 700px; margin: -20px auto 40px; color: #555;">O roteador padrão oferecido pelas operadoras não tem força para atravessar paredes grossas, espelhos e lajes. Comprar repetidores comuns de tomada muitas vezes só piora o problema.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>❌ Pontos cegos na residência</h3>
+                    <p>O Wi-Fi funciona muito bem na sala, mas fica praticamente inutilizável nos quartos, escritório ou áreas externas.</p>
+                </div>
+                <div class="card">
+                    <h3>❌ Quedas em chamadas e vídeos</h3>
+                    <p>Reuniões de trabalho por vídeo que travam no meio, filmes em 4K que ficam carregando infinitamente e jogos online com atraso.</p>
+                </div>
+                <div class="card">
+                    <h3>❌ Aparelhos que disputam sinal</h3>
+                    <p>Quando mais de duas pessoas se conectam ao mesmo tempo, a rede residencial fica sobrecarregada e começa a derrubar os dispositivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>Nosso Método Planejado em 2 Etapas</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: #555;">Para garantir que o seu sinal fique perfeito, fazemos um mapeamento físico e sob medida para a sua estrutura.</p>
+            
+            <div style="max-width: 630px; margin: 0 auto;">
+                <div class="step">
+                    <div style="margin-bottom: 5px;"><span class="step-num">1</span> <strong>Visita 1: Análise Técnica e Diagnóstico</strong></div>
+                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Vamos até a sua casa para mapear a interferência das paredes, medir a real entrega da sua velocidade e identificar os locais exatos onde a estrutura precisa ser reforçada.</p>
+                </div>
+                <div class="step">
+                    <div style="margin-bottom: 5px;"><span class="step-num">2</span> <strong>Visita 2: Instalação e Entrega do Sinal Total</strong></div>
+                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Retornamos com os equipamentos adequados para fazer a fixação, configuração e o casamento perfeito de sinal entre todos os cômodos da sua casa de forma invisível e profissional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS E FORMATO DE PAGAMENTO -->
+    <section class="benefits">
+        <div class="container" style="max-width: 750px; text-align: center;">
+            <h2 style="margin-bottom: 30px;">Internet fluida para toda a família</h2>
+            <div class="benefit-item"><strong>Mapeamento Profissional:</strong> Equipamentos instalados nos pontos exatos para cobertura total e inteligente.</div>
+            <div class="benefit-item"><strong>Rede Única na Casa Toda:</strong> Você se move entre os cômodos e seu celular muda de antena sem cair ou precisar trocar de senha.</div>
+            <div class="benefit-item"><strong>Visual Limpo e Discreto:</strong> Sem fios espalhados ou bagunça. Integração perfeita com a estética do seu ambiente.</div>
+
+            <!-- CARD DE PAGAMENTO FRACIONADO -->
+            <div class="price-box">
+                <h3>Condições de Pagamento Facilitadas</h3>
+                <div class="price">Pagamento Dividido por Etapa</div>
+                <p style="margin-top: 15px;">Para sua total segurança e transparência, o valor do serviço é dividido estritamente em duas partes:</p>
+                
+                <div style="text-align: left; background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd;">
+                    💵 <strong>50% do valor:</strong> Pago no ato da primeira visita (Análise e Projeto).<br>
+                    🛠️ <strong>50% do valor restante:</strong> Pago no ato da segunda visita (Instalação e Conclusão).
+                </div>
+                
+                <a href="https://wa.me/5511996077963?text=Olá!%20Gostaria%20de%20agendar%20a%20primeira%20visita%20com%20a%20LT.WifiMelhor%20para%20análise%20técnica." class="cta-btn" style="width: 100%;">Solicitar Visita Técnica de Análise</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LT.WifiMelhor. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Soluções de conectividade residencial em São Paulo e Arredores.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

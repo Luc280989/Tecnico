@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LT.InternetSegura | Proteção Digital Familiar Definitiva em SP</title>
+    <meta name="description" content="Proteja seus filhos de conteúdos inadequados e pornografia. Atendimento em São Paulo e arredores. Taxa única de R$ 399, pago apenas no ato da visita.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #25D366; /* Verde WhatsApp */
+            --imperial-blue: #002FA7; /* Azul Imperial */
+            --dark: #1a1a1a; /* Preto para o LT e textos firmes */
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
+        
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
+        
+        /* Header */
+        header { background: var(--white); border-bottom: 1px solid #eaeaea; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.4rem; display: flex; align-items: center; gap: 5px; }
+        .logo .lt { color: var(--dark); }
+        .logo .is { color: var(--imperial-blue); }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); text-align: center; padding: 60px 0; }
+        .hero h1 { font-size: 2.5rem; color: var(--dark); margin-bottom: 20px; font-weight: 700; }
+        .hero h1 span { color: var(--imperial-blue); }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: #444; }
+        
+        /* Badge de Localização e Preço */
+        .badge-info { 
+            display: inline-block; background: var(--white); padding: 10px 20px; 
+            border-radius: 30px; font-weight: 600; font-size: 0.9rem; 
+            color: var(--imperial-blue); border: 1px solid #ddd; margin-bottom: 20px;
+        }
+        
+        /* Botão CTA Principal */
+        .cta-btn { 
+            display: inline-flex; align-items: center; justify-content: center;
+            background-color: var(--primary); color: var(--white); 
+            text-decoration: none; padding: 18px 35px; font-size: 1.2rem; 
+            font-weight: 700; border-radius: 50px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s; 
+        }
+        .cta-btn:hover { transform: scale(1.03); }
+        
+        /* Seção das Dores */
+        .pain-section { background: var(--white); text-align: center; }
+        .pain-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--dark); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+        .card { background: var(--light); padding: 30px; border-radius: 10px; border-left: 5px solid #ff4d4d; text-align: left; }
+        .card h3 { margin-bottom: 10px; color: var(--dark); }
+        
+        /* Como Funciona */
+        .solution-section { background: #f9fbfd; text-align: center; border-top: 1px solid #eaeaea; }
+        .solution-section h2 { font-size: 2rem; margin-bottom: 20px; }
+        .step { background: var(--white); padding: 25px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: left; }
+        .step-num { background: var(--imperial-blue); color: var(--white); width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; margin-right: 10px; }
+
+        /* Vantagens e Valores */
+        .benefits { background: var(--white); }
+        .benefit-item { display: flex; align-items: center; margin-bottom: 15px; text-align: left; font-size: 1.1rem; }
+        .benefit-item::before { content: "✓"; color: var(--primary); font-weight: bold; font-size: 1.5rem; margin-right: 15px; }
+
+        /* Card de Preço Destacado */
+        .price-box { 
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%); 
+            border: 2px solid var(--imperial-blue); padding: 40px; 
+            border-radius: 15px; margin: 40px auto 0; max-width: 550px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .price-box h3 { font-size: 1.1rem; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+        .price-box .price { font-size: 3rem; font-weight: 700; color: var(--imperial-blue); margin: 10px 0; }
+        .price-box p { font-size: 1rem; color: #444; font-weight: 600; margin-bottom: 25px; }
+
+        /* Rodapé */
+        footer { background: #111; color: var(--white); text-align: center; padding: 30px 0; font-size: 0.9rem; }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .cta-btn { font-size: 1rem; width: 100%; text-align: center; }
+            .header-wrap { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-wrap">
+            <div class="logo">🛡️ <span class="lt">LT</span><span class="is">.InternetSegura</span></div>
+            <div><a href="https://wa.me/5511996077963?text=Olá!%20Vi%20o%20site%20da%20LT.InternetSegura%20e%20quero%20proteger%20minha%20casa." class="cta-btn" style="padding: 10px 20px; font-size: 0.9rem;">Falar com Especialista</a></div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge-info">📍 Atendendo São Paulo e Arredores</div>
+            <h1>Bloqueie Pornografia e Conteúdos Nocivos da sua Internet de Forma <span>Definitiva</span></h1>
+            <p>Sem aplicativos que seus filhos conseguem desinstalar. Uma configuração profissional e invisível feita direto nos aparelhos da sua casa por um técnico especializado.</p>
+            <a href="https://wa.me/5511996077963?text=Olá!%20Gostaria%20de%20agendar%20a%20visita%20da%20LT.InternetSegura%20na%20minha%20residência." class="cta-btn">🛡️ Agendar Minha Blindagem Digital</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE ALERTA -->
+    <section class="pain-section">
+        <div class="container">
+            <h2>O perigo está a apenas um clique dos seus filhos</h2>
+            <p style="max-width: 700px; margin: -20px auto 40px; color: #555;">Basta digitar uma palavra errada por acidente ou clicar em um anúncio para que uma criança seja exposta a conteúdos altamente inadequados. Monitorar o histórico já não funciona mais.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>❌ Aplicativos de controle falham</h3>
+                    <p>As crianças de hoje descobrem em minutos no YouTube como burlar, desativar ou desinstalar aplicativos de monitoramento.</p>
+                </div>
+                <div class="card">
+                    <h3>❌ Abas Anônimas</h3>
+                    <p>Ficar checando o celular não resolve. Com a navegação anônima, eles acessam o que não devem sem deixar nenhum rastro no histórico.</p>
+                </div>
+                <div class="card">
+                    <h3>❌ Riscos Invisíveis</h3>
+                    <p>Além de pornografia, a internet sem filtros abre portas para sites de apostas disfarçados, conteúdos violentos e vírus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="solution-section">
+        <div class="container">
+            <h2>Como a LT.InternetSegura protege sua casa?</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: #555;">Nós não instalamos programas que deixam os aparelhos lentos ou cheios de avisos. Fazemos uma reconfiguração na raiz do sistema.</p>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <strong>Visita Técnica Agendada:</strong> Nosso especialista vai até a sua residência em São Paulo ou arredores no dia combinado.
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <strong>Configuração na Raiz:</strong> Configuramos os computadores, notebooks, tablets e celulares que sua família usa com filtros internos de segurança.
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <strong>Navegação Blindada:</strong> Qualquer tentativa de carregar sites pornográficos ou nocivos será bloqueada na hora. A página simplesmente não abre.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS, PREÇO E CTA FINAL -->
+    <section class="benefits">
+        <div class="container" style="max-width: 750px; text-align: center;">
+            <h2 style="margin-bottom: 30px;">A tranquilidade que sua família merece</h2>
+            <div class="benefit-item"><strong>100% Invisível e Impossível de Burlar:</strong> Não há aplicativos para desinstalar. A proteção roda direto no sistema.</div>
+            <div class="benefit-item"><strong>Internet com a mesma velocidade:</strong> Nossa configuração não consome memória e nem deixa a navegação lenta.</div>
+            <div class="benefit-item"><strong>Bloqueio Inteligente e Automático:</strong> O sistema se atualiza sozinho todos os dias para barrar novos sites ruins que surgem na internet.</div>
+
+            <!-- CARD DE VALOR DESTACADO -->
+            <div class="price-box">
+                <h3>Investimento na Segurança dos seus Filhos</h3>
+                <div class="price">R$ 399</div>
+                <p>Taxa única. Sem mensalidades, sem assinaturas e sem surpresas. <br><strong>Pago apenas no ato da visita após o serviço concluído.</strong></p>
+                <a href="https://wa.me/5511996077963?text=Olá!%20Gostaria%20de%20agendar%20a%20visita%20técnica%20de%20R$399%20da%20LT.InternetSegura." class="cta-btn" style="width: 100%;">Garantir Internet Segura Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LT.InternetSegura. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Atendimento especializado em São Paulo e Arredores.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
