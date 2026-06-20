@@ -4,40 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LT.design | Sites Profissionais de Alta Conversão</title>
-    <!-- Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .gradient-text {
-            background: linear-gradient(135deg, #a855f7, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans">
 
-    <!-- NAV BAR -->
-    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-900">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-wider uppercase">LT<span class="text-purple-500">.design</span></a>
-            <a href="https://wa.me/5511996077963?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+site." target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-purple-600/20">
+            <a href="#" class="text-xl font-bold tracking-wider uppercase text-slate-900">LT<span class="text-purple-600">.design</span></a>
+            <a href="https://wa.me/5511996077963?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+site." target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-purple-600/10">
                 <i class="fab fa-whatsapp mr-2"></i>Contratar
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-[70vh] flex items-center justify-center px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08),transparent_60%)]"></div>
+    <section class="relative min-h-[70vh] flex items-center justify-center px-6 overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.04),transparent_60%)]"></div>
         <div class="max-w-4xl text-center z-10">
-            <span class="text-purple-400 text-sm font-semibold tracking-widest uppercase bg-purple-950/50 border border-purple-900/50 px-4 py-1.5 rounded-full">Web Design de Alta Conversão</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-6 mb-6 leading-tight">
-                Transformo suas ideias em <br><span class="gradient-text">Experiências Digitais</span> Impecáveis
+            <span class="text-purple-700 text-sm font-semibold tracking-widest uppercase bg-purple-50 border border-purple-200 px-4 py-1.5 rounded-full">Web Design de Alta Conversão</span>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-6 mb-6 leading-tight text-slate-900">
+                Transformo suas ideias em <br><span class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Experiências Digitais</span> Impecáveis
             </h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+            
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
                 Criação de landing pages, sites institucionais e portfólios focados em velocidade, design moderno e, acima de tudo, resultados para o seu negócio.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -48,22 +41,21 @@
         </div>
     </section>
 
-    <!-- SEÇÃO TEXTAREA / ORÇAMENTO -->
-    <section id="orcamento" class="py-24 border-t border-slate-900 bg-slate-900/20 relative">
+    <section id="orcamento" class="py-24 border-t border-slate-200 bg-slate-100/60 relative">
         <div class="max-w-3xl mx-auto px-6 relative z-10">
-            <div class="bg-gradient-to-br from-slate-900 to-purple-950/40 p-8 rounded-3xl border border-slate-800 shadow-2xl">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Simule seu Projeto</h2>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">Simule seu Projeto</h2>
                 
                 <div class="space-y-6">
                     <div>
-                        <label for="ideia-site" class="block text-base font-medium text-slate-200 mb-3">
+                        <label for="ideia-site" class="block text-base font-medium text-slate-700 mb-3">
                             Como você quer seu site?
                         </label>
-                        <textarea id="ideia-site" rows="5" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-purple-500 transition resize-none" placeholder="Ex: Preciso de uma Landing Page para meu negócio de manutenção de computadores, com foco em atendimento local e botão de WhatsApp..."></textarea>
+                        <textarea id="ideia-site" rows="5" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-purple-500 focus:bg-white transition resize-none" placeholder="Ex: Preciso de uma Landing Page para meu negócio de manutenção de computadores, com foco em atendimento local e botão de WhatsApp..."></textarea>
                     </div>
                     
                     <div class="text-center">
-                        <button onclick="enviarWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition transform hover:-translate-y-0.5 shadow-xl shadow-green-600/20 inline-flex items-center justify-center gap-3">
+                        <button onclick="enviarWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition transform hover:-translate-y-0.5 shadow-xl shadow-green-600/10 inline-flex items-center justify-center gap-3">
                             <i class="fab fa-whatsapp text-2xl"></i> Enviar Ideia para o WhatsApp
                         </button>
                     </div>
@@ -72,92 +64,82 @@
         </div>
     </section>
 
-    <!-- PORTFÓLIO (TRÊS SITES) -->
-    <section id="portfolio" class="py-24 border-t border-slate-900">
+    <section id="portfolio" class="py-24 border-t border-slate-200 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Sites que já fiz</h2> 
+            <h2 class="text-3xl font-bold mb-12 text-slate-900">Sites que já fiz</h2> 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
-                <!-- Projeto 1 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-purple-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/apaf-rio.png" alt="Apaf RIO" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-purple-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/apaf-rio.png" alt="Apaf RIO" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">Apaf RIO</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Desenvolvida sob medida para campanhas de tráfego pago, otimizada para carregamento instantâneo em celulares.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">Apaf RIO</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Desenvolvida sob medida para campanhas de tráfego pago, otimizada para carregamento instantâneo em celulares.</p>
                     </div>
                 </div>
-                <!-- Projeto 2 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-blue-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/pax-congonhas.png" alt="PAX Congonhas" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/pax-congonhas.png" alt="PAX Congonhas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">PAX Congonhas</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Website completo focado em autoridade de marca, com arquitetura de SEO planejada para o Google.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">PAX Congonhas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Website completo focado em autoridade de marca, com arquitetura de SEO planejada para o Google.</p>
                     </div>
                 </div>
-                <!-- Projeto 3 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-emerald-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/sim-planos.png" alt="Cristo Rei" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-emerald-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/sim-planos.png" alt="Cristo Rei" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">Cristo Rei</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Estrutura minimalista e elegante voltada para profissionais de altíssimos critérios estéticos.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">Cristo Rei</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Estrutura minimalista e elegante voltada para profissionais de altíssimos critérios estéticos.</p>
                     </div>
                 </div>
-                <!-- Projeto 4 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-purple-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/tecnico-em-informatica.png" alt="Técnico em Informática" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-purple-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/tecnico-em-informatica.png" alt="Técnico em Informática" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">Técnico em Informática</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Criado para destacar profissionalismo e expertise técnica do cliente.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">Técnico em Informática</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Criado para destacar profissionalismo e expertise técnica do cliente.</p>
                     </div>
                 </div>
-                <!-- Projeto 5 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-blue-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/santa-casa-de-betim.png" alt="Santa Casa de Betim" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/santa-casa-de-betim.png" alt="Santa Casa de Betim" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">Santa Casa de Betim</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Website de funerária com foco em clareza, empatia e confiança.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">Santa Casa de Betim</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Website de funerária com foco em clareza, empatia e confiança.</p>
                     </div>
                 </div>
-                <!-- Projeto 6 -->
-                <div class="bg-slate-900/40 border border-slate-900 rounded-2xl overflow-hidden hover:border-purple-900/50 transition group">
-                    <div class="h-48 bg-gradient-to-tr from-emerald-900/40 to-slate-800 flex items-center justify-center text-slate-600 group-hover:scale-105 transition duration-300">
-                        <img src="imagens/vale-das-araucarias.png" alt="Vale das Araucárias" class="w-full h-full object-cover">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition group">
+                    <div class="h-48 bg-emerald-50 flex items-center justify-center overflow-hidden">
+                        <img src="imagens/vale-das-araucarias.png" alt="Vale das Araucárias" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mt-1 mb-2">Vale das Araucárias</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Sitem com linguagem alegre e acolhedora, voltado para um público de luto.</p>
+                        <h3 class="text-lg font-bold mt-1 mb-2 text-slate-900">Vale das Araucárias</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Site com linguagem alegre e acolhedora, voltado para um público de luto.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-900/60 py-8 bg-slate-950">
+    <footer class="border-t border-slate-200 py-8 bg-slate-100">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
             <div>&copy; 2026 LT.design. Todos os direitos reservados.</div>
             <div class="flex space-x-6">
-                <span>Design focado em Performance e Conversão</span>
+                <span class="font-medium text-slate-600">Design focado em Performance e Conversão</span>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT PARA ENVIAR WHATSAPP COM O TEXTO DA TEXTAREA -->
     <script>
         function enviarWhatsApp() {
             const texto = document.getElementById('ideia-site').value;
             const numero = "5511996077963";
             
-            // Se o usuário não digitar nada, envia uma mensagem padrão limpa
             let mensagem = "Olá! Gostaria de fazer um orçamento de site.";
             if (texto.trim() !== "") {
                 mensagem = "Olá! Tenho uma ideia para o meu site:\n\n" + texto;
