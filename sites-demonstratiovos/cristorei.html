@@ -1,0 +1,3226 @@
+<style>
+    /* ===================================
+   DESIGN SYSTEM & VARIABLES
+   =================================== */
+:root {
+    /* Colors */
+    --color-primary: #0A8DFA;
+    --color-primary-dark: #0477F6;
+    --color-accent: #A4F13B;
+    --color-accent-dark: #6ECE1B;
+    --color-black: #222222;
+    --color-white: #FFFFFF;
+    --color-gray-light: #F8F9FA;
+    --color-gray-medium: #6C757D;
+    --color-gray-dark: #1063C6;
+    --color-dark: #222222;
+    
+    /* Gradients */
+    --gradient-primary: #1063C6;
+    --gradient-accent: #A4F13B;
+    --gradient-dark: #1063C6;
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 1.875rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-4xl: 3rem;
+    --font-size-5xl: 3.75rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+    
+    /* Container */
+    --container-max-width: 1200px;
+    --container-padding: var(--spacing-lg);
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-black);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+a.btn:hover {
+    color: var(--color-primary-dark);
+}
+
+.btn:hover,
+.btn-whatsapp:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+    color: var(--color-white) !important;
+}
+
+/* ===================================
+   CONTAINER
+   =================================== */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.plans .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 var(--container-padding);
+}
+
+.regions .container,
+.history .container,
+.contact .container,
+.footer .container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: var(--color-white);
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.logo-divider {
+    color: var(--color-gray-medium);
+    font-weight: 300;
+}
+
+.logo-link {
+    display: block;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 75px;
+    width: auto;
+    max-width: 510px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1002;
+    border-radius: var(--radius-sm);
+}
+
+.hamburger {
+    width: 20px;
+    height: 2px;
+    background-color: #000 !important;
+    transition: all var(--transition-base);
+    border-radius: 1px;
+    display: block;
+    margin: 3px 0;
+}
+
+.nav-dropdown {
+    position: static;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    min-width: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+    z-index: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    list-style: none;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-black);
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.nav-item-cta {
+    margin-left: var(--spacing-md);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid white; /* limite inferior */
+}
+
+.hero-left {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a05eca0fde8a86ce6c7cfc9.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.hero-left:hover {
+    filter: brightness(1.05);
+}
+
+.hero-left:hover::before {
+    transform: scale(1.1);
+}
+
+.hero-right {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a078c86ff331dd87940ca26.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.hero-right:hover {
+    filter: brightness(1.05);
+}
+
+.hero-right:hover::before {
+    transform: scale(1.1);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-content-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    padding: var(--spacing-lg);
+    max-width: 500px;
+}
+
+.hero-content-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    padding: var(--spacing-lg);
+    max-width: 500px;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    padding: var(--spacing-xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge,
+.hero-badge-right {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-title-left,
+.hero-title-right {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.hero-subtitle-left,
+.hero-subtitle-right {
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-medium);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.hero-ctas-left {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+/* Mobile specific styles */
+@media (max-width: 767px) {
+    .hero {
+        flex-direction: column;
+        background: #FFFFFF;
+        padding-top: 0px;
+        margin-top: 60px;
+        min-height: auto;
+        height: auto;
+    }
+    
+    .hero-left,
+    .hero-right {
+        display: flex;
+        min-height: auto;
+        height: auto;
+        background: transparent;
+    }
+    
+    .hero-left::before,
+    .hero-right::before {
+        display: none;
+    }
+    
+    .hero-left .hero-overlay,
+    .hero-right .hero-overlay {
+        display: none;
+    }
+    
+    .hero-left {
+        border-right: none;
+        margin-bottom: var(--spacing-sm);
+        margin-top: 90px;
+    }
+    
+    .hero-content-left,
+    .hero-content-right {
+        padding: var(--spacing-md);
+        max-width: none;
+        width: 100%;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+    }
+    
+    .hero-content-left {
+        padding-top: var(--spacing-lg);
+        justify-content: space-evenly;
+    }
+    
+    .hero-content-right {
+        padding-top: var(--spacing-lg);
+        justify-content: space-evenly;
+    }
+    
+    .hero-card {
+        background: #0A8DFA;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        margin-bottom: 0;
+        color: #6ECE1B;
+    }
+    
+    .hero-badge-right {
+        font-size: 0.75rem;
+        margin-bottom: 0;
+        color: #6ECE1B;
+    }
+    
+    .hero-title-left,
+    .hero-title-right {
+        font-size: var(--font-size-xl);
+        margin-bottom: 0;
+        color: #FFFFFF;
+    }
+    
+    .hero-subtitle-left,
+    .hero-subtitle-right {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0;
+        color: #FFFFFF;
+    }
+    
+    .hero-ctas-left {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        margin-top: 0;
+    }
+    
+    .hero-ctas-left .btn {
+        width: 100%;
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    .hero-ctas-left .btn-primary {
+        background: #0477F6;
+    }
+    
+    .logo-img {
+        height: 100px !important;
+        max-width: 350px !important;
+    }
+    
+    .whatsapp-float {
+        display: flex !important;
+        width: 50px !important;
+        height: 50px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 99999 !important;
+        position: fixed !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        border: 3px solid white !important;
+    }
+    
+    .whatsapp-float i {
+        font-size: 24px !important;
+    }
+}
+
+/* ===================================
+   SECTION STYLES
+   =================================== */
+section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.services {
+    background-color: #FFFFFF;
+}
+
+.plans {
+    background-color: #F8F9FA;
+}
+
+.regions {
+    background-color: #FFFFFF;
+}
+
+.history {
+    background-color: #F8F9FA;
+}
+
+.contact {
+    background-color: #FFFFFF;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-medium);
+    font-weight: 300;
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+}
+
+/* ===================================
+   SERVICES SECTION
+   =================================== */
+.services {
+    background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69fde1406ca44fd3348bd371.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.service-icon i {
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+}
+
+.service-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.service-card .btn {
+    margin-top: auto;
+    align-self: stretch;
+}
+
+/* ===================================
+   PLANS SECTION
+   =================================== */
+.plans-grid {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    width: 100%;
+}
+
+.plans-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.plans-grid::-webkit-scrollbar-track {
+    background: var(--color-gray-light);
+    border-radius: var(--radius-md);
+}
+
+.plans-grid::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+/* Carousel Navigation */
+.plans-carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-arrow:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-prev {
+    left: -24px;
+}
+
+.carousel-arrow-next {
+    right: -24px;
+}
+
+.carousel-arrow i {
+    font-size: 1.2rem;
+}
+
+.carousel-arrow.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.plan-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-gray-light);
+    transition: all var(--transition-base);
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Crystal - Transparent/Ice effect */
+.plan-cristal {
+    background: linear-gradient(135deg, rgba(200, 220, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border-color: #B0C4DE;
+    box-shadow: 0 4px 15px rgba(176, 196, 222, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.plan-cristal .plan-value {
+    color: #5F9EA0;
+}
+
+.plan-cristal:hover {
+    box-shadow: 0 10px 25px rgba(176, 196, 222, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Emerald - Green stone effect */
+.plan-esmeralda {
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.15) 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-color: #50C878;
+    box-shadow: 0 4px 15px rgba(80, 200, 120, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.plan-esmeralda .plan-value {
+    color: #2E8B57;
+}
+
+.plan-esmeralda:hover {
+    box-shadow: 0 10px 25px rgba(80, 200, 120, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Sapphire - Blue stone effect */
+.plan-safira {
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.15) 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-color: #0F52BA;
+    box-shadow: 0 4px 15px rgba(15, 82, 186, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.plan-safira .plan-value {
+    color: #007BFF;
+}
+
+.plan-safira:hover {
+    box-shadow: 0 10px 25px rgba(15, 82, 186, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Ruby - Red stone effect */
+.plan-rubi {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.15) 0%, rgba(255, 255, 255, 0.95) 100%);
+    border-color: #E0115F;
+    box-shadow: 0 4px 15px rgba(224, 17, 95, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.plan-rubi .plan-value {
+    color: #DC143C;
+}
+
+.plan-rubi:hover {
+    box-shadow: 0 10px 25px rgba(224, 17, 95, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Diamond - Luxury sparkle effect */
+.plan-diamante {
+    background: linear-gradient(135deg, rgba(185, 242, 255, 0.2) 0%, rgba(255, 255, 255, 0.98) 100%);
+    border-color: #B9F6FF;
+    box-shadow: 0 4px 20px rgba(185, 246, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.plan-diamante .plan-value {
+    color: #00CED1;
+    background: linear-gradient(135deg, #00CED1, #20B2AA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.plan-diamante:hover {
+    box-shadow: 0 10px 30px rgba(185, 246, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.plan-featured {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.plan-featured:hover {
+    transform: scale(1.05) translateY(-4px);
+}
+
+.plan-featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    min-width: 140px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.plan-tag {
+    display: inline-block;
+    background: var(--color-gray-light);
+    color: var(--color-gray-medium);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.plan-featured .plan-tag {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.plan-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.plan-currency {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.plan-value {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.plan-period {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-medium);
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+}
+
+.feature-item i {
+    color: var(--color-accent);
+}
+
+.plan-card .btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* ===================================
+   REGIONS SECTION
+   =================================== */
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.region-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    min-width: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .regions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.region-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.region-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+}
+
+.region-icon i {
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+}
+
+.region-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-xs);
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.region-type {
+    display: inline-block;
+    background: var(--color-gray-light);
+    color: var(--color-gray-medium);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.region-address {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-medium);
+}
+
+.regions-coverage {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.coverage-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.coverage-item i {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+}
+
+/* ===================================
+   HISTORY SECTION
+   =================================== */
+.history-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.history-quote {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.history-quote blockquote {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-gray-dark);
+    line-height: 1.4;
+}
+
+.history-timeline {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.timeline-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.timeline-year {
+    flex-shrink: 0;
+    width: 80px;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: right;
+}
+
+.timeline-content {
+    flex: 1;
+    text-align: left;
+}
+
+.timeline-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-xs);
+}
+
+.timeline-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+}
+
+.history-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--color-gray-light);
+    border-radius: var(--radius-xl);
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-gray-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================
+   CONTACT SECTION
+   =================================== */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+}
+
+.contact-details h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+.contact-item:last-child .contact-details p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact-details a,
+.contact-details p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+    margin: 0;
+    padding: 0;
+}
+
+.contact-details a:hover {
+    color: var(--color-primary);
+}
+
+/* Contact Map */
+.contact-map {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin: 0;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: var(--radius-xl);
+    margin: 0;
+}
+
+/* MPS Integration */
+.mps-integration {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.mps-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mps-description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mps-secure {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-medium);
+    margin-top: var(--spacing-md);
+}
+
+.mps-secure i {
+    color: var(--color-accent);
+    margin-right: var(--spacing-xs);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.form-group input,
+.form-group select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group select {
+    cursor: pointer;
+    background-color: var(--color-white);
+}
+
+.form-checkbox {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.form-checkbox input {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.form-checkbox label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-medium);
+    line-height: 1.5;
+}
+
+/* ===================================
+   MPS MODAL
+   =================================== */
+.mps-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+.mps-modal.active {
+    display: flex;
+}
+
+.mps-modal-content {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.mps-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.mps-modal-header h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.mps-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    color: var(--color-gray-medium);
+    transition: color var(--transition-fast);
+}
+
+.mps-modal-close:hover {
+    color: var(--color-black);
+}
+
+.mps-modal-body {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.mps-loading,
+.mps-success,
+.mps-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--color-gray-light);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mps-success i,
+.mps-error i {
+    font-size: var(--font-size-4xl);
+}
+
+.mps-success i {
+    color: var(--color-accent);
+}
+
+.mps-error i {
+    color: #dc3545;
+}
+
+.mps-success h4,
+.mps-error h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.mps-success p,
+.mps-error p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-medium);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.footer {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-brand .logos {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-brand .logo-text {
+    color: var(--color-white);
+}
+
+.footer-brand .logo-divider {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-description {
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.footer-links-column h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-links-column ul {
+    list-style: none;
+}
+
+.footer-links-column ul li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links-column ul li a {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links-column ul li a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0;
+}
+
+/* ===================================
+   WHATSAPP FLOAT BUTTON
+   =================================== */
+.whatsapp-float {
+    position: fixed !important;
+    bottom: var(--spacing-lg) !important;
+    right: var(--spacing-lg) !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: #25D366 !important;
+    border-radius: 50% !important;
+    border: 3px solid white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: var(--shadow-xl) !important;
+    z-index: 99999 !important;
+    transition: all var(--transition-base) !important;
+    text-decoration: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float i {
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 1024px) {
+    :root {
+        --font-size-5xl: 3rem;
+        --font-size-4xl: 2.5rem;
+        --font-size-3xl: 2rem;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-left,
+    .hero-right {
+        min-height: 50vh;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo-img {
+        height: 100px !important;
+        max-width: 350px !important;
+    }
+    
+    .nav-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--color-white);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        padding: var(--spacing-md);
+        min-width: 200px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all var(--transition-base);
+        z-index: 1001;
+    }
+    
+    .nav-dropdown.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.75rem;
+        --font-size-2xl: 1.5rem;
+        --container-padding: var(--spacing-md);
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .logos {
+        order: 1;
+        flex: 1;
+    }
+    
+    .nav {
+        order: 2;
+        width: auto;
+        margin-top: 0;
+    }
+    
+    .nav-toggle {
+        display: flex !important;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: var(--radius-sm);
+    }
+    
+    .nav-toggle:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: var(--spacing-sm);
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .nav-item-cta {
+        margin-left: 0;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero-left,
+    .hero-right {
+        min-height: 50vh;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plans-grid {
+        overflow-x: auto;
+        padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .plan-card {
+        min-width: 280px;
+        max-width: 300px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    
+    .plan-featured {
+        transform: none;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow-prev {
+        left: 8px;
+    }
+    
+    .carousel-arrow-next {
+        right: 8px;
+    }
+    
+    .carousel-arrow i {
+        font-size: 1rem;
+    }
+    
+    .plan-featured:hover {
+        transform: translateY(-4px);
+    }
+    
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .timeline-year {
+        width: auto;
+        text-align: left;
+    }
+    
+    .history-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+    
+    .whatsapp-float i {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-5xl: 2rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+    }
+    
+    .logo-img {
+        height: 40px !important;
+        max-width: 150px !important;
+    }
+    
+    .logos {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .logo-divider {
+        display: none;
+    }
+    
+    section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .history-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .regions-coverage {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    z-index: 1001;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    .header,
+    .nav-toggle,
+    .btn,
+    .mps-modal {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    .hero,
+    .services,
+    .plans,
+    .regions,
+    .history,
+    .contact {
+        page-break-inside: avoid;
+    }
+}
+
+</style>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Funerária Cristo Rei - Quase 30 anos de experiência oferecendo planos funerários completos em São Simão, Itaguaçu, Paranaiguara e Mineiros. Atendimento humanizado e respeitoso.">
+    <meta name="keywords" content="planos funerários, assistência funeral, São Simão GO, Itaguaçu GO, Paranaiguara GO, Mineiros GO, funerária, plano funeral">
+    <meta name="author" content="Funerária Cristo Rei + SIM Assistência Familiar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Funerária Cristo Rei - Planos Funerários | 29 anos de história">
+    <meta property="og:description" content="Planos funerários completos com benefícios em vida. Atendimento humanizado em São Simão, Itaguaçu, Paranaiguara e Mineiros.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funerária Cristo Rei - Planos Funerários">
+    <meta name="twitter:description" content="29 anos de história, cuidando de quem mais importa: sua família">
+    
+    <title>Funerária Cristo Rei - Planos Funerários | 29 anos de história, cuidando de quem mais importa: sua família</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Funerária Cristo Rei + SIM Assistência Familiar",
+        "description": "Planos funerários completos com benefícios em vida",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mineiros - GO",
+            "addressLocality": "Mineiros",
+            "addressRegion": "GO",
+            "addressCountry": "BR"
+        },
+        "telephone": "+5564999747498",
+        "email": "adm.simplanos@hotmail.com",
+        "foundingDate": "1997",
+        "areaServed": ["São Simão", "Itaguaçu", "Paranaiguara", "Mineiros"],
+        "priceRange": "R$65,00 - R$162,10/mês"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logos">
+                    <a href="#inicio" class="logo-link">
+                        <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a0741a72e98e28fa1073683.png" 
+                             alt="Funerária Cristo Rei + SIM Assistência Familiar" 
+                             class="logo-img">
+                    </a>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                    
+                    <div class="nav-dropdown" id="navDropdown">
+                        <ul class="nav-menu" id="navMenu">
+                            <li class="nav-item">
+                                <a href="#inicio" class="nav-link">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#servicos" class="nav-link">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#planos" class="nav-link">Planos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#regioes" class="nav-link">Regiões</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#historia" class="nav-link">História</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contato" class="nav-link">Contato</a>
+                            </li>
+                            <li class="nav-item nav-item-cta">
+                                <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre os Planos da Sim Assistência Familiar/Funerária Cristo Rei." 
+                                   class="btn btn-whatsapp btn-sm" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="Falar no WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio" style="padding: 0px">
+            <div class="hero-left">
+                <div class="hero-overlay"></div>
+                <div class="hero-content-left hero-card">
+                    <p class="hero-badge">29 anos de história, cuidando de quem mais importa: sua família.</p>
+                    <h1 class="hero-title-left">Sim! Para uma vida tranquila e segura.</h1>
+                    <p class="hero-subtitle-left">Tranquilidade, segurança e acolhimento para você e sua família.</p>
+                    <div class="hero-ctas-left">
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de contratar um plano." class="btn btn-whatsapp" target="_blank" onclick="event.stopPropagation()">Contrate Agora</a>
+                        <a href="#planos" class="btn btn-primary" onclick="event.stopPropagation()">Ver Planos</a>
+                    </div>
+                </div>
+            </div>
+            <div href="https://wa.me/5564999747498?text=Olá! Preciso de apoio funerário emergencial." class="hero-right" target="_blank">
+                <div class="hero-overlay"></div>
+                <div class="hero-content-right hero-card">
+                    <p class="hero-badge-right">Do seu lado quando você mais precisa!</p>
+                    <h1 class="hero-title-right">Apoio assistencial imediato.</h1>
+                    <p class="hero-subtitle-right">Clique abaixo e receba serviço funerário emergencial:</p>
+                    <a href="https://wa.me/5564999747498?text=Atendimento emergencial!" class="btn btn-whatsapp btn-full" target="_blank" onclick="event.stopPropagation()">Atendimento 24h</a>
+                </div>
+            </div>
+        </section> 
+
+        <!-- Services Section -->
+        <section class="services" id="servicos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tudo o que Sua Família Precisa</h2>
+                    <p class="section-subtitle">Oferecemos atendimento profissional e de excelência</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="service-title">Assistência Funeral Completa</h3>
+                        <p class="service-description">
+                            <strong>• Atendimento 24 horas</strong><br>
+                            <strong>• Equipe especializada</strong><br>
+                            <strong>• Preparação completa</strong><br>
+                            <strong>• Cerimônia funeral</strong><br>
+                            <strong>• Cuidados detalhados</strong><br>
+                            <strong>• Suporte familiar</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre a Assistência Funeral Completa." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h3 class="service-title">Translado</h3>
+                        <p class="service-description">
+                            <strong>Transporte especializado do ente querido com cuidado e pontualidade para todo território nacional.</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre o Translado." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h3 class="service-title">Espaço Café</h3>
+                        <p class="service-description">
+                            <strong>Disponibilizamos de lanches diferenciados, durante os velórios para melhor acomodar as famílias e amigos enlutados.</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre o Espaço Café." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3 class="service-title">Salas Velatórias</h3>
+                        <p class="service-description">
+                            <strong>Contamos com amplas, modernas, confortáveis estruturas em todas nossas unidades, preparadas e planejadas para o momento da despedida.</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre as Salas Velatórias." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="service-title">Apoio Humanizado</h3>
+                        <p class="service-description">
+                            <strong>• Suporte emocional</strong><br>
+                            <strong>• Acompanhamento psicológico</strong><br>
+                            <strong>• Equipe treinada</strong><br>
+                            <strong>• Atendimento sensível</strong><br>
+                            <strong>• Respeito em todos os momentos</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre o Apoio Humanizado." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="service-title">Tanatopraxia</h3>
+                        <p class="service-description">
+                            <strong>• Conservação</strong><br>
+                            <strong>• Preparação técnica</strong><br>
+                            <strong>• Profissionais qualificados</strong><br>
+                            <strong>• Apresentação digna</strong><br>
+                            <strong>• Tratamento respeitoso</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre a Tanatopraxia." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="service-title">Carro Social</h3>
+                        <p class="service-description">
+                            <strong>• Transporte de familiares</strong><br>
+                            <strong>• Situações de necessidade</strong><br>
+                            <strong>• Mobilidade garantida</strong><br>
+                            <strong>• Suporte quando preciso</strong><br>
+                            <strong>• Veículo disponível</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre o Carro Social." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="service-title">Rede de Convênios</h3>
+                        <p class="service-description">
+                            <strong>Vasta rede de parceiros, com descontos exclusivos em: hospitais, clínicas médicas, laboratórios, farmácias, dentistas, educação, entretenimento e muito mais.</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre a Rede de Convênios." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crutch"></i>
+                        </div>
+                        <h3 class="service-title">Apoio Ortopédico</h3>
+                        <p class="service-description">
+                            <strong>• Equipamentos ortopédicos</strong><br>
+                            <strong>• Suporte especializado</strong><br>
+                            <strong>• Benefícios em vida</strong><br>
+                            <strong>• Cuidado familiar</strong>
+                        </p>
+                        <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre o Apoio Ortopédico." 
+                           class="btn btn-whatsapp btn-sm" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre os serviços da Funerária Cristo Rei." 
+                       class="btn btn-whatsapp" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Falar com Especialista
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans Section -->
+        <section class="plans" id="planos">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Escolha o Plano Ideal para Você</h2>
+                    <p class="section-subtitle">Planos completos com benefícios em vida para toda sua família</p>
+                </div>
+                
+                <div class="plans-carousel-wrapper">
+                    <button class="carousel-arrow carousel-arrow-prev" aria-label="Planos anteriores">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="plans-grid" id="plansGrid" style="overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+                        <!-- Cristal -->
+                    <div class="plan-card plan-cristal">
+                        <div class="plan-header">
+                            <span class="plan-tag">Menor carência do mercado</span>
+                            <h3 class="plan-name">Cristal</h3>
+                            <div class="plan-price">
+                                <span class="plan-currency">R$</span>
+                                <span class="plan-value">65,00</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item"><i class="fas fa-check"></i>Assistência funeral completa</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Translado municipal</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Sala velatória padrão</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Carro social básico</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Atendimento 24h</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Carência reduzida</li>
+                        </ul>
+                        <button class="btn btn-outline btn-contratar" data-plan="cristal" data-price="65.00">
+                            Contratar Plano
+                        </button>
+                    </div>
+                    
+                    <!-- Esmeralda -->
+                    <div class="plan-card plan-esmeralda">
+                        <div class="plan-header">
+                            <span class="plan-tag">Excelente custo-benefício</span>
+                            <h3 class="plan-name">Esmeralda</h3>
+                            <div class="plan-price">
+                                <span class="plan-currency">R$</span>
+                                <span class="plan-value">81,10</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item"><i class="fas fa-check"></i>Tudo do plano Cristal</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Translado regional</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Sala velatória premium</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Espaço café incluso</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Carro social ampliado</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Rede de convênios básica</li>
+                        </ul>
+                        <button class="btn btn-outline btn-contratar" data-plan="esmeralda" data-price="81.10">
+                            Contratar Plano
+                        </button>
+                    </div>
+                    
+                    <!-- Safira - Featured -->
+                    <div class="plan-card plan-safira plan-featured">
+                        <div class="plan-featured-badge">Mais Escolhido</div>
+                        <div class="plan-header">
+                            <span class="plan-tag">Recomendado</span>
+                            <h3 class="plan-name">Safira</h3>
+                            <div class="plan-price">
+                                <span class="plan-currency">R$</span>
+                                <span class="plan-value">113,50</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item"><i class="fas fa-check"></i>Tudo do plano Esmeralda</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Translado estadual</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Tanatopraxia inclusa</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Apoio humanizado completo</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Rede de convênios ampliada</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Apoio ortopédico básico</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Prioridade no atendimento</li>
+                        </ul>
+                        <button class="btn btn-primary btn-contratar" data-plan="safira" data-price="113.50">
+                            Contratar Plano
+                        </button>
+                    </div>
+                    
+                    <!-- Rubi -->
+                    <div class="plan-card plan-rubi">
+                        <div class="plan-header">
+                            <span class="plan-tag">Premium</span>
+                            <h3 class="plan-name">Rubi</h3>
+                            <div class="plan-price">
+                                <span class="plan-currency">R$</span>
+                                <span class="plan-value">129,70</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item"><i class="fas fa-check"></i>Tudo do plano Safira</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Translado nacional</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Sala velatória exclusiva</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Carro social premium</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Rede de convênios completa</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Apoio ortopédico ampliado</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Benefícios em vida exclusivos</li>
+                        </ul>
+                        <button class="btn btn-outline btn-contratar" data-plan="rubi" data-price="129.70">
+                            Contratar Plano
+                        </button>
+                    </div>
+                    
+                    <!-- Diamante -->
+                    <div class="plan-card plan-diamante">
+                        <div class="plan-header">
+                            <span class="plan-tag">Completo</span>
+                            <h3 class="plan-name">Diamante</h3>
+                            <div class="plan-price">
+                                <span class="plan-currency">R$</span>
+                                <span class="plan-value">162,10</span>
+                                <span class="plan-period">/mês</span>
+                            </div>
+                        </div>
+                        <ul class="plan-features">
+                            <li class="feature-item"><i class="fas fa-check"></i>Tudo do plano Rubi</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Cobertura ilimitada</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Atendimento VIP exclusivo</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Tanatopraxia premium</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Apoio ortopédico completo</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Benefícios em vida totais</li>
+                            <li class="feature-item"><i class="fas fa-check"></i>Sem carência</li>
+                        </ul>
+                        <button class="btn btn-outline btn-contratar" data-plan="diamante" data-price="162.10">
+                            Contratar Plano
+                        </button>
+                    </div>
+                </div>
+                <button class="carousel-arrow carousel-arrow-next" aria-label="Próximos planos">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="https://wa.me/5564999747498?text=Olá! Gostaria de ajuda para escolher o melhor plano para minha família." 
+                       class="btn btn-whatsapp" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Dúvidas? Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regions Section -->
+        <section class="regions" id="regioes">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Onde Estamos</h2>
+                    <p class="section-subtitle">Atuamos em <strong>todo território nacional</strong></p>
+                </div>
+                
+                <div class="regions-grid">
+                    <div class="region-card">
+                        <div class="region-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="region-title">Mineiros</h3>
+                        <span class="region-type">Matriz - GO</span>
+                        <p class="region-address">Sede principal com estrutura completa</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <div class="region-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="region-title">São Simão</h3>
+                        <span class="region-type">Filial - GO</span>
+                        <p class="region-address">Atendimento regional especializado</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <div class="region-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="region-title">Itaguaçu</h3>
+                        <span class="region-type">Filial - GO</span>
+                        <p class="region-address">Unidade com atendimento humanizado</p>
+                    </div>
+                    
+                    <div class="region-card">
+                        <div class="region-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="region-title">Paranaiguara</h3>
+                        <span class="region-type">Filial - GO</span>
+                        <p class="region-address">Cobertura regional eficiente</p>
+                    </div>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber se atendem na minha região." 
+                       class="btn btn-whatsapp" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Verificar Atendimento
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="history" id="historia">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossa História</h2>
+                    <p class="section-subtitle">29 anos de dedicação e cuidado com as famílias</p>
+                </div>
+                
+                <div class="history-content">
+                    <div class="history-quote">
+                        <blockquote>
+                            <p>"Nossa maior conquista é o reconhecimento, a satisfação e o agradecimento de nossos clientes"</p>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="history-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1997</div>
+                            <div class="timeline-content">
+                                <h3>Fundação</h3>
+                                <p>Fundada por Rubens e Rose com o propósito de oferecer atendimento humanizado e de qualidade.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2000s</div>
+                            <div class="timeline-content">
+                                <h3>Expansão</h3>
+                                <p>Crescimento regional com abertura de filiais em São Simão, Itaguaçu e Paranaiguara.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">Hoje</div>
+                            <div class="timeline-content">
+                                <h3>Excelência</h3>
+                                <p>29 anos de história, 4 filiais e milhares de famílias atendidas com dignidade e respeito.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="history-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">29</div>
+                            <div class="stat-label">Anos de História</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Filiais</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Planos</div>
+                        </div>
+                                            </div>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="https://wa.me/5564999747498?text=Olá! Gostaria de conhecer mais sobre a história da Funerária Cristo Rei." 
+                       class="btn btn-whatsapp" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Conheça Nossa História
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with MPS API Integration -->
+        <section class="contact" id="contato">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contate-nos</h2>
+                    <p class="section-subtitle">Estamos prontos para te atender</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 43px; padding: 0;">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/5564999747498" target="_blank" rel="noopener noreferrer">(64) 99974-7498</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 43px; padding: 0;">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:adm.simplanos@hotmail.com">adm.simplanos@hotmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 43px;padding: 0;">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Instagram</h3>
+                                <a href="https://instagram.com/simplanos" target="_blank" rel="noopener noreferrer">@simplanos</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" style="display: flex; gap: 1rem; align-items: flex-start; margin: 0; padding: 0;">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Endereço</h3>
+                                <p style="margin-bottom: 0; padding-bottom: 0;">Av. Antônio Carlos Paniago, Nº 79 - Mundinho - Mineiros - GO - CEP 75832-005</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Google Maps -->
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.1234567890123!2d-52.55555555555555!3d-17.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sAv.%20Ant%C3%B4nio%20Carlos%20Paniago%2C%2079%20-%20Mundinho%20-%20Mineiros%20-%20GO%20-%20CEP%2075832-005!2s-17.123456789012345%2c-52.55555555555555!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                            width="100%"
+                            height="400"
+                            style="border:0; border-radius: 1rem;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização Funerária Cristo Rei - Mineiros GO">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logos">
+                        <span class="logo-text">Funerária Cristo Rei</span>
+                        <span class="logo-divider">+</span>
+                        <span class="logo-text">SIM Assistência Familiar</span>
+                    </div>
+                    <p class="footer-description">29 anos cuidando de quem mais importa: sua família</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Links Rápidos</h4>
+                        <ul>
+                            <li><a href="#inicio">Início</a></li>
+                            <li><a href="#servicos">Serviços</a></li>
+                            <li><a href="#planos">Planos</a></li>
+                            <li><a href="#regioes">Regiões</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="https://wa.me/5564999747498" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                            <li><a href="mailto:adm.simplanos@hotmail.com">Email</a></li>
+                            <li><a href="https://instagram.com/simplanos" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Funerária Cristo Rei + SIM Assistência Familiar. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5564999747498?text=Olá! Gostaria de saber mais sobre os Planos da Sim Assistência Familiar/Funerária Cristo Rei." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- MPS Modal -->
+    <div class="mps-modal" id="mpsModal">
+        <div class="mps-modal-content">
+            <div class="mps-modal-header">
+                <h3>Processando Contratação</h3>
+                <button class="mps-modal-close" id="mpsModalClose" aria-label="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mps-modal-body">
+                <div class="mps-loading">
+                    <div class="spinner"></div>
+                    <p>Processando seus dados...</p>
+                </div>
+                <div class="mps-success" id="mpsSuccess" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Dados enviados com sucesso!</h4>
+                    <p>Você será redirecionado para o pagamento em instantes.</p>
+                </div>
+                <div class="mps-error" id="mpsError" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h4>Erro no processamento</h4>
+                    <p>Por favor, tente novamente ou entre em contato pelo WhatsApp.</p>
+                    <a href="https://wa.me/5564999747498" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    // ===================================
+// MPS API CONFIGURATION
+// ===================================
+const MPS_CONFIG = {
+    // Configure o endpoint real da API MPS aqui
+    API_ENDPOINT: 'https://api.mps.com.br/v1/contratacao', // Exemplo - substituir pelo endpoint real
+    API_KEY: 'YOUR_API_KEY_HERE', // Substituir pela chave real da API
+    TIMEOUT: 30000 // 30 segundos
+};
+
+// ===================================
+// MOBILE NAVIGATION
+// ===================================
+const navToggle = document.getElementById('navToggle');
+const navDropdown = document.getElementById('navDropdown');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
+const hamburgers = document.querySelectorAll('.hamburger');
+
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navDropdown.classList.toggle('active');
+        
+        // Animate hamburger to X
+        hamburgers.forEach((hamburger, index) => {
+            if (!isExpanded) {
+                if (index === 0) {
+                    hamburger.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                } else if (index === 1) {
+                    hamburger.style.opacity = '0';
+                } else if (index === 2) {
+                    hamburger.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                }
+            } else {
+                hamburger.style.transform = 'none';
+                hamburger.style.opacity = '1';
+            }
+        });
+    });
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navDropdown.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        hamburgers.forEach(hamburger => {
+            hamburger.style.transform = 'none';
+            hamburger.style.opacity = '1';
+        });
+    });
+});
+
+document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        hamburgers.forEach(hamburger => {
+            hamburger.style.transform = 'none';
+            hamburger.style.opacity = '1';
+        });
+    }
+});
+
+// ===================================
+// STICKY HEADER
+// ===================================
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+        header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// ===================================
+// SMOOTH SCROLL
+// ===================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ===================================
+// PLAN CARDS - CONTRATAR BUTTONS
+// ===================================
+const contratarButtons = document.querySelectorAll('.btn-contratar');
+const mpsPlanSelect = document.getElementById('mps-plan');
+
+contratarButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const plan = button.getAttribute('data-plan');
+        
+        // Scroll to contact section
+        const contactSection = document.getElementById('contato');
+        if (contactSection) {
+            const headerOffset = 80;
+            const elementPosition = contactSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Select the plan in the form
+        if (mpsPlanSelect) {
+            mpsPlanSelect.value = plan;
+        }
+    });
+});
+
+// ===================================
+// MPS API INTEGRATION
+// ===================================
+const mpsForm = document.getElementById('mpsForm');
+const mpsModal = document.getElementById('mpsModal');
+const mpsModalClose = document.getElementById('mpsModalClose');
+const mpsSuccess = document.getElementById('mpsSuccess');
+const mpsError = document.getElementById('mpsError');
+const mpsLoading = document.querySelector('.mps-loading');
+
+if (mpsForm) {
+    mpsForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(mpsForm);
+        const data = Object.fromEntries(formData);
+        
+        // Validate form
+        if (!data.name || !data.phone || !data.email || !data.plan || !data.city) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+        
+        if (!data.lgpd) {
+            alert('Por favor, concorde com a política de privacidade.');
+            return;
+        }
+        
+        // Show modal
+        showMpsModal('loading');
+        
+        try {
+            // Send data to MPS API
+            const response = await sendToMpsAPI(data);
+            
+            if (response.success) {
+                showMpsModal('success');
+                
+                // Redirect to payment page after 2 seconds
+                setTimeout(() => {
+                    if (response.paymentUrl) {
+                        window.location.href = response.paymentUrl;
+                    } else {
+                        // Fallback to WhatsApp if no payment URL
+                        const whatsappMessage = `Olá! Meu nome é ${data.name}.\n\nTelefone: ${data.phone}\nEmail: ${data.email}\nCidade: ${data.city}\n\nPlano de interesse: ${data.plan}`;
+                        window.open(`https://wa.me/5564999747498?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+                        closeMpsModal();
+                    }
+                }, 2000);
+            } else {
+                showMpsModal('error');
+            }
+        } catch (error) {
+            console.error('MPS API Error:', error);
+            showMpsModal('error');
+        }
+    });
+}
+
+// Send data to MPS API
+async function sendToMpsAPI(data) {
+    // Simulação da chamada de API (remover em produção)
+    // Em produção, descomente o código abaixo e configure o endpoint real
+    
+    /*
+    const response = await fetch(MPS_CONFIG.API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${MPS_CONFIG.API_KEY}`
+        },
+        body: JSON.stringify({
+            nome: data.name,
+            telefone: data.phone,
+            email: data.email,
+            plano: data.plan,
+            cidade: data.city,
+            lgpd_consent: data.lgpd
+        }),
+        signal: AbortSignal.timeout(MPS_CONFIG.TIMEOUT)
+    });
+    
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
+    */
+    
+    // Simulação para desenvolvimento
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            // Simular sucesso (70% de chance) ou erro (30% de chance)
+            const isSuccess = Math.random() > 0.3;
+            
+            if (isSuccess) {
+                resolve({
+                    success: true,
+                    paymentUrl: null, // Em produção, retornar URL real de pagamento
+                    message: 'Dados processados com sucesso'
+                });
+            } else {
+                resolve({
+                    success: false,
+                    error: 'Erro ao processar dados'
+                });
+            }
+        }, 2000);
+    });
+}
+
+// Show MPS modal with specific state
+function showMpsModal(state) {
+    if (!mpsModal) return;
+    
+    mpsModal.classList.add('active');
+    
+    // Hide all states
+    if (mpsLoading) mpsLoading.style.display = 'none';
+    if (mpsSuccess) mpsSuccess.style.display = 'none';
+    if (mpsError) mpsError.style.display = 'none';
+    
+    // Show selected state
+    switch (state) {
+        case 'loading':
+            if (mpsLoading) mpsLoading.style.display = 'flex';
+            break;
+        case 'success':
+            if (mpsSuccess) mpsSuccess.style.display = 'flex';
+            break;
+        case 'error':
+            if (mpsError) mpsError.style.display = 'flex';
+            break;
+    }
+}
+
+// Close MPS modal
+function closeMpsModal() {
+    if (!mpsModal) return;
+    mpsModal.classList.remove('active');
+    
+    // Reset form
+    if (mpsForm) {
+        mpsForm.reset();
+    }
+}
+
+if (mpsModalClose) {
+    mpsModalClose.addEventListener('click', closeMpsModal);
+}
+
+// Close modal on outside click
+if (mpsModal) {
+    mpsModal.addEventListener('click', (e) => {
+        if (e.target === mpsModal) {
+            closeMpsModal();
+        }
+    });
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMpsModal();
+        navMenu.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        const hamburger = navToggle.querySelector('.hamburger');
+        if (hamburger) hamburger.style.transform = 'none';
+    }
+});
+
+// ===================================
+// SCROLL ANIMATIONS
+// ===================================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+const animateElements = document.querySelectorAll('.service-card, .plan-card, .region-card, .stat-item, .contact-item');
+
+animateElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// ===================================
+// PLAN CARDS HOVER EFFECT
+// ===================================
+const planCards = document.querySelectorAll('.plan-card');
+
+planCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        planCards.forEach(c => {
+            if (c !== card) {
+                c.style.opacity = '0.7';
+            }
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        planCards.forEach(c => {
+            c.style.opacity = '1';
+        });
+    });
+});
+
+// ===================================
+// WHATSAPP FLOAT BUTTON
+// ===================================
+const whatsappFloat = document.querySelector('.whatsapp-float');
+
+// WhatsApp flutuante sempre visível
+if (whatsappFloat) {
+    whatsappFloat.style.opacity = '1';
+    whatsappFloat.style.visibility = 'visible';
+    whatsappFloat.style.transition = 'opacity 0.3s ease';
+}
+
+// ===================================
+// PHONE MASK
+// ===================================
+const phoneInput = document.getElementById('mps-phone');
+
+if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length > 11) {
+            value = value.slice(0, 11);
+        }
+        
+        if (value.length > 2) {
+            value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+        }
+        
+        if (value.length > 9) {
+            value = `${value.slice(0, 9)}-${value.slice(9)}`;
+        }
+        
+        e.target.value = value;
+    });
+}
+
+// ===================================
+// PERFORMANCE OPTIMIZATION
+// ===================================
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+const debouncedScroll = debounce(() => {
+    // Scroll-related logic here
+}, 100);
+
+window.addEventListener('scroll', debouncedScroll);
+
+// ===================================
+// PLANS CAROUSEL NAVIGATION
+// ===================================
+function initPlansCarousel() {
+    const carousel = document.getElementById('plansGrid');
+    const prevBtn = document.querySelector('.carousel-arrow-prev');
+    const nextBtn = document.querySelector('.carousel-arrow-next');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    const cardWidth = 320; // Largura aproximada do card + gap
+    
+    function updateArrowVisibility() {
+        const scrollLeft = carousel.scrollLeft;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        // Esconde seta anterior se estiver no início
+        if (scrollLeft <= 10) {
+            prevBtn.classList.add('hidden');
+        } else {
+            prevBtn.classList.remove('hidden');
+        }
+        
+        // Esconde seta próxima se estiver no final
+        if (scrollLeft >= maxScroll - 10) {
+            nextBtn.classList.add('hidden');
+        } else {
+            nextBtn.classList.remove('hidden');
+        }
+    }
+    
+    // Scroll anterior
+    prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -cardWidth,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll próximo
+    nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: cardWidth,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Atualiza visibilidade das setas ao scroll
+    carousel.addEventListener('scroll', debounce(updateArrowVisibility, 50), { passive: true });
+    
+    // Atualiza visibilidade ao redimensionar
+    window.addEventListener('resize', debounce(updateArrowVisibility, 100));
+    
+    // Inicializa visibilidade
+    updateArrowVisibility();
+}
+
+// ===================================
+// INITIALIZATION
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    if (header) {
+        header.style.position = 'fixed';
+        header.style.top = '0';
+        header.style.left = '0';
+        header.style.right = '0';
+    }
+    
+    document.body.classList.add('loaded');
+    
+    // Inicializa carrossel de planos
+    initPlansCarousel();
+});
+
+// ===================================
+// ERROR HANDLING
+// ===================================
+window.addEventListener('error', (e) => {
+    console.error('An error occurred:', e);
+});
+
+// ===================================
+// CONSOLE MESSAGE
+// ===================================
+console.log('Funerária Cristo Rei + SIM Assistência Familiar');
+console.log('Site desenvolvido com foco em conversão e experiência do usuário');
+console.log('Integração com API MPS configurada');
+
+</script>

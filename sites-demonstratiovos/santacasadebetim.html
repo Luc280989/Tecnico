@@ -1,0 +1,2336 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Funerária Santa Casa de Betim - Serviços funerários, plano de assistência funerária e vendas de coroas. Atendimento 24h em Betim, Belo Horizonte e Grande BH.">
+    <meta name="keywords" content="funerária, Betim, Belo Horizonte, serviços funerários, plano funerário, cremação, sepultamento">
+    <meta name="author" content="Funerária Santa Casa de Betim">
+    <meta property="og:title" content="Funerária Santa Casa de Betim - Há 11 anos confortando as famílias mineiras">
+    <meta property="og:description" content="Serviços funerários completos com atendimento humanizado e preço justo. Atendimento 24h em Betim e região.">
+    <meta property="og:type" content="website">
+    <title>Funerária Santa Casa de Betim - Serviços Funerários 24h</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           VARIÁVEIS GLOBAIS
+           ============================================ */
+        :root {
+            /* Cores */
+            --cor-primaria: #000000;
+            --cor-secundaria: #fdfdfd;
+            --cor-terciaria: #222222;
+            --cor-quaternaria: #FFFFFF;
+            --cor-dourada: #d4af37;
+            --cor-dourada-clara: #f4d03f;
+            
+            /* Fontes */
+            --fonte-titulos: 'Marcellus', serif;
+            --fonte-texto: 'Josefin Sans', sans-serif;
+            
+            /* Dados da Empresa */
+            --nome-empresa: 'Funerária Santa Casa de Betim';
+            --whatsapp: '553135228000';
+            --telefone: '553135228000';
+            --email: 'geraldomendes05@hotmail.com';
+            --instagram: '@funerariasantacasadebetim';
+            --cnpj: '20.889.786/0001-57';
+            --data-fundacao: '2014-08-22';
+            --endereco: 'Avenida Amazonas, 4012 - Betim - MG - 32602-508';
+            --preco-servico: '990,00';
+            
+            /* Espaçamentos */
+            --espacamento-xs: clamp(0.5rem, 1vw, 0.75rem);
+            --espacamento-sm: clamp(0.75rem, 2vw, 1rem);
+            --espacamento-md: clamp(1rem, 3vw, 1.5rem);
+            --espacamento-lg: clamp(1.5rem, 4vw, 2rem);
+            --espacamento-xl: clamp(2rem, 5vw, 3rem);
+            --espacamento-xxl: clamp(3rem, 8vw, 5rem);
+            
+            /* Bordas */
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            
+            /* Sombras */
+            --sombra-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --sombra-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --sombra-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --sombra-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --sombra-card: 0 4px 20px rgba(34, 34, 34, 0.15);
+            
+            /* Transições */
+            --transicao-rapida: 0.2s ease;
+            --transicao-media: 0.3s ease;
+            --transicao-lenta: 0.5s ease;
+        }
+
+        /* ============================================
+           RESET E ESTILOS BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--fonte-texto);
+            color: var(--cor-primaria);
+            background-color: var(--cor-secundaria);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--fonte-titulos);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transicao-rapida);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            font-family: var(--fonte-texto);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ============================================
+           ANIMAÇÕES
+           ============================================ */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            50% { transform: translateY(-5px) rotate(-1deg); }
+            75% { transform: translateY(-15px) rotate(0.5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Stagger delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+        .stagger-7 { transition-delay: 0.7s; }
+        .stagger-8 { transition-delay: 0.8s; }
+        .stagger-9 { transition-delay: 0.9s; }
+        .stagger-10 { transition-delay: 1.0s; }
+
+        /* ============================================
+           CÍRCULO DECORATIVO DESKTOP (LOGO)
+           ============================================ */
+        .logo-circle-container {
+            position: fixed;
+            top: -150px;
+            left: -150px;
+            width: 300px;
+            height: 300px;
+            background: var(--cor-quaternaria);
+            border: 3px solid var(--cor-primaria);
+            border-radius: 50%;
+            z-index: 1001;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 20px;
+            box-shadow: var(--sombra-lg);
+        }
+
+        .logo-circle-container img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+            margin-right: 30px;
+        }
+
+        /* ============================================
+           HEADER / NAVBAR
+           ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.8) 50%, 
+                rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            transition: background var(--transicao-media);
+        }
+
+        .logo-desktop {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .header.scrolled {
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.85) 0%, 
+                rgba(0, 0, 0, 0.75) 50%, 
+                rgba(0, 0, 0, 0.65) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: var(--espacamento-lg);
+        }
+
+        .nav-desktop a {
+            color: var(--cor-quaternaria);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cor-quaternaria);
+            transition: width var(--transicao-media);
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Header */
+        .header-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.8) 50%, 
+                rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1000;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-shadow: var(--sombra-sm);
+        }
+
+        .header-mobile.scrolled {
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.85) 0%, 
+                rgba(0, 0, 0, 0.75) 50%, 
+                rgba(0, 0, 0, 0.65) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-mobile {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Menu Toggle Button (Hamburger) */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 10px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--cor-quaternaria);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--espacamento-xl);
+        }
+
+        .mobile-menu-link {
+            color: var(--cor-quaternaria);
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--cor-dourada);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ea7917b0e5e2bb7f33de3b.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(255, 255, 255, 0.75) 35%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0.3) 65%,
+                rgba(255, 255, 255, 0) 100%);
+        }
+
+        .hero-curve {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--cor-secundaria);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            z-index: 2;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--espacamento-xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--espacamento-xxl);
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--cor-primaria);
+            color: var(--cor-quaternaria);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--espacamento-md);
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-md);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--cor-primaria);
+            opacity: 0.8;
+            margin-bottom: var(--espacamento-lg);
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+            margin-bottom: var(--espacamento-xl);
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--cor-quaternaria);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--sombra-md);
+            transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra-lg);
+        }
+
+        .hero-cta svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Offer Box */
+        .offer-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: var(--border-radius-xl);
+            padding: var(--espacamento-xl);
+            box-shadow: var(--sombra-glass);
+            max-width: 400px;
+            margin-left: auto;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cor-dourada), var(--cor-dourada-clara));
+            color: var(--cor-primaria);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--espacamento-sm);
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-sm);
+        }
+
+        .offer-price {
+            font-size: 2.5rem;
+            color: var(--cor-primaria);
+            font-weight: 700;
+            margin-bottom: var(--espacamento-xs);
+        }
+
+        .offer-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .offer-description {
+            font-size: 0.9rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+            margin-bottom: var(--espacamento-lg);
+        }
+
+        .offer-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: #25D366;
+            color: var(--cor-quaternaria);
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida);
+        }
+
+        .offer-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ============================================
+           SEÇÃO SERVIÇOS
+           ============================================ */
+        .services {
+            padding: var(--espacamento-xxl) var(--espacamento-xl);
+            background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ebf4ef6c819d3c6f745363.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(253, 253, 253, 0.95);
+        }
+
+        .services-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--espacamento-xxl);
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--cor-primaria);
+            color: var(--cor-quaternaria);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--espacamento-sm);
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-sm);
+        }
+
+        /* Efeito degrade preto-dourado para textos */
+        .texto-dourado {
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-dourada) 50%, var(--cor-primaria) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+            font-weight: 600;
+        }
+
+        .texto-dourado-estatico {
+            background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-dourada) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--espacamento-lg);
+            margin-bottom: var(--espacamento-xl);
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--sombra-card);
+            transition: transform var(--transicao-media), box-shadow var(--transicao-media);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(34, 34, 34, 0.2);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: var(--espacamento-md);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card-title {
+            font-size: 1.1rem;
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-xs);
+        }
+
+        .service-card-description {
+            font-size: 0.85rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .service-card-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: var(--cor-primaria);
+            color: var(--cor-quaternaria);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: var(--espacamento-md);
+            transition: background var(--transicao-rapida), transform var(--transicao-rapida);
+        }
+
+        .service-card-cta:hover {
+            background: var(--cor-terciaria);
+            transform: scale(1.02);
+        }
+
+        /* CTA WhatsApp Section */
+        .services-cta {
+            text-align: center;
+            margin-top: var(--espacamento-xxl);
+        }
+
+        .whatsapp-btn-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: var(--cor-quaternaria);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--sombra-lg);
+            transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida);
+        }
+
+        .whatsapp-btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn-large svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* ============================================
+           SEÇÃO PLANOS DE ASSISTÊNCIA
+           ============================================ */
+        .plans {
+            padding: var(--espacamento-xxl) var(--espacamento-xl);
+            background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ebf4ef6c819d3c6f745363.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .plans::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 250, 250, 0.95);
+        }
+
+        .plans-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--espacamento-xl);
+            margin-top: var(--espacamento-xxl);
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--cor-primaria);
+            border-radius: var(--border-radius-xl);
+            padding: var(--espacamento-lg);
+            text-align: center;
+            transition: transform var(--transicao-media), box-shadow var(--transicao-media);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .plan-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(34, 34, 34, 0.2);
+        }
+
+        .plan-card.featured {
+            border: 3px solid var(--cor-dourada);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cor-dourada), var(--cor-dourada-clara));
+            color: var(--cor-primaria);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .plan-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--cor-primaria), var(--cor-dourada));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--espacamento-md);
+            flex-shrink: 0;
+        }
+
+        .plan-icon svg {
+            width: 30px;
+            height: 30px;
+            color: var(--cor-quaternaria);
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-xs);
+            flex-shrink: 0;
+        }
+
+        .plan-description {
+            font-size: 0.9rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+            margin-bottom: var(--espacamento-md);
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            color: var(--cor-primaria);
+            font-weight: 700;
+            margin-bottom: var(--espacamento-xs);
+            flex-shrink: 0;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .plan-price-period {
+            font-size: 0.85rem;
+            color: var(--cor-primaria);
+            opacity: 0.6;
+            margin-bottom: var(--espacamento-md);
+            flex-shrink: 0;
+        }
+
+        .plan-features {
+            text-align: left;
+            margin-bottom: var(--espacamento-md);
+            flex-grow: 1;
+        }
+
+        .plan-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--espacamento-xs);
+            padding: var(--espacamento-xs) 0;
+            font-size: 0.85rem;
+            color: var(--cor-primaria);
+        }
+
+        .plan-feature svg {
+            width: 16px;
+            height: 16px;
+            color: #25D366;
+            flex-shrink: 0;
+        }
+
+        .plan-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: #25D366;
+            color: var(--cor-quaternaria);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--sombra-md);
+            transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida), background var(--transicao-rapida);
+            margin-top: auto;
+        }
+
+        .plan-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            background: #128C7E;
+        }
+
+        .plan-cta svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ============================================
+           SEÇÃO REGIÕES ATENDIDAS
+           ============================================ */
+        .regions {
+            padding: var(--espacamento-xxl) var(--espacamento-xl);
+            background: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%);
+        }
+
+        .regions-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--espacamento-lg);
+            margin-top: var(--espacamento-xl);
+        }
+
+        .region-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--cor-primaria);
+            border-radius: var(--border-radius-lg);
+            padding: var(--espacamento-xl);
+            text-align: center;
+            transition: transform var(--transicao-media), box-shadow var(--transicao-media);
+        }
+
+        .region-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-lg);
+        }
+
+        .region-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--cor-primaria), var(--cor-dourada));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--espacamento-md);
+        }
+
+        .region-icon svg {
+            width: 30px;
+            height: 30px;
+            color: var(--cor-quaternaria);
+        }
+
+        .region-name {
+            font-size: 1.25rem;
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-xs);
+        }
+
+        .region-info {
+            font-size: 0.9rem;
+            color: var(--cor-primaria);
+            opacity: 0.7;
+        }
+
+        /* ============================================
+           SEÇÃO HISTÓRIA
+           ============================================ */
+        .history {
+            padding: var(--espacamento-xxl) var(--espacamento-xl);
+            background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69e90acab1e594157521f930.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .history::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(34, 34, 34, 0.85);
+        }
+
+        .history-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .history .section-tag {
+            background: var(--cor-quaternaria);
+            color: var(--cor-primaria);
+        }
+
+        .history .section-title {
+            color: var(--cor-quaternaria);
+        }
+
+        .history .section-subtitle {
+            color: var(--cor-quaternaria);
+            opacity: 0.8;
+        }
+
+        .history-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: var(--espacamento-xxl);
+            margin-top: var(--espacamento-xl);
+        }
+
+        .history-text {
+            font-size: 1.1rem;
+            color: var(--cor-quaternaria);
+            line-height: 1.8;
+            margin-bottom: var(--espacamento-lg);
+        }
+
+        .history-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .history-years {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cor-dourada), var(--cor-dourada-clara));
+            color: var(--cor-primaria);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: var(--espacamento-lg);
+        }
+
+        /* ============================================
+           SEÇÃO CONTATO
+           ============================================ */
+        .contact {
+            padding: var(--espacamento-xxl) var(--espacamento-xl);
+            background: linear-gradient(135deg, #f2f2f2 0%, #e8e8e8 100%);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 5rem);
+            align-items: stretch;
+            margin-top: var(--espacamento-xxl);
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 34, 34, 0.1);
+            border-radius: var(--border-radius-lg);
+            padding: var(--espacamento-xxl);
+            box-shadow: var(--sombra-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+
+        .contact-info-title {
+            font-size: 1.5rem;
+            color: var(--cor-primaria);
+            margin-bottom: var(--espacamento-lg);
+        }
+
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: var(--espacamento-md);
+            padding: var(--espacamento-md) 0;
+            border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+        }
+
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cor-primaria), var(--cor-dourada));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--cor-quaternaria);
+        }
+
+        .contact-details {
+            flex-grow: 1;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: var(--cor-primaria);
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            color: var(--cor-primaria);
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: var(--cor-primaria);
+            transition: opacity var(--transicao-rapida);
+        }
+
+        .contact-value a:hover {
+            opacity: 0.7;
+        }
+
+        .contact-cta {
+            margin-top: var(--espacamento-xl);
+            text-align: center;
+        }
+
+        /* Map Container with Offset Border */
+        .map-container {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            height: 100%;
+            min-height: 500px;
+        }
+
+        .map-offset-border {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            right: 20px;
+            bottom: -20px;
+            border: 3px solid var(--cor-primaria);
+            border-radius: var(--border-radius-lg);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .map-frame {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius-lg);
+            filter: grayscale(20%);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--cor-primaria);
+            color: var(--cor-quaternaria);
+            padding: var(--espacamento-lg) var(--espacamento-xl);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-cnpj {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: var(--espacamento-xs);
+        }
+
+        /* ============================================
+           BOTÃO WHATSAPP FLUTUANTE
+           ============================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            color: var(--cor-quaternaria);
+        }
+
+        /* ============================================
+           RESPONSIVIDADE - TABLET
+           ============================================ */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .regions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-xl);
+            }
+
+            .contact-info {
+                order: -1;
+            }
+
+            .map-container {
+                min-height: 350px;
+                height: 350px;
+            }
+
+            .map-frame {
+                min-height: 350px;
+                height: 350px;
+            }
+        }
+
+        /* ============================================
+           RESPONSIVIDADE - MOBILE
+           ============================================ */
+        @media (max-width: 768px) {
+            /* Esconder elementos desktop */
+            .logo-circle-container,
+            .header {
+                display: none;
+            }
+
+            /* Mostrar header mobile */
+            .header-mobile {
+                display: flex;
+            }
+
+            /* Hero ajustes */
+            .hero {
+                padding-top: 140px;
+                min-height: auto;
+                padding-bottom: 80px;
+            }
+
+            .contact-info {
+                order: -1;
+            }
+
+            .hero-bg {
+                background-attachment: scroll;
+            }
+
+            /* Remover gradiente, usar overlay branco */
+            .hero-overlay {
+                background: rgba(255, 255, 255, 0.75);
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-xl);
+                padding: var(--espacamento-lg);
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+            }
+
+            .offer-box {
+                max-width: 100%;
+                margin: 0;
+                animation: none;
+                margin-top: var(--espacamento-lg);
+            }
+
+            /* Services grid mobile */
+            .services {
+                padding: var(--espacamento-xl) var(--espacamento-md);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-md);
+            }
+
+            .service-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            /* Regions grid mobile */
+            .regions {
+                padding: var(--espacamento-xl) var(--espacamento-md);
+            }
+
+            .regions-grid {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-md);
+            }
+
+            /* Plans grid mobile */
+            .plans {
+                padding: var(--espacamento-xl) var(--espacamento-md);
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: var(--espacamento-md);
+            }
+
+            .plan-card {
+                padding: var(--espacamento-lg);
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+
+            /* History mobile */
+            .history {
+                padding: var(--espacamento-xl) var(--espacamento-md);
+            }
+
+            .history-content {
+                padding: var(--espacamento-lg);
+            }
+
+            .history-text {
+                font-size: 1rem;
+            }
+
+            /* Contact mobile */
+            .contact {
+                padding: var(--espacamento-xl) var(--espacamento-md);
+            }
+
+            .contact-info {
+                padding: var(--espacamento-lg);
+            }
+
+            .map-offset-border {
+                display: none;
+            }
+
+            .map-frame {
+                height: 300px;
+            }
+
+            /* WhatsApp float mobile */
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Footer mobile */
+            .footer {
+                padding: var(--espacamento-md);
+            }
+
+            .footer-text {
+                font-size: 0.8rem;
+            }
+
+            /* Prevent horizontal scroll */
+            html, body {
+                overflow-x: hidden;
+                max-width: 100vw;
+            }
+        }
+
+        /* ============================================
+           MOBILE MENU CENTERING FIX
+           ============================================ */
+        @media (max-width: 768px) {
+            .header-mobile {
+                justify-content: space-between;
+            }
+
+            .logo-mobile {
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        /* Small mobile adjustments */
+        @media (max-width: 375px) {
+            .menu-toggle {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu-toggle span {
+                width: 20px;
+            }
+
+            .mobile-menu-link {
+                font-size: 1.25rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .offer-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Desktop -->
+    <header class="header" id="header">
+        <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ef916c0d66f2a665a4fb84.png" class="logo-desktop" alt="Funerária Santa Casa de Betim">
+        <nav class="nav-desktop">
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#planos">Planos</a>
+            <a href="#regioes">Regiões</a>
+            <a href="#historia">História</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Header Mobile -->
+    <header class="header-mobile">
+        <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ef916c0d66f2a665a4fb84.png" alt="Funerária Santa Casa de Betim" class="logo-mobile">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <nav class="mobile-menu-nav">
+            <a href="#inicio" class="mobile-menu-link">Início</a>
+            <a href="#servicos" class="mobile-menu-link">Serviços</a>
+            <a href="#planos" class="mobile-menu-link">Planos</a>
+            <a href="#regioes" class="mobile-menu-link">Regiões</a>
+            <a href="#historia" class="mobile-menu-link">História</a>
+            <a href="#contato" class="mobile-menu-link">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-curve"></div>
+        
+        <div class="hero-container">
+            <div class="hero-content reveal-left">
+                <span class="hero-tag">Atendimento 24 Horas</span>
+                <h1 class="hero-title">Cuidamos de quem você ama com <span class="texto-dourado">dignidade</span> e <span class="texto-dourado">respeito</span></h1>
+                <p class="hero-subtitle" id="hero-years">Há <span class="texto-dourado">11 anos</span> confortando as famílias <span class="texto-dourado">mineiras</span></p>
+                <p class="hero-description">Serviços funerários completos com atendimento humanizado e preço justo. Estamos ao seu lado nos momentos mais difíceis.</p>
+                <a href="https://wa.me/553135228000" target="_blank" class="hero-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                    </svg>
+                    Contrate Agora
+                </a>
+            </div>
+            
+            <div class="offer-box reveal-right">
+                <span class="offer-badge">Oferta Especial</span>
+                <h3 class="offer-title">Serviço Funeral Completo</h3>
+                <div class="offer-price">
+                    <span>a partir de</span><br>
+                    R$ 990,00
+                </div>
+                <p class="offer-description">Inclui: atendimento 24h, preparação do corpo, cerimonial e documentação necessária.</p>
+                <a href="https://wa.me/553135228000" target="_blank" class="offer-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                    </svg>
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section class="services" id="servicos">
+        <div class="services-container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Nossos <span class="texto-dourado">Serviços</span></h2>
+                <p class="section-subtitle">Oferecemos soluções dignas para você e sua família, com atendimento humanizado e preço justo</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1: Atendimento 24h -->
+                <div class="service-card reveal stagger-1">
+                    <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69ee0daa717d5dd4e117bfdc.jpg" alt="Atendimento 24h" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Atendimento 24h</span></h3>
+                        <p class="service-card-description">Disponibilidade total, 24 horas por dia, 7 dias por semana. Estamos sempre prontos para atender você.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Funeral -->
+                <div class="service-card reveal stagger-2">
+                    <img src="https://assets.cdn.filesafe.space/PcB8NhfCgqPuZ3Odphcg/media/69e391ee38381eafa84dbb2b.jpg" alt="Funeral" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Funeral Completo</span></h3>
+                        <p class="service-card-description">Serviço funerário básico com cerimonial e toda documentação necessária.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Coroas -->
+                <div class="service-card reveal stagger-3">
+                    <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a063ff4fde8a86ce6db4a65.png" alt="Coroas de Flores" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Coroas de Flores</span></h3>
+                        <p class="service-card-description">Venda de coroas e arranjos florais para homenagear seu ente querido com dignidade.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Urnas -->
+                <div class="service-card reveal stagger-4">
+                    <img src="https://assets.cdn.filesafe.space/PcB8NhfCgqPuZ3Odphcg/media/69dfdc34d75d436f53ffd76c.jpg" alt="Urnas" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Urnas</span></h3>
+                        <p class="service-card-description">Ampla variedade de urnas para cremação e sepultamento, atendendo a todas as necessidades.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                
+                <!-- Card 6: Frete e Logística -->
+                <div class="service-card reveal stagger-6">
+                    <img src="https://assets.cdn.filesafe.space/PcB8NhfCgqPuZ3Odphcg/media/69e39c7238381eafa8504160.png" alt="Frete e Logística" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Frete e Logística</span></h3>
+                        <p class="service-card-description">Transporte seguro e pontual para todo o território nacional e internacional.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Tanatopraxia -->
+                <div class="service-card reveal stagger-7">
+                    <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69e91694a1636a6c653f9f87.png" alt="Tanatopraxia" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Tanatopraxia</span></h3>
+                        <p class="service-card-description">Preparação e conservação do corpo com técnicas modernas e respeito.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                
+                <!-- Card 9: Lanches -->
+                <div class="service-card reveal stagger-9">
+                    <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/69e92e92a1636a6c65460d71.png" alt="Lanches" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Lanches e Café</span></h3>
+                        <p class="service-card-description">Serviço de catering para familiares e amigos durante o velório.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 10: Livro de Presença -->
+                <div class="service-card reveal stagger-10">
+                    <img src="https://assets.cdn.filesafe.space/PcB8NhfCgqPuZ3Odphcg/media/69e3a128c56ad27908a4586e.png" alt="Livro de Presença" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Livro de Presença</span></h3>
+                        <p class="service-card-description">Registro de todas as pessoas que prestaram suas últimas homenagens.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+
+                <!-- Card 11: Confecção de Lápides -->
+                <div class="service-card reveal stagger-1">
+                    <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a0645c0fde8a86ce6dc3a62.jpeg" alt="Confecção de Lápides" class="service-card-image">
+                    <div class="service-card-content">
+                        <h3 class="service-card-title"><span class="texto-dourado-estatico">Confecção de Lápides</span></h3>
+                        <p class="service-card-description">Lápides personalizadas com qualidade e respeito para eternizar a memória de seus entes queridos.</p>
+                        <a href="https://wa.me/553135228000" target="_blank" class="service-card-cta">Contrate Agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-cta reveal">
+                <a href="https://wa.me/553135228000" target="_blank" class="whatsapp-btn-large">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                    </svg>
+                    Contrate Agora pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos de Assistência Section -->
+    <section class="plans" id="planos">
+        <div class="plans-container">
+            <div class="section-header reveal">
+                <h2 class="section-title"><span class="texto-dourado">Planos</span> Familiares e Individuais</h2>
+                <p class="section-subtitle">Preços populares amparando sua família nos momentos mais difíceis</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- Individual Plan -->
+                <a href="https://wa.me/553135228000" target="_blank" class="plan-card-link">
+                    <div class="plan-card reveal stagger-1">
+                        <div class="plan-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-title"><span class="texto-dourado-estatico">Plano Individual</span></h3>
+                        <p class="plan-description">Proteção completa para você, garantindo tranquilidade e eficiência nos momentos mais difíceis.</p>
+                        <div class="plan-price">
+                            <span>a partir de</span><br>
+                            R$ 35,00
+                        </div>
+                        <div class="plan-price-period">por mês</div>
+                        
+                        <div class="plan-features">
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Atendimento 24 horas
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Cobertura individual completa
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Documentação inclusa
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Transporte funerário
+                            </div>
+                        </div>
+
+                        <div class="plan-cta">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                            </svg>
+                            Contratar Plano Individual
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Family Plan -->
+                <a href="https://wa.me/553135228000" target="_blank" class="plan-card-link">
+                    <div class="plan-card featured reveal stagger-2">
+                        <span class="plan-badge">Mais Popular</span>
+                        <div class="plan-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-title"><span class="texto-dourado-estatico">Plano Familiar</span></h3>
+                        <p class="plan-description">Proteção completa para toda sua família, garantindo tranquilidade e eficiência nos momentos mais difíceis.</p>
+                        <div class="plan-price">
+                            <span>a partir de</span><br>
+                            R$ 45,00
+                        </div>
+                        <div class="plan-price-period">por mês</div>
+                        
+                        <div class="plan-features">
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Atendimento 24 horas
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Cobertura para toda família
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Documentação inclusa
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Transporte funerário
+                            </div>
+                            <div class="plan-feature">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                Atendimento prioritário
+                            </div>
+                        </div>
+
+                        <div class="plan-cta">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                            </svg>
+                            Contratar Plano Familiar
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regiões Atendidas Section -->
+    <section class="regions" id="regioes">
+        <div class="regions-container">
+            <div class="section-header reveal">
+                <h2 class="section-title"><span class="texto-dourado">Regiões</span> Atendidas</h2>
+                <p class="section-subtitle">Cobertura completa em Betim, Belo Horizonte e toda a Grande BH</p>
+            </div>
+
+            <div class="regions-grid">
+                <div class="region-card reveal stagger-1">
+                    <div class="region-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="region-name"><span class="texto-dourado-estatico">Betim</span></h3>
+                    <p class="region-info">Sede principal<br>Atendimento prioritário</p>
+                </div>
+
+                <div class="region-card reveal stagger-2">
+                    <div class="region-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="region-name"><span class="texto-dourado-estatico">Belo Horizonte</span></h3>
+                    <p class="region-info">Capital mineira<br>Atendimento 24h</p>
+                </div>
+
+                <div class="region-card reveal stagger-3">
+                    <div class="region-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="region-name"><span class="texto-dourado-estatico">Grande BH</span></h3>
+                    <p class="region-info">Região metropolitana<br>Raio de 100km</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História Section -->
+    <section class="history" id="historia">
+        <div class="history-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Nossa Trajetória</span>
+                <h2 class="section-title">História e <span class="texto-dourado">Conquistas</span></h2>
+                <p class="section-subtitle">Uma jornada de dedicação e compromisso com as famílias</p>
+            </div>
+
+            <div class="history-content reveal">
+                <p class="history-text">
+                    Tudo começou trabalhando em empresas do ramo. Com o tempo, conquistamos a nossa própria empresa. Ainda somos pequenos, mas carregamos grandes promessas e um compromisso inabalável com a dignidade humana.
+                </p>
+                <p class="history-text">
+                    Desde a nossa fundação em 22 de agosto de 2014, temos buscado oferecer um atendimento diferenciado, onde o respeito, a empatia e o cuidado com cada detalhe são prioridades. Acreditamos que cada vida merece ser celebrada com dignidade.
+                </p>
+                <p class="history-text">
+                    Nossos diferenciais são o <strong>atendimento humanizado</strong> e o <strong>preço justo</strong>. Sabemos que os momentos de despedida exigem sensibilidade, e é por isso que treinamos nossa equipe para oferecer acolhimento genuíno às famílias.
+                </p>
+                <span class="history-years" id="history-years">Há <span class="texto-dourado-estatico">11 anos</span> ao seu lado</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contact" id="contato">
+        <div class="contact-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Fale Conosco</span>
+                <h2 class="section-title">Entre em <span class="texto-dourado">Contato</span></h2>
+                <p class="section-subtitle">Estamos disponíveis 24 horas para atender você</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3 class="contact-info-title">Informações de Contato</h3>
+                    
+                    <div class="contact-table">
+                        <div class="contact-row">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">WhatsApp</div>
+                                <div class="contact-value">
+                                    <a href="https://wa.me/553135228000" target="_blank">(31) 3522-8000</a><br>
+                                    <a href="https://wa.me/5531996197177" target="_blank">(31) 99619-7177</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">E-mail</div>
+                                <div class="contact-value">
+                                    <a href="mailto:geraldomendes05@hotmail.com">funerariasantacasadebetim@bol.com.br</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">Instagram</div>
+                                <div class="contact-value">
+                                    <a href="https://instagram.com/funerariasantacasadebetim" target="_blank">@funerariasantacasadebetim</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-label">Endereço</div>
+                                <div class="contact-value">
+                                    Avenida Amazonas, 4012<br>
+                                    Betim - MG - 32602-508
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-cta">
+                        <a href="https://wa.me/553135228000" target="_blank" class="whatsapp-btn-large">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+                            </svg>
+                            Contrate Agora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-container reveal-right">
+                    <div class="map-offset-border"></div>
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.789123456789!2d-44.19876543210987!3d-19.92345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU1JzI0LjQiUyA0NMKwMTEnNTUuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© <span id="current-year">2026</span> Funerária Santa Casa de Betim - Todos os direitos reservados</p>
+            <p class="footer-cnpj">CNPJ: 20.889.786/0001-57</p>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/553135228000" target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.35-8.413"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // CÁLCULO DE ANOS DESDE A FUNDAÇÃO
+        // ============================================
+        function calcularAnosFundacao() {
+            const dataFundacao = new Date('2014-08-22');
+            const dataAtual = new Date();
+            let anos = dataAtual.getFullYear() - dataFundacao.getFullYear();
+            
+            // Ajusta se ainda não passou o aniversário este ano
+            const mesAtual = dataAtual.getMonth();
+            const mesFundacao = dataFundacao.getMonth();
+            const diaAtual = dataAtual.getDate();
+            const diaFundacao = dataFundacao.getDate();
+            
+            if (mesAtual < mesFundacao || (mesAtual === mesFundacao && diaAtual < diaFundacao)) {
+                anos--;
+            }
+            
+            return anos;
+        }
+
+        // Atualizar textos com anos calculados
+        document.addEventListener('DOMContentLoaded', function() {
+            const anos = calcularAnosFundacao();
+            
+            // Hero subtitle
+            const heroYears = document.getElementById('hero-years');
+            if (heroYears) {
+                heroYears.innerHTML = `Há <span class="texto-dourado">${anos} anos</span> confortando as famílias <span class="texto-dourado">mineiras</span>`;
+            }
+            
+            // History years badge
+            const historyYears = document.getElementById('history-years');
+            if (historyYears) {
+                historyYears.innerHTML = `Há <span class="texto-dourado-estatico">${anos} anos</span> ao seu lado`;
+            }
+            
+            // Current year in footer
+            const currentYear = document.getElementById('current-year');
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
+        });
+
+        // ============================================
+        // SCROLL REVEAL ANIMATIONS
+        // ============================================
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+        }
+
+        // ============================================
+        // HEADER SCROLL EFFECT
+        // ============================================
+        function initHeaderScroll() {
+            const header = document.getElementById('header');
+            const headerMobile = document.querySelector('.header-mobile');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    if (headerMobile) headerMobile.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                    if (headerMobile) headerMobile.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // ============================================
+        // MOBILE MENU TOGGLE
+        // ============================================
+        function initMobileMenuToggle() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            
+            if (!menuToggle || !mobileMenuOverlay) return;
+            
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            // Close menu when clicking a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            mobileMenuOverlay.addEventListener('click', (e) => {
+                if (e.target === mobileMenuOverlay) {
+                    menuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // ============================================
+        // PARALLAX EFFECT
+        // ============================================
+        function initParallax() {
+            const heroBg = document.querySelector('.hero-bg');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                if (heroBg && scrolled < window.innerHeight) {
+                    heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        }
+
+        // ============================================
+        // MOBILE DETECTION AND TEST
+        // ============================================
+        function isMobile() {
+            return window.innerWidth <= 768 || 
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function isTablet() {
+            return window.innerWidth > 768 && window.innerWidth <= 1024;
+        }
+
+        // Mobile Test Script
+        function runMobileTest() {
+            console.log('=== MOBILE TEST RESULTS ===');
+            console.log('Screen Width:', window.innerWidth);
+            console.log('Screen Height:', window.innerHeight);
+            console.log('Is Mobile:', isMobile());
+            console.log('Is Tablet:', isTablet());
+            console.log('User Agent:', navigator.userAgent);
+            
+            // Check for horizontal scroll
+            const bodyWidth = document.body.scrollWidth;
+            const windowWidth = window.innerWidth;
+            const hasHorizontalScroll = bodyWidth > windowWidth;
+            
+            console.log('Body Width:', bodyWidth);
+            console.log('Window Width:', windowWidth);
+            console.log('Has Horizontal Scroll:', hasHorizontalScroll);
+            
+            if (hasHorizontalScroll) {
+                console.warn('⚠️ WARNING: Horizontal scroll detected!');
+                
+                // Find overflowing elements
+                const allElements = document.querySelectorAll('*');
+                allElements.forEach(el => {
+                    if (el.scrollWidth > windowWidth) {
+                        console.log('Overflowing element:', el.tagName, el.className);
+                    }
+                });
+            } else {
+                console.log('✅ No horizontal scroll detected');
+            }
+            
+            // Check mobile menu toggle button
+            if (isMobile()) {
+                const menuToggle = document.getElementById('menuToggle');
+                if (menuToggle) {
+                    console.log('✅ Mobile menu toggle button found');
+                } else {
+                    console.warn('⚠️ Mobile menu toggle button not found');
+                }
+            }
+            
+            console.log('=== END MOBILE TEST ===');
+        }
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 120; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // ============================================
+        // LAZY LOADING FOR IMAGES
+        // ============================================
+        function initLazyLoading() {
+            const images = document.querySelectorAll('img');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        }
+
+        // ============================================
+        // INITIALIZE ALL FUNCTIONS
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollReveal();
+            initHeaderScroll();
+            initMobileMenuToggle();
+            initParallax();
+            initSmoothScroll();
+            initLazyLoading();
+            
+            // Run mobile test after a short delay to ensure everything is rendered
+            setTimeout(runMobileTest, 1000);
+        });
+
+        // Re-run mobile test on resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(runMobileTest, 250);
+        });
+    </script>
+</body>
+</html>

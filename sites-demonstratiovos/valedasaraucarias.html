@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funerária Vale das Araucárias - Planos Funerários e Serviços</title>
+    <meta name="description" content="Planos funerários individuais, familiares e empresariais em Curitiba e Região Metropolitana. Atendimento 24h com WhatsApp.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables - Design System */
+        :root {
+            /* Colors */
+            --color-primary: #1A5C53;
+            --color-primary-dark: #13443d;
+            --color-accent: #F29B53;
+            --color-accent-dark: #d6853f;
+            --color-black: #222222;
+            --color-white: #FFFFFF;
+            --color-gray-light: #F8F9FA;
+            --color-gray-medium: #6C757D;
+            --color-gray-dark: #0A2540;
+            --color-dark: #222222;
+            --color-whatsapp: #25D366;
+            --color-whatsapp-dark: #128C7E;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #1A5C53 0%, #13443d 100%);
+            --gradient-accent: linear-gradient(135deg, #F29B53 0%, #d6853f 100%);
+            --gradient-dark: linear-gradient(180deg, #0A2540 0%, #222222 100%);
+            --gradient-hero: linear-gradient(135deg, #1A5C53 0%, #0A2540 100%);
+            --gradient-navbar: linear-gradient(180deg, rgba(26, 92, 83, 0.95) 0%, rgba(26, 92, 83, 1) 100%);
+            
+            /* Typography */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            
+            /* Font Sizes */
+            --font-size-xs: 0.875rem;
+            --font-size-sm: 1rem;
+            --font-size-base: 1.125rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 1.875rem;
+            --font-size-3xl: 2.25rem;
+            --font-size-4xl: 3rem;
+            --font-size-5xl: 3.75rem;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+            
+            /* Container */
+            --container-max-width: 1200px;
+            --container-padding: var(--spacing-lg);
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-base);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Container */
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* Section Base Styles */
+        section {
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .section-header h2 {
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .section-header p {
+            font-size: var(--font-size-xl);
+            color: var(--color-gray-medium);
+            font-weight: 300;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            border: none;
+            text-transform: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: var(--color-accent);
+            color: var(--color-white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .btn-whatsapp {
+            background: var(--color-whatsapp);
+            color: var(--color-white);
+        }
+        
+        .btn-whatsapp:hover {
+            background: var(--color-whatsapp-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-sm {
+            padding: var(--spacing-xs) var(--spacing-md);
+            font-size: var(--font-size-sm);
+        }
+        
+        .btn-full {
+            width: 100%;
+        }
+        
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+        
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) var(--container-padding);
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+        
+        .header-logo {
+            height: 50px;
+            max-width: 200px;
+        }
+        
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+        
+        .header-nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+        
+        .header-nav-links a {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            color: var(--color-dark);
+            position: relative;
+        }
+        
+        .header-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width var(--transition-base);
+        }
+        
+        .header-nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .header-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-xs);
+        }
+        
+        .header-menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--color-primary);
+            border-radius: 2px;
+            transition: all var(--transition-base);
+        }
+        
+        .header-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .header-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .header-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            background: var(--gradient-hero);
+            padding-top: 160px;
+            padding-bottom: var(--spacing-3xl);
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(26, 92, 83, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-white-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.75) 35%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0.3) 65%,
+                rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .hero-content {
+            color: var(--color-white);
+        }
+        
+        .hero-tagline {
+            font-size: var(--font-size-lg);
+            font-weight: 300;
+            color: var(--color-black);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .hero-title {
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        /* SERVICES SECTION */
+        .services {
+            background: var(--color-gray-light);
+            position: relative;
+        }
+        
+        .services-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+        
+        .services-container {
+            position: relative;
+            z-index: 1;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+        
+        .service-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .service-icon i {
+            font-size: var(--font-size-2xl);
+            color: var(--color-white);
+        }
+        
+        .service-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary);
+        }
+        
+        .service-card p {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-medium);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .services-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        /* PLANS SECTION */
+        .plans {
+            background: var(--color-white);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .plans .section-header {
+            max-width: var(--container-max-width);
+            margin: 0 auto var(--spacing-3xl);
+            padding: 0 var(--container-padding);
+        }
+        
+        .plans-grid {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+        
+        .plan-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--color-gray-light);
+            transition: all var(--transition-base);
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .plan-card.featured {
+            border-color: var(--color-accent);
+        }
+        
+        .plan-card-green {
+            border-color: var(--color-primary);
+        }
+        
+        .plan-card.featured::before {
+            content: 'Mais Escolhido';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        
+        .plan-tag {
+            display: inline-block;
+            background: var(--color-gray-light);
+            color: var(--color-gray-medium);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .plan-card h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary);
+        }
+        
+        .plan-price {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .plan-price .currency {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-medium);
+        }
+        
+        .plan-price .value {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .plan-price .period {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-medium);
+        }
+        
+        .plan-features {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .plan-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-base);
+            color: var(--color-gray-medium);
+        }
+        
+        .plan-features li i {
+            color: var(--color-primary);
+            font-size: var(--font-size-sm);
+        }
+        
+        .plans-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+            max-width: var(--container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* REGIONS SECTION */
+        .regions {
+            background: var(--color-gray-light);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .regions .section-header {
+            max-width: var(--container-max-width);
+            margin: 0 auto var(--spacing-3xl);
+            padding: 0 var(--container-padding);
+        }
+        
+        .regions-grid {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .region-card {
+            background: var(--color-white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        
+        .region-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .region-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+        }
+        
+        .region-icon i {
+            font-size: var(--font-size-2xl);
+            color: var(--color-white);
+        }
+        
+        .region-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+        }
+        
+        .region-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            min-height: 24px;
+            line-height: 1.5;
+        }
+        
+        .region-address {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-medium);
+        }
+        
+        .regions-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+            max-width: var(--container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* HISTORY SECTION */
+        .history {
+            background: var(--color-white);
+        }
+        
+        .history-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .history-quote {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .history-quote blockquote {
+            font-size: var(--font-size-2xl);
+            font-style: italic;
+            color: var(--color-gray-dark);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .history-timeline {
+            margin-bottom: var(--spacing-3xl);
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            align-items: flex-start;
+        }
+        
+        .timeline-year {
+            width: 80px;
+            text-align: right;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            flex-shrink: 0;
+        }
+        
+        .timeline-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-dark);
+        }
+        
+        .timeline-content p {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-medium);
+        }
+        
+        .history-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .stat-item .label {
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--color-gray-medium);
+        }
+        
+        .history-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+        
+        /* CONTACT SECTION */
+        .contact {
+            background: var(--color-gray-light);
+        }
+        
+        .contact-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            font-size: var(--font-size-xl);
+            color: var(--color-white);
+        }
+        
+        .contact-item h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+        }
+        
+        .contact-item a,
+        .contact-item p {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-medium);
+        }
+        
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+        
+        .contact-map {
+            height: 400px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+        }
+        
+        .footer-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .footer-brand .logo-text {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-white);
+        }
+        
+        .footer-brand p {
+            font-size: var(--font-size-base);
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+        
+        .footer-links h4 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-accent);
+        }
+        
+        .footer-links ul li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-links ul li a {
+            font-size: var(--font-size-base);
+            opacity: 0.7;
+            transition: all var(--transition-base);
+        }
+        
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--color-accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            font-size: var(--font-size-sm);
+            opacity: 0.5;
+        }
+        
+        /* WHATSAPP FLOAT BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: var(--spacing-lg);
+            right: var(--spacing-lg);
+            width: 60px;
+            height: 60px;
+            background: var(--color-whatsapp);
+            border: 3px solid var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-xl);
+            z-index: 99999;
+            transition: all var(--transition-base);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float i {
+            font-size: var(--font-size-3xl);
+            color: var(--color-white);
+        }
+        
+        /* SCROLL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            :root {
+                --font-size-5xl: 3rem;
+                --font-size-4xl: 2.5rem;
+                --font-size-3xl: 2rem;
+                --spacing-3xl: 4rem;
+            }
+            
+            .regions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --font-size-5xl: 2.5rem;
+                --font-size-4xl: 2rem;
+                --font-size-3xl: 1.75rem;
+                --font-size-2xl: 1.5rem;
+                --spacing-3xl: 3rem;
+                --spacing-2xl: 3rem;
+                --container-padding: var(--spacing-md);
+            }
+            
+            .header-nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--color-white);
+                flex-direction: column;
+                padding: var(--spacing-lg);
+                gap: var(--spacing-lg);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-base);
+            }
+            
+            .header-nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .header-menu-toggle {
+                display: flex;
+            }
+            
+            .header .btn {
+                display: none;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                order: 2;
+                margin-top: var(--spacing-xl);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .plans-carousel-button {
+                display: none;
+            }
+            
+            .plan-card {
+                flex: 0 0 280px;
+            }
+            
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .timeline-year {
+                text-align: left;
+                width: auto;
+            }
+            
+            .history-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-map {
+                height: 300px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: var(--spacing-md);
+                right: var(--spacing-md);
+            }
+            
+            .whatsapp-float i {
+                font-size: var(--font-size-2xl);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            :root {
+                --font-size-5xl: 2rem;
+                --font-size-4xl: 1.75rem;
+                --font-size-3xl: 1.5rem;
+                --spacing-3xl: 2rem;
+                --spacing-2xl: 2rem;
+            }
+            
+            .hero-title {
+                font-size: var(--font-size-4xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .history-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="header-logo">
+                <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a0b8462ea36308bcf923362.png" alt="Funerária Vale das Araucárias" class="header-logo">
+            </a>
+            <nav class="header-nav">
+                <div class="header-nav-links">
+                    <a href="#inicio">Início</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#planos">Planos</a>
+                    <a href="#regioes">Regiões</a>
+                    <a href="#historia">História</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <button class="header-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio" style="background-size: cover; width: 100%; background-image: url('https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a0b955e9574cb1f59d4f76f.jpg');">
+        <div class="hero-container">
+            <div class="hero-content reveal">
+                <p class="hero-tagline">Cuidando de quem você ama</p>
+                <h1 class="hero-title">Planos Funerários para Toda a Família</h1>
+                <p class="hero-subtitle">Garanta um funeral digno e sem preocupações financeiras para seus entes queridos. Atendimento 24h em Curitiba e Região Metropolitana.</p>
+                <div class="hero-buttons">
+                    <a href="#planos" class="btn btn-primary">Ver Planos</a>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Contratar Agora
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="https://assets.cdn.filesafe.space/5g2KhEjsNwSFbW9j0Cqs/media/6a0b8456ea36308bcf92330d.png" alt="Família unida">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="servicos">
+        <div class="services-bg"></div>
+        <div class="services-container">
+            <div class="section-header reveal">
+                <h2>Tudo o que Sua Família Precisa</h2>
+                <p>Oferecemos atendimento profissional e de excelência</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Planos Familiares</h3>
+                    <p>Proteja até 12 pessoas da sua família com nossos planos familiares completos.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Cremação</h3>
+                    <p>Serviço de cremação com todo o respeito e dignidade que sua família merece.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Planos Empresariais</h3>
+                    <p>Soluções completas para empresas protegerem seus colaboradores.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Translado</h3>
+                    <p>Translado em até 300km para garantir que seu ente querido chegue ao destino final.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Coroas de Flores</h3>
+                    <p>Coroas a partir de R$ 350 para homenagear quem partiu.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Atendimento 24h</h3>
+                    <p>Central de plantão 24 horas através do WhatsApp ou telefone.</p>
+                    <a href="https://wa.me/554135900221" class="btn btn-whatsapp btn-sm" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            <div class="services-cta reveal">
+                <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Falar com Especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANS SECTION -->
+    <section class="plans" id="planos">
+        <div class="section-header reveal">
+            <h2>Escolha o Plano Ideal para Você</h2>
+            <p>Planos para todas as necessidades</p>
+        </div>
+        <div class="plans-grid reveal">
+            <a href="https://wa.me/554135900221" class="plan-card plan-card-green" target="_blank">
+                <span class="plan-tag">Individual</span>
+                <h3>Plano 1</h3>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="value">35</span>
+                    <span class="period">/mês</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Até 6 pessoas</li>
+                    <li><i class="fas fa-check"></i> Cobertura Nacional</li>
+                    <li><i class="fas fa-check"></i> Sem carência</li>
+                    <li><i class="fas fa-check"></i> Translado 100km</li>
+                    <li><i class="fas fa-check"></i> Funeral completo</li>
+                    <li><i class="fas fa-check"></i> Atendimento 24h</li>
+                    <li><i class="fas fa-check"></i> Assessoria completa</li>
+                </ul>
+                <span class="btn btn-primary btn-full">Contratar Plano</span>
+            </a>
+            <a href="https://wa.me/554135900221" class="plan-card plan-card-green" target="_blank">
+                <span class="plan-tag">Familiar</span>
+                <h3>Plano 2</h3>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="value">85</span>
+                    <span class="period">/mês</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Até 8 pessoas</li>
+                    <li><i class="fas fa-check"></i> Cobertura Nacional</li>
+                    <li><i class="fas fa-check"></i> Sem carência</li>
+                    <li><i class="fas fa-check"></i> Translado 150km</li>
+                    <li><i class="fas fa-check"></i> Funeral completo</li>
+                    <li><i class="fas fa-check"></i> Atendimento 24h</li>
+                    <li><i class="fas fa-check"></i> Assessoria completa</li>
+                </ul>
+                <span class="btn btn-primary btn-full">Contratar Plano</span>
+            </a>
+            <a href="https://wa.me/554135900221" class="plan-card featured" target="_blank">
+                <span class="plan-tag">Familiar Premium</span>
+                <h3>Plano 3</h3>
+                <div class="plan-price">
+                    <span class="currency">R$</span>
+                    <span class="value">120</span>
+                    <span class="period">/mês</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Até 12 pessoas</li>
+                    <li><i class="fas fa-check"></i> Cobertura Nacional</li>
+                    <li><i class="fas fa-check"></i> Sem carência</li>
+                    <li><i class="fas fa-check"></i> Translado 300km</li>
+                    <li><i class="fas fa-check"></i> Funeral completo</li>
+                    <li><i class="fas fa-check"></i> Cremação inclusa</li>
+                    <li><i class="fas fa-check"></i> Assessoria completa</li>
+                </ul>
+                <span class="btn btn-secondary btn-full">Contratar Plano</span>
+            </a>
+        </div>
+        <div class="plans-cta reveal">
+            <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Dúvidas? Fale Conosco
+            </a>
+        </div>
+    </section>
+
+    <!-- REGIONS SECTION -->
+    <section class="regions" id="regioes">
+        <div class="section-header reveal">
+            <h2>Onde Estamos</h2>
+            <p>Atendendo Curitiba e Região Metropolitana</p>
+        </div>
+        <div class="regions-grid">
+            <div class="region-card reveal">
+                <div class="region-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Araucária</h3><br>
+                <span class="region-badge">Matriz - PR</span>
+                <p class="region-address">Av. Manoel Ribas, 2390<br> CEP: 83702-035</p>
+            </div>
+            <div class="region-card reveal">
+                <div class="region-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <h3>Curitiba</h3><br>
+                <span class="region-badge">Atendida - PR</span>
+                <p class="region-address">Capital do Paraná<br>Região Metropolitana</p>
+            </div>
+            <div class="region-card reveal">
+                <div class="region-icon">
+                    <i class="fas fa-map"></i>
+                </div>
+                <h3>Região Metropolitana</h3>
+                <span class="region-badge">Atendida - PR</span>
+                <p class="region-address">Todos os municípios<br>da RM de Curitiba</p>
+            </div>
+            <div class="region-card reveal">
+                <div class="region-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Cobertura Nacional</h3>
+                <span class="region-badge">Rede Parceira</span>
+                <p class="region-address">Translado em todo<br>território nacional</p>
+            </div>
+        </div>
+        <div class="regions-cta reveal">
+            <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Verificar sua Região
+            </a>
+        </div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section class="history" id="historia">
+        <div class="history-container">
+            <div class="section-header reveal">
+                <h2>Nossa História</h2>
+                <p>7 anos de cuidado e dedicação às famílias</p>
+            </div>
+            <div class="history-quote reveal">
+                <blockquote>
+                    "A Luto Vale das Araucárias sabe que a perda de um ente querido causa um intenso abalo emocional aos familiares. Por isso, nossos agentes funerários especializados dão todo suporte necessário."
+                </blockquote>
+            </div>
+            <div class="history-timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Fundação</h3>
+                        <p>Início das atividades na Rua Malva, 693, no bairro Campina da Barra, com a venda de planos de assistência funeral.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <h3>Expansão</h3>
+                        <p>Devido à confiança dos moradores de Araucária, os serviços se expandiram e a empresa passou a oferecer atendimento funeral próprio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>Nova Sede</h3>
+                        <p>Mudança para a Av. Manoel Ribas, 2390, onde a organização permanece até hoje com infraestrutura completa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Consolidação</h3>
+                        <p>7 anos de história atendendo diversas famílias com ética, atendimento humanizado e central de plantão 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="history-stats reveal">
+                <div class="stat-item">
+                    <div class="number">7+</div>
+                    <div class="label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">24h</div>
+                    <div class="label">Atendimento Diário</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">100%</div>
+                    <div class="label">Cobertura Nacional</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">300km</div>
+                    <div class="label">Translado Máximo</div>
+                </div>
+            </div>
+            <div class="history-cta reveal">
+                <a href="https://wa.me/554135900221" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Conheça Nossa História
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contato">
+        <div class="contact-container">
+            <div class="section-header reveal">
+                <h2>Contate-nos</h2>
+                <p>Estamos prontos para te atender</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/554135900221" target="_blank">55 41 3590-0221</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>E-mail</h3>
+                            <a href="mailto:contato@funerariavaledasaraucarias.com.br">contato@funerariavaledasaraucarias.com.br</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h3>Instagram</h3>
+                            <a href="#" target="_blank">@funerariavaledasaraucarias</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Av. Manoel Ribas, 2390<br>Araucária - PR<br>CEP: 83702-035</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.1234567890123!2d-49.12345678901234!3d-25.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA3JzI0LjUiUyA0OcKwMDcnMjQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">Funerária Vale das Araucárias</div>
+                    <p>Ajudando nossos Associados e sua Família a garantir um funeral e sepultamento digno aos seus entes queridos, sem que tenham gastos desnecessários.</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>Links Rápidos</h4>
+                        <ul>
+                            <li><a href="#inicio">Início</a></li>
+                            <li><a href="#servicos">Serviços</a></li>
+                            <li><a href="#planos">Planos</a></li>
+                            <li><a href="#regioes">Regiões</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="https://wa.me/554135900221" target="_blank">WhatsApp</a></li>
+                            <li><a href="mailto:contato@funerariavaledasaraucarias.com.br">E-mail</a></li>
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Funerária Vale das Araucárias. CNPJ: 24.617.343/0001-68. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT BUTTON -->
+    <a href="https://wa.me/554135900221" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.querySelector('.header-menu-toggle');
+        const navLinks = document.querySelector('.header-nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header Shadow
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Plans Carousel Navigation
+        const carouselTrack = document.querySelector('.plans-carousel-track');
+        const prevButton = document.querySelector('.plans-carousel-prev');
+        const nextButton = document.querySelector('.plans-carousel-next');
+        
+        if (carouselTrack && prevButton && nextButton) {
+            prevButton.addEventListener('click', () => {
+                carouselTrack.scrollBy({
+                    left: -340,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextButton.addEventListener('click', () => {
+                carouselTrack.scrollBy({
+                    left: 340,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Plan Cards Hover Effect
+        const planCards = document.querySelectorAll('.plan-card');
+        
+        planCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                planCards.forEach(c => {
+                    if (c !== card) {
+                        c.style.opacity = '0.7';
+                    }
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                planCards.forEach(c => {
+                    c.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
