@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LT.WifiMelhor | Sinal de Wi-Fi Forte e Estável em Toda a Casa</title>
-    <meta name="description" content="Elimine os pontos cegos de Wi-Fi na sua casa. Sinal forte e estável em todos os cômodos com análise técnica especializada em São Paulo e arredores.">
+    <meta name="description" content="Elimine os pontos cegos de Wi-Fi na sua casa. Sinal forte e estável em todos os cômodos com análise técnica especializada in São Paulo e arredores.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -68,8 +68,9 @@
 
         /* Vantagens */
         .benefits { background: var(--white); }
-        .benefit-item { display: flex; align-items: center; margin-bottom: 15px; text-align: left; font-size: 1.1rem; }
-        .benefit-item::before { content: "✓"; color: var(--primary); font-weight: bold; font-size: 1.5rem; margin-right: 15px; }
+        .benefit-item { display: flex; align-items: flex-start; margin-bottom: 20px; text-align: left; font-size: 1.1rem; }
+        .benefit-item::before { content: "✓"; color: var(--primary); font-weight: bold; font-size: 1.5rem; margin-right: 15px; flex-shrink: 0; line-height: 1; }
+        .benefit-content { display: flex; flex-direction: row; gap: 5px; }
 
         /* Card de Pagamento Inteligente */
         .price-box { 
@@ -90,6 +91,16 @@
             .hero p { font-size: 1rem; }
             .cta-btn { font-size: 1rem; width: 100%; text-align: center; }
             .header-wrap { flex-direction: column; gap: 15px; }
+            
+            /* Ajuste específico solicitado para o Mobile */
+            .benefit-content {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .benefit-content strong {
+                display: block;
+                margin-bottom: 2px;
+            }
         }
     </style>
 </head>
@@ -102,7 +113,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(imagens/projeto-wifi.jpg); background-size: cover; background-position: center; width: 100%;">
         <div class="container">
             <div class="badge-info">📍 Atendendo São Paulo e Arredores</div>
@@ -112,7 +122,6 @@
         </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
     <section class="solution-section">
         <div class="container">
             <h2>Nosso Método Planejado em 2 Etapas</h2>
@@ -125,21 +134,37 @@
                 </div>
                 <div class="step">
                     <div style="margin-bottom: 5px;"><span class="step-num">2</span> <strong>Visita 2: Instalação e Entrega do Sinal Total</strong></div>
-                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Retornamos com os equipamentos adequados para fazer a fixação, configuração e o casamento perfeito de sinal entre todos os cômodos da sua casa de forma invisível e profissional.</p>
+                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Retornamos para instalar os equipamentos adequados (não inclusos no serviço) para fazer a fixação e configuração do sinal entre todos os cômodos da sua casa de forma invisível e profissional.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFÍCIOS E FORMATO DE PAGAMENTO -->
     <section class="benefits">
         <div class="container" style="max-width: 750px; text-align: center;">
             <h2 style="margin-bottom: 30px;">Internet fluida para toda a família</h2>
-            <div class="benefit-item"><strong>Mapeamento Profissional:</strong> Equipamentos instalados nos pontos exatos para cobertura total e inteligente.</div>
-            <div class="benefit-item"><strong>Rede Única na Casa Toda:</strong> Você se move entre os cômodos e seu celular muda de antena sem cair ou precisar trocar de senha.</div>
-            <div class="benefit-item"><strong>Visual Limpo e Discreto:</strong> Sem fios espalhados ou bagunça. Integração perfeita com a estética do seu ambiente.</div>
+            
+            <div class="benefit-item">
+                <div class="benefit-content">
+                    <strong>Mapeamento Profissional:</strong> 
+                    <span>Equipamentos instalados nos pontos exatos para cobertura total e inteligente.</span>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-content">
+                    <strong>Rede Única na Casa Toda:</strong> 
+                    <span>Você se move entre os cômodos e seu celular muda de antena sem cair ou precisar trocar de senha.</span>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-content">
+                    <strong>Visual Limpo e Discreto:</strong> 
+                    <span>Sem fios espalhados ou bagunça. Integração perfeita com a estética do seu ambiente.</span>
+                </div>
+            </div>
 
-            <!-- CARD DE PAGAMENTO FRACIONADO -->
             <div class="price-box">
                 <h3>Condições de Pagamento Facilitadas</h3>
                 <div class="price">Pagamento Dividido por Etapa</div>
