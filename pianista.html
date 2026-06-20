@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pianista para Casamentos, Aniversários e Festas | Música ao Vivo</title>
+    <meta name="description" content="Piano ao vivo para casamentos, festas de 15 anos e aniversários. Música emocionante e personalizada para seu momento especial. Fale comigo no WhatsApp!">
+    <meta name="keywords" content="pianista casamento, piano ao vivo festa, música casamento, pianista aniversário, festa 15 anos música">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bege-claro: #FAF8F5;
+            --bege: #F5F0E8;
+            --azul-suave: #E8F0F5;
+            --cinza-escuro: #4A4A4A;
+            --cinza-medio: #6B6B6B;
+            --cinza-claro: #9A9A9A;
+            --branco: #FFFFFF;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #1EBE57;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--cinza-escuro);
+            line-height: 1.7;
+            background-color: var(--bege-claro);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Botão WhatsApp */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bege-claro) 0%, var(--bege) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--cinza-escuro);
+            margin-bottom: 20px;
+        }
+
+        .hero-text .highlight {
+            color: var(--cinza-medio);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--cinza-medio);
+            margin-bottom: 35px;
+            max-width: 480px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Seções */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--cinza-escuro);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--cinza-claro);
+            font-size: 1.1rem;
+        }
+
+        /* Como posso ajudar */
+        .ajuda {
+            background: var(--branco);
+        }
+
+        .eventos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .evento-card {
+            text-align: center;
+            padding: 35px 25px;
+            background: var(--bege-claro);
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .evento-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .evento-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .evento-card h3 {
+            font-size: 1.2rem;
+            color: var(--cinza-escuro);
+            margin-bottom: 8px;
+        }
+
+        .evento-card p {
+            font-size: 0.95rem;
+            color: var(--cinza-claro);
+        }
+
+        /* Repertório */
+        .repertorio {
+            background: var(--azul-suave);
+        }
+
+        .repertorio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .musicas-lista {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .musica-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--bege);
+        }
+
+        .musica-item:last-child {
+            border-bottom: none;
+        }
+
+        .musica-item .nota {
+            font-size: 1.3rem;
+        }
+
+        .musica-item .nome {
+            font-weight: 600;
+            color: var(--cinza-escuro);
+        }
+
+        .musica-item .origem {
+            font-size: 0.9rem;
+            color: var(--cinza-claro);
+            margin-left: auto;
+        }
+
+        .repertorio-texto h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--cinza-escuro);
+        }
+
+        .repertorio-texto p {
+            color: var(--cinza-medio);
+            margin-bottom: 20px;
+        }
+
+        .repertorio-texto .destaque-box {
+            background: var(--branco);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--whatsapp);
+        }
+
+        .repertorio-texto .destaque-box p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--cinza-escuro);
+        }
+
+        /* Diferenciais */
+        .diferenciais {
+            background: var(--branco);
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .diferencial-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .diferencial-item .icone {
+            width: 70px;
+            height: 70px;
+            background: var(--bege-claro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .diferencial-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--cinza-escuro);
+        }
+
+        .diferencial-item p {
+            font-size: 0.95rem;
+            color: var(--cinza-claro);
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            background: var(--bege);
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .depoimento-card {
+            background: var(--branco);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .depoimento-card .estrelas {
+            color: #FFC107;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .depoimento-card .texto {
+            font-style: italic;
+            color: var(--cinza-medio);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .depoimento-card .autor {
+            font-weight: 700;
+            color: var(--cinza-escuro);
+        }
+
+        .depoimento-card .evento-tipo {
+            font-size: 0.85rem;
+            color: var(--cinza-claro);
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background: linear-gradient(135deg, var(--azul-suave) 0%, var(--bege) 100%);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-final h2 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+
+        .cta-final p {
+            font-size: 1.15rem;
+            color: var(--cinza-medio);
+            margin-bottom: 35px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--cinza-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .eventos-grid,
+            .diferenciais-grid,
+            .depoimentos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .repertorio-content {
+                grid-template-columns: 1fr;
+            }
+
+            .repertorio-texto {
+                order: -1;
+                text-align: center;
+            }
+
+            .repertorio-texto .destaque-box {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.7rem;
+            }
+
+            .eventos-grid,
+            .diferenciais-grid,
+            .depoimentos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-final h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Deixe seu momento ainda mais <span class="highlight">especial</span> com piano ao vivo</h1>
+                    <p>Música que emociona, cria memórias e torna cada celebração única. Tocando em casamentos, aniversários e festas com carinho e dedicação.</p>
+                    <a href="https://wa.me/55SEUNUMERO?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20piano%20ao%20vivo%20para%20meu%20evento" class="btn-whatsapp" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                        </svg>
+                        Fale comigo no WhatsApp
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="imagens/ocando.png" alt="Pianista tocando piano em evento">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como posso ajudar -->
+    <section class="ajuda">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Como posso ajudar</h2>
+                <p>Toco em diferentes momentos especiais da sua vida</p>
+            </div>
+            <div class="eventos-grid">
+                <div class="evento-card animate-on-scroll">
+                    <div class="icon">💒</div>
+                    <h3>Casamentos</h3>
+                    <p>Entrada da noiva, cerimônia, coquetel e festa</p>
+                </div>
+                <div class="evento-card animate-on-scroll">
+                    <div class="icon">🎂</div>
+                    <h3>Festas de 15 anos</h3>
+                    <p>Debut com música que emociona e encanta</p>
+                </div>
+                <div class="evento-card animate-on-scroll">
+                    <div class="icon">🎈</div>
+                    <h3>Aniversários</h3>
+                    <p>De toda idade e tamanho, com muito carinho</p>
+                </div>
+                <div class="evento-card animate-on-scroll">
+                    <div class="icon">🎊</div>
+                    <h3>Pequenos Eventos</h3>
+                    <p>Confraternizações, jantares e celebrações íntimas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repertório -->
+    <section class="repertorio">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Repertório</h2>
+                <p>Músicas que tocam o coração</p>
+            </div>
+            <div class="repertorio-content">
+                <div class="musicas-lista animate-on-scroll">
+                    <div class="musica-item">
+                        <span class="nota">🎵</span>
+                        <span class="nome">Perfect</span>
+                        <span class="origem">Ed Sheeran</span>
+                    </div>
+                    <div class="musica-item">
+                        <span class="nota">🎹</span>
+                        <span class="nome">Tema de Twilight</span>
+                        <span class="origem">Bella's Lullaby</span>
+                    </div>
+                    <div class="musica-item">
+                        <span class="nota">🎵</span>
+                        <span class="nome">A Thousand Years</span>
+                        <span class="origem">Christina Perri</span>
+                    </div>
+                    <div class="musica-item">
+                        <span class="nota">🎹</span>
+                        <span class="nome">Tema de Game of Thrones</span>
+                        <span class="origem">Light of the Seven</span>
+                    </div>
+                    <div class="musica-item">
+                        <span class="nota">🎵</span>
+                        <span class="nome">River Flows in You</span>
+                        <span class="origem">Yiruma</span>
+                    </div>
+                </div>
+                <div class="repertorio-texto animate-on-scroll">
+                    <h3>Sua música favorita pode fazer parte</h3>
+                    <p>Entendo que cada momento é único. Por isso, estou sempre aberto a aprender e tocar aquela música especial que tem significado para você.</p>
+                    <div class="destaque-box">
+                        <p>🎼 Posso adaptar músicas especiais para o seu momento — basta conversarmos!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="diferenciais">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Por que me escolher?</h2>
+                <p>Cuidado e atenção em cada detalhe</p>
+            </div>
+            <div class="diferenciais-grid">
+                <div class="diferencial-item animate-on-scroll">
+                    <div class="icone">💬</div>
+                    <h3>Atendimento Direto</h3>
+                    <p>Você fala diretamente comigo, sem intermediários</p>
+                </div>
+                <div class="diferencial-item animate-on-scroll">
+                    <div class="icone">🔄</div>
+                    <h3>Flexibilidade</h3>
+                    <p>Adaptação ao seu espaço e necessidades</p>
+                </div>
+                <div class="diferencial-item animate-on-scroll">
+                    <div class="icone">🎶</div>
+                    <h3>Repertório Personalizado</h3>
+                    <p>Suas músicas favoritas no seu evento</p>
+                </div>
+                <div class="diferencial-item animate-on-scroll">
+                    <div class="icone">⏰</div>
+                    <h3>Pontualidade</h3>
+                    <p>Respeito ao seu tempo e cronograma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>O que dizem</h2>
+                <p>Depoimentos de quem já viveu essa experiência</p>
+            </div>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card animate-on-scroll">
+                    <div class="estrelas">★★★★★</div>
+                    <p class="texto">"A música na nossa cerimônia foi linda demais. Todo mundo se emocionou, foi perfeito!"</p>
+                    <p class="autor">Mariana & João</p>
+                    <p class="evento-tipo">Casamento</p>
+                </div>
+                <div class="depoimento-card animate-on-scroll">
+                    <div class="estrelas">★★★★★</div>
+                    <p class="texto">"Minha festa de 15 ficou mágica com o piano. Tocou todas as músicas que eu pedi!"</p>
+                    <p class="autor">Isabela</p>
+                    <p class="evento-tipo">Festa de 15 anos</p>
+                </div>
+                <div class="depoimento-card animate-on-scroll">
+                    <div class="estrelas">★★★★★</div>
+                    <p class="texto">"Super atencioso, pontual e toca muito bem. Recomendo de olhos fechados!"</p>
+                    <p class="autor">Família Oliveira</p>
+                    <p class="evento-tipo">Aniversário de 50 anos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="animate-on-scroll">Vamos conversar sobre seu evento?</h2>
+            <p class="animate-on-scroll">Me conte qual música não pode faltar no seu momento especial</p>
+            <a href="https://wa.me/55SEUNUMERO?text=Oi!%20Gostaria%20de%20saber%20mais%20sobre%20piano%20ao%20vivo%20para%20meu%20evento" class="btn-whatsapp animate-on-scroll" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                </svg>
+                Conversar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pianista para Eventos. Música que emociona e transforma momentos.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animação ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
