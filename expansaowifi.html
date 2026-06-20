@@ -73,11 +73,32 @@
         .step { background: var(--white); padding: 25px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: left; }
         .step-num { background: var(--imperial-blue); color: var(--white); width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; margin-right: 10px; }
 
-        /* Vantagens */
+        /* Tabela de Vantagens Otimizada (Desktop & Mobile) */
         .benefits { background: var(--white); }
-        .benefit-item { display: flex; align-items: flex-start; margin-bottom: 20px; text-align: left; font-size: 1.1rem; }
-        .benefit-item::before { content: "✓"; color: var(--primary); font-weight: bold; font-size: 1.5rem; margin-right: 15px; flex-shrink: 0; line-height: 1; }
-        .benefit-content { display: flex; flex-direction: row; gap: 5px; }
+        .benefits-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; table-layout: fixed; }
+        .benefits-table tr { border-bottom: 1px solid #eaeaea; }
+        .benefits-table tr:last-child { border-bottom: none; }
+        .benefits-table td { padding: 20px 15px; text-align: left; vertical-align: top; font-size: 1.05rem; }
+        
+        .benefits-table td.title-cell { 
+            font-weight: 700; 
+            color: var(--dark); 
+            width: 42%; /* Amplo espaço para o título */
+            word-break: keep-all; /* Sem quebra de palavras no meio de sílabas */
+            white-space: normal;
+        }
+        .benefits-table td.title-cell::before { 
+            content: "✓"; 
+            color: var(--primary); 
+            font-weight: bold; 
+            font-size: 1.3rem; 
+            margin-right: 12px; 
+            display: inline-block;
+        }
+        .benefits-table td.desc-cell { 
+            color: #444; 
+            width: 58%; 
+        }
 
         /* Card de Pagamento Inteligente */
         .price-box { 
@@ -99,14 +120,22 @@
             .cta-btn { font-size: 1rem; width: 100%; text-align: center; }
             .header-wrap { flex-direction: column; gap: 15px; }
             
-            /* Ajuste específico solicitado para o Mobile */
-            .benefit-content {
-                flex-direction: column;
-                gap: 2px;
-            }
-            .benefit-content strong {
+            /* Desestruturação da Tabela para Comportamento Mobile */
+            .benefits-table, .benefits-table tbody, .benefits-table tr, .benefits-table td {
                 display: block;
-                margin-bottom: 2px;
+                width: 100% !important;
+            }
+            .benefits-table tr {
+                padding: 15px 0;
+            }
+            .benefits-table td {
+                padding: 0;
+            }
+            .benefits-table td.title-cell {
+                margin-bottom: 5px;
+            }
+            .benefits-table td.desc-cell {
+                padding-left: 23px; /* Alinha perfeitamente abaixo do início do título mobile */
             }
         }
     </style>
@@ -141,36 +170,32 @@
                 </div>
                 <div class="step">
                     <div style="margin-bottom: 5px;"><span class="step-num">2</span> <strong>Visita 2: Instalação e Entrega do Sinal Total</strong></div>
-                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Retornamos para instalar os equipamentos adequados (não inclusos no serviço), fazer a fixação e configuração do sinal entre todos os cômodos da sua casa de forma invisível e profissional.</p>
+                    <p style="font-size: 0.95rem; color: #555; margin-left: 45px;">Retorno para instalar os equipamentos adequados (não inclusos no serviço) e fazer a fixação e configuração do sinal entre todos os cômodos da sua casa de forma invisível e profissional.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="benefits">
-        <div class="container" style="max-width: 750px; text-align: center;">
+        <div class="container" style="max-width: 850px; text-align: center;">
             <h2 style="margin-bottom: 30px;">Internet fluida para toda a família</h2>
             
-            <div class="benefit-item">
-                <div class="benefit-content">
-                    <strong>Mapeamento Profissional:</strong> 
-                    <span>Equipamentos instalados nos pontos exatos para cobertura total e inteligente.</span>
-                </div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-content">
-                    <strong>Rede Única na Casa Toda:</strong> 
-                    <span>Você se move entre os cômodos e seu celular muda de antena sem cair ou precisar trocar de senha.</span>
-                </div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-content">
-                    <strong>Visual Limpo e Discreto:</strong> 
-                    <span>Sem fios espalhados ou bagunça. Integração perfeita com a estética do seu ambiente.</span>
-                </div>
-            </div>
+            <table class="benefits-table">
+                <tbody>
+                    <tr>
+                        <td class="title-cell">Mapeamento Profissional</td>
+                        <td class="desc-cell">Equipamentos instalados nos pontos exatos para cobertura total e inteligente.</td>
+                    </tr>
+                    <tr>
+                        <td class="title-cell">Rede Única na Casa Toda</td>
+                        <td class="desc-cell">Você se move entre os cômodos e seu celular muda de antena sem cair ou precisar trocar de senha.</td>
+                    </tr>
+                    <tr>
+                        <td class="title-cell">Visual Limpo e Discreto</td>
+                        <td class="desc-cell">Sem fios espalhados ou bagunça. Integração perfeita com a estética do seu ambiente.</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="price-box">
                 <h3>Condições de Pagamento Facilitadas</h3>
@@ -196,3 +221,4 @@
 
 </body>
 </html>
+
