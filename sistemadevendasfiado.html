@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Vendas Fiado - Sistema de Gestão</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">FiadoPro</div>
+    <div class="user-auth">
+        <button id="btn-login-avatar" class="avatar-btn" onclick="abrirPainel()">
+            <span id="user-icon">👤</span>
+            <span id="user-display">Entrar</span>
+        </button>
+    </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nunca mais perca dinheiro ao vender fiado.</h1>
+            <p>Gerencie pagamentos, acompanhe inadimplências e organize o cadastro dos seus clientes com uma ferramenta completa, desenvolvida em C# e Python.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="imagens/tela principal - visão geral selecionado.jpg" alt="Visão Geral">
+        </div>
+    </section>
+
+    <section class="feature alternate">
+        <div class="feature-text">
+            <h2>Gestão de Fiados Inteligente</h2>
+            <p>Registre um fiado, liquide total ou parcialmente, ou quite todos os débitos de um cliente de uma vez. O sistema prioriza a quitação de valores menores automaticamente.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+        <div class="feature-image"><img src="imagens/tela principal - Lista de Fiados Selecionado.jpg" alt="Lista de Fiados"></div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-image"><img src="imagens/tela principal - Lista de Fiados - Mensagem de Cobrança clicado.jpg" alt="Mensagem de Cobrança"></div>
+        <div class="feature-text">
+            <h2>Cobranças Via WhatsApp</h2>
+            <p>Clique duas vezes no número de celular para abrir o WhatsApp com mensagem de cobrança automática, contendo dados do cliente e valor em aberto.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature alternate" style="background-color: #fff9e6;">
+        <div class="feature-text">
+            <h2>Selo Bom Pagador</h2>
+            <p>Fidelize seus clientes. Atribua o "Selo Bom Pagador" manualmente ou deixe que o sistema o faça automaticamente para quem honra os prazos.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+        <div class="feature-image trophy-large">🏆</div>
+    </section>
+
+    <section class="feature">
+        <div class="feature-text">
+            <h2>Alerta de Fiados Urgentes</h2>
+            <p>O sistema destaca clientes que exigem atenção imediata. Monitore de perto quem possui débitos antigos ou de alto valor para evitar prejuízos financeiros.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+        <div class="feature-image"><img src="imagens/tela principal - Tela principal - Visão geral - KPI pagamentos por período clicado.jpg" alt="Alertas de Fiados Urgentes"></div>
+    </section>
+
+    <section class="feature alternate">
+        <div class="feature-image"><img src="imagens/tela principal - Configurações Selecionado.jpg" alt="Configurações e Backup"></div>
+        <div class="feature-text">
+            <h2>Segurança com Backup e Restauração</h2>
+            <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente para nunca perder seu histórico de vendas.</p>
+            <div class="ctas">
+                <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
+                <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Controle Vendas Fiado. Todos os direitos reservados.</p>
+        <p>Suporte: <a href="mailto:suporte@lucasteixeira.dev.br" style="color: #fff;">suporte@lucasteixeira.dev.br</a></p>
+        <p>Desenvolvido por <a href="https://github.com/Luc280989" style="color: #fff;">Lucas Teixeira</a></p>
+    </footer>
+
+    <div id="login-modal" class="modal"><div class="modal-content"><span class="close" onclick="fecharModal()">&times;</span><h2>Acesse</h2><form id="login-form"><input type="email" id="email" placeholder="E-mail" required><input type="password" id="senha" required><button type="submit" class="btn btn-primary">Entrar</button></form></div></div>
+    <div id="area-chave-modal" class="modal"><div class="modal-content"><span class="close" onclick="fecharAreaChave()">&times;</span><h2>Minha Chave</h2><div id="mensagem-chave"></div></div></div>
+
+    <script src="imagens/https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="imagens/app.js"></script>
+</body>
+</html>
+<style>
+:root { --primary: #4B0082; --secondary: #28A745; --bg-dark: #2C3E50; --text: #333; --light: #eef2f5; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text); }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 10%; background: var(--bg-dark); color: white; }
+.hero { padding: 4rem 10% 0 10%; text-align: center; background: #1a252f; color: white; }
+.hero-image { width: 100%; height: 580px; overflow: hidden; margin-top: 2rem; border-radius: 10px 10px 0 0; }
+.hero-image img { width: 100%; height: 580px; object-fit: cover; object-position: top; }
+
+.feature { display: flex; padding: 4rem 10%; align-items: center; gap: 3rem; background: white; }
+.feature.alternate { background: var(--light); flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-image { flex: 1; text-align: center; }
+.feature-image img { width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.trophy-large { font-size: 8rem; display: flex; justify-content: center; align-items: center; }
+
+.ctas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn { width: 200px; height: 50px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; transition: transform 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { background: var(--secondary); color: white; }
+
+footer { background: var(--bg-dark); color: white; padding: 2rem; text-align: center; border-top: 3px solid var(--primary); }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+.modal-content { background: white; padding: 2rem; border-radius: 10px; width: 90%; max-width: 400px; position: relative; }
+.close { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 1.5rem; }
+
+@media (max-width: 768px) { .feature, .feature.alternate { flex-direction: column; padding: 2rem 5%; } .btn { width: 100%; } }
+:root { --primary: #4B0082; --secondary: #28A745; --bg-dark: #2C3E50; --text: #333; --light: #eef2f5; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; color: var(--text); }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 10%; background: var(--bg-dark); color: white; }
+.hero { padding: 4rem 10% 0 10%; text-align: center; background: #1a252f; color: white; }
+.hero-image { width: 100%; height: 580px; overflow: hidden; margin-top: 2rem; border-radius: 10px 10px 0 0; }
+.hero-image img { width: 100%; height: 580px; object-fit: cover; object-position: top; }
+
+.feature { display: flex; padding: 4rem 10%; align-items: center; gap: 3rem; background: white; }
+.feature.alternate { background: var(--light); flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-image { flex: 1; text-align: center; }
+.feature-image img { width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.trophy-large { font-size: 8rem; display: flex; justify-content: center; align-items: center; }
+
+.ctas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn { width: 200px; height: 50px; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; transition: transform 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { background: var(--secondary); color: white; }
+
+footer { background: var(--bg-dark); color: white; padding: 2rem; text-align: center; border-top: 3px solid var(--primary); }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+.modal-content { background: white; padding: 2rem; border-radius: 10px; width: 90%; max-width: 400px; position: relative; }
+.close { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 1.5rem; }
+
+@media (max-width: 768px) { .feature, .feature.alternate { flex-direction: column; padding: 2rem 5%; } .btn { width: 100%; } }
+.avatar-btn {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 8px 20px;
+    border-radius: 50px; /* Bem arredondado */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.avatar-btn:hover {
+    background: #f8fafc;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+#user-display {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+</style>
+<script>
+    // Verifica se o usuário já está autenticado/comprou ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    if (getCookie("user_email")) {
+        document.getElementById("user-display").innerText = "👤 " + getCookie("user_email");
+    }
+});
+
+function iniciarCompra() {
+    // 1. Segurança: Verifica se já tem e-mail. Se não, força login.
+    if(!getCookie("user_email")) {
+        document.getElementById("login-modal").style.display = "flex";
+        return;
+    }
+
+    // 2. Simulação de Checkout
+    if(!getCookie("user_comprador")) {
+        alert("Redirecionando para o ambiente de pagamento seguro...");
+        // Simula sucesso de pagamento
+        setCookie("user_comprador", "true", 365);
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+        setTimeout(() => abrirAreaChave(), 1000);
+    } else {
+        abrirAreaChave();
+    }
+}
+
+document.getElementById("login-form").onsubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    setCookie("user_email", email, 30);
+    document.getElementById("login-modal").style.display = "none";
+    document.getElementById("user-display").innerText = "👤 " + email;
+    iniciarCompra(); // Continua o fluxo após o login
+};
+
+function abrirAreaChave() {
+    // 3. Mecanismo de Segurança: A chave só aparece se houver cookie de comprador
+    let container = document.getElementById("mensagem-chave");
+    if (getCookie("user_comprador") === "true") {
+        container.innerHTML = `<p>Sua licença vitalícia:</p> <code>A574A-B1013-F142D</code>`;
+    } else {
+        container.innerHTML = "<p>Acesso negado. Realize a compra primeiro.</p>";
+    }
+    document.getElementById("area-chave-modal").style.display = "flex";
+}
+
+// Funções utilitárias
+function setCookie(n, v, d) { let e = new Date(); e.setTime(e.getTime() + (d*86400000)); document.cookie = n+"="+v+";expires="+e.toUTCString()+";path=/"; }
+function getCookie(n) { let c = document.cookie.split(';'); for(let i=0; i<c.length; i++) { let p = c[i].split('='); if(p[0].trim()==n) return p[1]; } return ""; }
+function fecharModal() { document.querySelectorAll('.modal').forEach(m => m.style.display = 'none'); }
+function fecharAreaChave() { document.getElementById("area-chave-modal").style.display = "none"; }
+</script>
