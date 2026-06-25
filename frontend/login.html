@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar / Cadastro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="card">
+    <h1>Entrar</h1>
+    <p>Entre com seu e-mail e CPF. Se ainda não existir cadastro, ele será criado.</p>
+    <form id="loginForm">
+      <label>Nome (opcional)
+        <input type="text" id="nome" maxlength="120">
+      </label>
+      <label>E-mail *
+        <input type="email" id="email" required>
+      </label>
+      <label>CPF *
+        <input type="text" id="cpf" required placeholder="somente números">
+      </label>
+      <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Entrar / Cadastrar</button>
+      <div id="msg" class="error"></div>
+    </form>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

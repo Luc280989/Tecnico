@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento aprovado</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+      width: 100%;
+    }
+    .button-group .btn, 
+    .button-group .btn-primary {
+        flex: 1;
+        text-align: center;
+        padding: 12px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    /* Garante que o card fique acima do confete */
+    .card { position: relative; z-index: 10; }
+  </style>
+</head>
+<body>
+<canvas id="confetti" style="position: fixed; top: 0; left: 0; pointer-events: none; z-index: 0;"></canvas>
+
+<div class="auth-wrap">
+  <div class="card center">
+    <h1>Pagamento aprovado! 🎉</h1>
+    <p>Sua chave foi enviada por e-mail e é:</p>
+    
+    <div class="key-box" id="approvedKey">A574A-B1013-F142D</div>
+    
+    <div class="button-group">
+      <button id="btnCopiar" class="btn" onclick="copiarChave()">Copiar Chave</button>
+      <a class="btn btn-primary" href="dashboard.html">Ir para minha conta</a>
+    </div>
+  </div>
+</div>
+
+<script>
+    function startConfetti() {
+        const canvas = document.getElementById("confetti");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Criação das partículas
+        const pieces = Array.from({ length: 220 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            r: 4 + Math.random() * 6,
+            s: 2 + Math.random() * 4,
+            a: Math.random() * Math.PI * 2,
+            type: Math.random() > 0.5 ? 'circle' : 'rect',
+            c: `hsl(${Math.random() * 360}, 100%, 50%)`
+        }));
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            pieces.forEach(p => {
+                p.y += p.s;
+                p.x += Math.sin(p.a) * 2;
+                p.a += 0.05;
+
+                ctx.fillStyle = p.c;
+                ctx.beginPath();
+                if (p.type === 'circle') {
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                } else {
+                    ctx.rect(p.x, p.y, p.r * 2, p.r);
+                }
+                ctx.fill();
+
+                // Reposiciona no topo ao sair da tela para efeito constante
+                if (p.y > canvas.height) {
+                    p.y = -20;
+                    p.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    }
+
+    // Função de copiar chave
+    function copiarChave() {
+        const textoChave = document.getElementById("approvedKey").innerText;
+        const botao = document.getElementById("btnCopiar");
+
+        navigator.clipboard.writeText(textoChave).then(() => {
+            const textoOriginal = botao.innerText;
+            botao.innerText = "Copiado!";
+            botao.style.backgroundColor = "#28a745";
+
+            setTimeout(() => {
+                botao.innerText = textoOriginal;
+                botao.style.backgroundColor = "";
+            }, 2000);
+        }).catch(err => {
+            console.error('Erro ao copiar: ', err);
+            alert('Falha ao copiar.');
+        });
+    }
+
+    // Inicia o efeito ao carregar a página
+    window.onload = startConfetti;
+</script>
+</body>
+</html>
