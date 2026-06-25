@@ -7,10 +7,6 @@
 
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 10%; background: var(--bg-dark); color: white; }
         .hero { padding: 4rem 10% 0 10%; text-align: center; background: #1a252f; color: white; }
-        
-        /* Ajuste com clamp para o Hero Image */
-        .hero-image { width: 100%; height: clamp(250px, 40vw, 580px); overflow: hidden; margin-top: 2rem; border-radius: 10px 10px 0 0; }
-        .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
         .feature { display: flex; padding: 4rem 10%; align-items: center; gap: 3rem; background: white; }
         .feature.alternate { background: var(--light); flex-direction: row-reverse; }
@@ -32,6 +28,36 @@
         .btn-secondary { background: var(--secondary); color: white; }
 
         .avatar-btn { background: #ffffff; border: 1px solid #e2e8f0; padding: 8px 20px; border-radius: 50px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+        
+        /* No seu CSS, substitua ou adicione estas regras */
+
+        .hero-image { 
+            width: 100%; 
+            height: 600px; /* Altura fixa base ou use clamp como preferir */
+            overflow: hidden; 
+            margin-top: 2rem; 
+            border-radius: 10px 10px 0 0; 
+        }
+
+        .hero-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            /* Foca no topo e corta o restante conforme a tela diminui */
+            object-position: top center; 
+        }
+
+        @media (max-width: 768px) {
+            .hero-image { 
+                /* Reduzimos a altura no mobile para "esconder" mais a parte inferior da imagem */
+                height: 150px; 
+            }
+            
+            .hero-image img { 
+                /* Força o foco absoluto no topo, garantindo que o corte ocorra na parte inferior */
+                object-position: 50% 0%; 
+            }
+        }
 
         @media (max-width: 768px) { 
             .feature, .feature.alternate { flex-direction: column; padding: 2rem 5%; text-align: center; } 
