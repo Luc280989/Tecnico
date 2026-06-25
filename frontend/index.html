@@ -53,8 +53,9 @@
   <button onclick="abrirLogin()">Login</button>
   <button onclick="abrirCadastro()">Cadastrar</button>
 
-  <div id="modalLogin" class="modal" style="display: none;">
-      <div class="login-box">
+  <div  class="auth-wrap" id="modalLogin" style="display: none;">
+      <div class="card">
+        <form id="loginForm">
           <h2>Login</h2>
           <label for="email">E-mail
           <input type="email" id="email" placeholder="E-mail"/>
@@ -62,15 +63,17 @@
           <label for="loginPass">Senha
           <input type="password" id="loginPass" placeholder="Senha"/>
           </label>
-          <button onclick="validarLogin()">Entrar</button>
+          <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Entrar</button>
           <p>Não é cadastrado? <a href="#" onclick="trocarParaCadastro()">Clique aqui.</a></p>
+          <div id="msg-login" class="error"></div>
+        </form>
       </div>
   </div>
 
-  <div class="auth-wrap">
+  <div class="auth-wrap" id="modalCadastro" style="display: none;">
     <div class="card">
-      <h1>Cadastre-se</h1>
       <form id="loginForm">
+        <h2>Cadastre-se</h2>
         <label>Nome (opcional)
           <input type="text" id="nome" maxlength="120">
         </label>
@@ -86,7 +89,7 @@
         <label>Confirmar Senha *
           <input type="password" id="confirmPass" required placeholder="Confirmar Senha"/>
         </label>
-        <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Entrar / Cadastrar</button>
+        <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Cadastrar</button>
         <div id="msg" class="error"></div>
       </form>
     </div>
