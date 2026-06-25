@@ -273,7 +273,7 @@
                 <label>Senha *
                     <input type="password" id="loginSenha" required placeholder="Sua senha">
                 </label>
-                <button class="btn btn-primary" type="submit" onclick="abrirDashboard({nome: 'Usuário Teste', chave: ''})" style="margin-top:18px;width:100%;">Entrar</button>
+                <button class="btn btn-primary" type="submit" onclick="processarLogin(event)" style="margin-top:18px;width:100%;">Entrar</button>
                 <p style="margin-top:12px;text-align:center;"><a href="#" onclick="trocarParaCadastro(); return false;">Não tem conta? Cadastre-se</a></p>
             </form>
         </div>
@@ -319,7 +319,7 @@
             }
         }
 
-        // Sobre CPF
+        // Sobre o CPF
 
         const inputCpf = document.getElementById('cpf');
 
@@ -370,7 +370,29 @@
 
         // Function to open dashboard
 
-        function abrirDashboard(usuario) {
+        // 1. Função que processa o clique do formulário
+        function processarLogin(event) {
+            event.preventDefault(); // Impede o envio do form e o recarregamento da página
+
+            const email = document.getElementById('loginEmail').value;
+            const senha = document.getElementById('loginSenha').value;
+
+            if (email && senha) {
+                // Fecha o modal de login
+                document.getElementById('modalLogin').style.display = 'none';
+                
+                // Simula os dados do usuário após login bem-sucedido
+                const dadosUsuario = { nome: "Usuário", chave: "A574A-B1013-F142D" };
+                
+                // Chama a função que exibe o dashboard
+                exibirDashboard(dadosUsuario);
+            } else {
+                alert("Preencha todos os campos!");
+            }
+        }
+
+        // 2. Função que apenas prepara e mostra o modal de dashboard
+        function exibirDashboard(usuario) {
             const modal = document.getElementById('modalDashboard');
             const containerChave = document.getElementById('containerChave');
             const btnCopiar = document.getElementById('btnCopiar');
@@ -378,22 +400,19 @@
             const statusChave = document.getElementById('statusChave');
             const chaveValor = document.getElementById('chaveValor');
 
-            // Nome na saudação
             document.getElementById('saudacao').innerText = usuario.nome ? `Olá, ${usuario.nome}!` : "Olá, bem-vindo!";
 
             if (usuario.chave) {
-                // Lógica: Tem chave
                 statusChave.innerText = "A chave do seu produto é:";
                 chaveValor.innerText = usuario.chave;
                 containerChave.style.display = 'block';
-                btnCopiar.style.display = 'flex'; // Mostra botão copiar
-                btnComprar.style.display = 'none'; // Esconde botão comprar
+                btnCopiar.style.display = 'flex';
+                btnComprar.style.display = 'none';
             } else {
-                // Lógica: Não tem chave
                 statusChave.innerText = "Que pena! Você ainda não tem a chave do produto.";
                 containerChave.style.display = 'none';
-                btnCopiar.style.display = 'none';  // Esconde botão copiar
-                btnComprar.style.display = 'flex'; // Mostra botão comprar
+                btnCopiar.style.display = 'none';
+                btnComprar.style.display = 'flex';
             }
 
             modal.style.display = 'flex';
