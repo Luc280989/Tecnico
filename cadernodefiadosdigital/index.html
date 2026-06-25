@@ -2,6 +2,40 @@
 <html>
 <head>
     <style>
+        /* Container de botões do dashboard */
+        .dashboard-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Espaço consistente entre os botões */
+            margin-top: 20px;
+        }
+
+        /* Força todos os botões do modal a terem a mesma altura e largura */
+        .dashboard-actions .btn {
+            width: 100%;
+            margin: 0;
+            padding: 12px 0;
+            box-sizing: border-box; /* Garante que padding não afete a largura */
+        }
+
+        .login-box h2 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        /* Container que engloba chave E botões */
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Este valor controla o espaço entre TODOS os itens */
+            margin-top: 20px;
+        }
+
+        /* Garante que os elementos dentro do container não tenham margens "escondidas" */
+        .dashboard-container > * {
+            margin: 0 !important;
+        }
+
         label { display:block; margin-top:14px; font-weight:600; }
         input { width:100%; box-sizing:border-box; padding:12px; border:1px solid #cbd5e1; border-radius:10px; margin-top:6px; }
         small { color:#64748b; }
@@ -123,7 +157,7 @@
     <header class="navbar">
         <div class="logo">Carderno de Fiados Digital</div>
         <div class="user-auth">
-            <button id="btn-login-avatar" onclick="abrirLogin()" class="avatar-btn" onclick="abrirPainel()">
+            <button id="btn-login-avatar" onclick="abrirLogin()" class="avatar-btn">
                 <span id="user-icon">👤</span>
                 <span id="user-display">Entrar</span>
             </button>
@@ -239,9 +273,28 @@
                 <label>Senha *
                     <input type="password" id="loginSenha" required placeholder="Sua senha">
                 </label>
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Entrar</button>
+                <button class="btn btn-primary" type="submit" onclick="abrirDashboard({nome: 'Usuário Teste', chave: ''})" style="margin-top:18px;width:100%;">Entrar</button>
                 <p style="margin-top:12px;text-align:center;"><a href="#" onclick="trocarParaCadastro(); return false;">Não tem conta? Cadastre-se</a></p>
             </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modalDashboard">
+        <div class="login-box">
+            <h2 id="saudacao">Olá!</h2>
+            <p id="statusChave" style="margin: 15px 0; font-weight: 500;"></p>
+            
+            <div id="containerChave" style="display:none;">
+                <div id="chaveValor" style="font-family: monospace; font-size: 1.2rem; color: var(--primary); font-weight: bold; padding: 10px; background: #f4f4f4; border-radius: 5px;"></div>
+            </div>
+
+            <div class="dashboard-actions" style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                <button id="btnCopiar" class="btn" style="display: none; width: 100%; background: #6c757d; color: white;" onclick="copiarChave()">Copiar Chave</button>
+                
+                <button id="btnComprar" class="btn btn-primary" style="width: 100%;" onclick="alert('Redirecionando...')">Comprar Chave</button>
+                
+                <button class="btn" style="width: 100%; background: #e9ecef; color: #333;" onclick="fecharModal('modalDashboard')">Sair</button>
+            </div>
         </div>
     </div>
 
@@ -266,18 +319,99 @@
             }
         }
 
+        // Sobre CPF
+
         const inputCpf = document.getElementById('cpf');
 
+        // Máscara de CPF
         inputCpf.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
-            
-            // Aplica a máscara: 000.000.000-00
+            let value = e.target.value.replace(/\D/g, '');
             value = value.replace(/(\d{3})(\d)/, '$1.$2');
             value = value.replace(/(\d{3})(\d)/, '$1.$2');
             value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-            
             e.target.value = value;
         });
+
+        // Função de Validação do CPF
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+            let soma = 0;
+            let resto;
+            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(9, 10))) return false;
+
+            soma = 0;
+            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            resto = (soma * 10) % 11;
+            if (resto === 10 || resto === 11) resto = 0;
+            if (resto !== parseInt(cpf.substring(10, 11))) return false;
+
+            return true;
+        }
+
+        // Validação ao enviar o formulário
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const cpf = document.getElementById('cpf').value;
+            const msgDiv = document.getElementById('msg');
+            
+            if (!validarCPF(cpf)) {
+                e.preventDefault(); // Impede o envio
+                msgDiv.innerText = "CPF inválido!";
+                msgDiv.style.color = "red";
+            } else {
+                msgDiv.innerText = "CPF válido, processando...";
+                msgDiv.style.color = "green";
+            }
+        });
+
+        // Function to open dashboard
+
+        function abrirDashboard(usuario) {
+            const modal = document.getElementById('modalDashboard');
+            const containerChave = document.getElementById('containerChave');
+            const btnCopiar = document.getElementById('btnCopiar');
+            const btnComprar = document.getElementById('btnComprar');
+            const statusChave = document.getElementById('statusChave');
+            const chaveValor = document.getElementById('chaveValor');
+
+            // Nome na saudação
+            document.getElementById('saudacao').innerText = usuario.nome ? `Olá, ${usuario.nome}!` : "Olá, bem-vindo!";
+
+            if (usuario.chave) {
+                // Lógica: Tem chave
+                statusChave.innerText = "A chave do seu produto é:";
+                chaveValor.innerText = usuario.chave;
+                containerChave.style.display = 'block';
+                btnCopiar.style.display = 'flex'; // Mostra botão copiar
+                btnComprar.style.display = 'none'; // Esconde botão comprar
+            } else {
+                // Lógica: Não tem chave
+                statusChave.innerText = "Que pena! Você ainda não tem a chave do produto.";
+                containerChave.style.display = 'none';
+                btnCopiar.style.display = 'none';  // Esconde botão copiar
+                btnComprar.style.display = 'flex'; // Mostra botão comprar
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function copiarChave() {
+            const textoChave = document.getElementById("chaveValor").innerText;
+            navigator.clipboard.writeText(textoChave).then(() => {
+                const btn = document.getElementById("btnCopiar");
+                btn.innerText = "Copiado!";
+                setTimeout(() => btn.innerText = "Copiar Chave", 2000);
+            });
+        }
+
+        function fecharModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
     </script>
 </body>
 </html>

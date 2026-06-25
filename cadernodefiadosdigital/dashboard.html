@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha conta</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Minha Conta | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .info-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .info-group { margin-bottom: 15px; }
+        .label { font-weight: bold; color: #555; display: block; }
+        .value { color: #333; font-size: 1.1rem; }
+        .danger-zone { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .btn-delete { background: #dc3545; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
+    </style>
 </head>
 <body>
-<div class="auth-wrap">
-  <div class="card">
-    <h1>Minha conta</h1>
-    <div id="welcome"></div>
-    <div id="statusBox" class="info-box"></div>
-    <div class="ctas" id="ctaArea"></div>
-  </div>
+
+<div class="dashboard-container">
+    <div class="info-card">
+        <h1 id="saudacao">Olá!</h1>
+        
+        <div class="info-group">
+            <span class="label">E-mail:</span>
+            <span class="value" id="userEmail">-</span>
+        </div>
+        
+        <div class="info-group">
+            <span class="label">CPF:</span>
+            <span class="value" id="userCpf">-</span>
+        </div>
+
+        <div class="info-group" id="keySection">
+            <span class="label">Chave do Produto:</span>
+            <span class="value" id="userKey" style="font-family: monospace; background: #f4f4f4; padding: 2px 5px;">Aguardando...</span>
+        </div>
+
+        <div class="danger-zone">
+            <h3>Zona de Perigo</h3>
+            <button class="btn-delete" onclick="excluirConta()">Excluir minha conta permanentemente</button>
+        </div>
+    </div>
 </div>
-<script src="main.js"></script>
+
+<script>
+    // Simulação de carregamento de dados (substitua pela sua lógica de backend/storage)
+    const userData = {
+        nome: "João Silva", // Deixe vazio "" para testar a saudação genérica
+        email: "joao@email.com",
+        cpf: "123.456.789-00",
+        chave: "A574A-B1013-F142D"
+    };
+
+    // 1. Saudação Dinâmica
+    const h1 = document.getElementById('saudacao');
+    h1.innerText = userData.nome ? `Olá, ${userData.nome}!` : "Olá, seja bem-vindo!";
+
+    // 2. Preencher dados
+    document.getElementById('userEmail').innerText = userData.email;
+    document.getElementById('userCpf').innerText = userData.cpf;
+    
+    // 3. Exibir ou ocultar Chave
+    const keySection = document.getElementById('keySection');
+    if (userData.chave) {
+        document.getElementById('userKey').innerText = userData.chave;
+    } else {
+        keySection.style.display = 'none';
+    }
+
+    // 4. Função de Exclusão
+    function excluirConta() {
+        if (confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+            // Lógica de exclusão aqui (ex: clear localStorage ou fetch API)
+            alert("Conta excluída com sucesso.");
+            window.location.href = "index.html";
+        }
+    }
+</script>
 </body>
 </html>
