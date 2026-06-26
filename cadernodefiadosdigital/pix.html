@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Pix - Caderno de Fiados</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            /* Adicionamos um padding no body para garantir que o card 
+            não encoste nas bordas do celular em telas muito pequenas */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: white;
+            /* Aqui está o segredo: definimos o mesmo valor para todos os lados */
+            padding: 30px; 
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            /* Garantimos que o padding não aumente o tamanho total da div */
+            box-sizing: border-box; 
+        }
+        h2 { color: #4B0082; margin-bottom: 0.5rem; }
+        p { color: #64748b; font-size: 0.95rem; }
+        #qr-code-img { width: 250px; height: 250px; margin: 20px 0; border: 2px solid #e2e8f0; border-radius: 12px; }
+        .btn-copy { background: #4B0082; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold; transition: background 0.3s; }
+        .btn-copy:hover { background: #6a0dad; }
+        .status { margin-top: 15px; font-weight: bold; color: #28A745; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Pedido Criado!</h2>
+    <p>Escaneie o QR Code abaixo ou copie o código para pagar.</p>
+    
+    <img id="qr-code-img" style="width: 335px; height: auto;" src="../imagens/pix-teste.png" alt="QR Code Pix">
+    
+    <button class="btn-copy" onclick="copiarPix()">Copiar Código Pix</button>
+    <p id="status-msg" class="status"></p>
+</div>
+
+<script>
+    // Função para copiar o código (o código estaria em uma variável vinda do backend)
+    function copiarPix() {
+        const codigoPix = "CODIGO_PIX_AQUI"; // Este valor você injeta via JS ou Backend
+        navigator.clipboard.writeText(codigoPix).then(() => {
+            const msg = document.getElementById('status-msg');
+            msg.innerText = "Código copiado com sucesso!";
+            setTimeout(() => msg.innerText = "", 3000);
+        });
+    }
+</script>
+</body>
+</html>
