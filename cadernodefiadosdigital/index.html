@@ -295,7 +295,7 @@
                 <label for="confirmPass">Confirmar Senha *</label>
                 <input type="password" id="confirmPass" required placeholder="Repita a senha">
 
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Enviar</button>
+                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Prosseguir para PagSeguro</button>
                 <div id="msg" class="error"></div>
             </form>
         </div>
@@ -470,7 +470,57 @@
             document.getElementById(id).style.display = 'none';
         }
 
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const msg = document.getElementById('msg');
+        const password = document.getElementById('loginPass').value;
+        const confirmPassword = document.getElementById('confirmPass').value;
+        
+        // 1. Validar senhas iguais
+        if (password !== confirmPassword) {
+            msg.textContent = "As senhas não coincidem!";
+            return;
+        }
+
+        // 2. Gerar hash da senha (salt de 10 rounds)
+        const salt = bcrypt.genSaltSync(10);
+        const senha_hash = bcrypt.hashSync(password, salt);
+
+        // 3. Preparar dados
+        const data = {
+            nome: "Cliente", // Adicione um campo de nome no seu HTML se quiser capturar
+            email: document.getElementById('email').value,
+            cpf: document.getElementById('cpf').value,
+            senha_hash: senha_hash
+        };
+
+        try {
+            msg.textContent = "Processando...";
+            
+            // 4. Enviar para seu backend
+            const response = await fetch('/create-order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // 5. Redirecionar para o checkout do PagBank
+                window.location.href = result.checkout_url;
+            } else {
+                throw new Error('Erro ao criar pedido');
+            }
+        } catch (err) {
+            msg.textContent = "Ocorreu um erro. Tente novamente.";
+            console.error(err);
+        }
+    });
+
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
 </body>
 </html>
 
