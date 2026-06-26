@@ -2,6 +2,41 @@
 <html>
 <head>
     <style>
+        /* O ícone do ponto de interrogação */
+        .info-tooltip {
+            display: inline-block;
+            width: 18px; height: 18px;
+            background-color: #94a3b8; color: white;
+            border-radius: 50%; text-align: center;
+            font-size: 12px; line-height: 18px;
+            cursor: help; /* Indica ajuda ao passar o mouse */
+            margin-left: 5px; font-weight: bold;
+            position: relative;
+        }
+
+        /* O texto que aparece no hover */
+        .info-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 220px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10000;
+            bottom: 125%; /* Aparece acima do ícone */
+            left: 50%;
+            margin-left: -110px; /* Centraliza o balão */
+            opacity: 0;
+            transition: opacity 0s; /* Instantâneo */
+        }
+
+        /* Faz aparecer ao passar o mouse */
+        .info-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
         /* Container de botões do dashboard */
         .dashboard-actions {
             display: flex;
@@ -167,7 +202,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Nunca mais perca dinheiro ao vender fiado.</h1>
-            <p>"Diga adeus ao caderninho. Monitore pagamentos, organize sua lista de clientes e envie cobranças pelo WhatsApp e e-mail em poucos cliques. Simples, seguro e completo."</p>
+            <p>Diga adeus ao caderninho. Monitore pagamentos, organize sua lista de clientes e envie cobranças pelo WhatsApp e e-mail em poucos cliques. Simples, seguro e completo.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
@@ -181,7 +216,7 @@
     <section class="feature alternate">
         <div class="feature-text">
             <h2>Gestão de Fiados Inteligente</h2>
-            <p>Registre um fiado, liquide total ou parcialmente, ou quite todos os débitos de um cliente de uma vez. O sistema prioriza a quitação de valores menores automaticamente.</p>
+            <p>Registre um fiado, liquide total ou parcialmente, ou quite todos os débitos de um cliente de uma vez. Visualize tendências, histórico e muito mais.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
@@ -193,8 +228,8 @@
     <section class="feature">
         <div class="feature-image"><img src="../imagens/tela principal - Lista de Fiados - Mensagem de Cobrança clicado.jpg" alt="Mensagem de Cobrança"></div>
         <div class="feature-text">
-            <h2>Cobranças Via WhatsApp</h2>
-            <p>Clique duas vezes no número de celular para abrir o WhatsApp com mensagem de cobrança automática, contendo dados do cliente e valor em aberto.</p>
+            <h2>Cobranças Via WhatsApp e E-mail</h2>
+            <p>Clique duas vezes no número de celular para abrir o WhatsApp com mensagem de cobrança automática, contendo dados do cliente e valor em aberto. O mesmo se aplica ao e-mail.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
@@ -205,7 +240,7 @@
     <section class="feature alternate" style="background-color: #fff9e6;">
         <div class="feature-text">
             <h2>Selo Bom Pagador</h2>
-            <p>Fidelize seus clientes. Atribua o "Selo Bom Pagador" manualmente ou deixe que o sistema atribua automaticamente para quem honra os prazos.</p>
+            <p>Reconheça os bons pagadores. Atribua o "Selo Bom Pagador" manualmente ou deixe que o sistema atribua automaticamente conforme critérios configuráveis.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
@@ -217,7 +252,7 @@
     <section class="feature">
         <div class="feature-text">
             <h2>Alerta de Fiados Urgentes</h2>
-            <p>O sistema destaca clientes que exigem atenção imediata. Monitore de perto quem possui débitos antigos ou de alto valor para evitar prejuízos financeiros.</p>
+            <p>O sistema destaca clientes que exigem atenção imediata. Monitore de perto quem possui débitos antigos e de alto valor para evitar prejuízos financeiros.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
@@ -230,34 +265,37 @@
         <div class="feature-image"><img src="../imagens/tela principal - Configurações Selecionado.jpg" alt="Configurações e Backup"></div>
         <div class="feature-text">
             <h2>Segurança com Backup e Restauração</h2>
-            <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente para nunca perder seu histórico de vendas.</p>
+            <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente para nunca perder seu histórico de vendas fiado.</p>
             <div class="ctas">
                 <a href="Controle Vendas Fiado_Setup.exe" class="btn btn-primary">Baixar Teste</a>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave</button>
             </div>
         </div>
     </section>
-
     <div class="modal" id="modalCadastro">
         <div class="card">
             <form id="registerForm">
-                <h2>Cadastre-se</h2>
-                <label>Nome (opcional)
-                    <input type="text" id="nome" maxlength="120" placeholder="Seu nome completo">
+                <div class="header-container" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">Finalizar Pedido</h2>
+                    <span class="price" style="font-size: 1.5rem; font-weight: bold; color: #2ecc71;">R$ 249,00</span>
+                </div>
+
+                <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail apenas para enviar o comprovante da compra com a chave de licença. Não enviamos spam.</span></span>
                 </label>
-                <label>E-mail *
-                    <input type="email" id="email" required placeholder="exemplo@email.com">
+                <input type="email" id="email" required placeholder="exemplo@email.com">
+
+                <label for="cpf">CPF * <span class="info-tooltip">? <span class="tooltip-text">O CPF é necessário para validar a segurança do pagamento no sistema PagBank.</span></span>
                 </label>
-                <label>CPF *
-                    <input type="text" id="cpf" required placeholder="000.000.000-00" maxlength="14">
+                <input type="text" id="cpf" required placeholder="000.000.000-00" maxlength="14">
+
+                <label for="loginPass">Definir uma Senha * <span class="info-tooltip">? <span class="tooltip-text">A senha é necessária para criar sua conta no site. Assim, você poderá recuperar sua chave de licença quando precisar.</span></span>
                 </label>
-                <label>Senha *
-                    <input type="password" id="loginPass" required placeholder="Crie uma senha forte">
-                </label>
-                <label>Confirmar Senha *
-                    <input type="password" id="confirmPass" required placeholder="Repita a senha">
-                </label>
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Cadastrar</button>
+                <input type="password" id="loginPass" required placeholder="Crie uma senha forte">
+
+                <label for="confirmPass">Confirmar Senha *</label>
+                <input type="password" id="confirmPass" required placeholder="Repita a senha">
+
+                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Enviar</button>
                 <div id="msg" class="error"></div>
             </form>
         </div>
@@ -274,7 +312,6 @@
                     <input type="password" id="loginSenha" required placeholder="Sua senha">
                 </label>
                 <button class="btn btn-primary" type="submit" onclick="processarLogin(event)" style="margin-top:18px;width:100%;">Entrar</button>
-                <p style="margin-top:12px;text-align:center;"><a href="#" onclick="trocarParaCadastro(); return false;">Não tem conta? Cadastre-se</a></p>
             </form>
         </div>
     </div>
@@ -306,7 +343,9 @@
     <script>
         function abrirLogin() { document.getElementById('modalLogin').style.display = 'flex'; }
         function abrirCadastro() { document.getElementById('modalCadastro').style.display = 'flex'; }
-
+        function iniciarCompra() {
+            abrirCadastro();
+        }
         function trocarParaCadastro() {
             document.getElementById('modalLogin').style.display = 'none';
             abrirCadastro();
