@@ -74,7 +74,7 @@
         label { display:block; margin-top:14px; font-weight:600; }
         input { width:100%; box-sizing:border-box; padding:12px; border:1px solid #cbd5e1; border-radius:10px; margin-top:6px; }
         small { color:#64748b; }
-        .card { width:min(520px,100%); background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:28px; }
+        .card { width:min(400px,100%); background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:28px; }
         .modal {
             display: none;             /* Invisível por padrão */
             position: fixed;           /* Flutuante sobre tudo */
@@ -272,12 +272,14 @@
             </div>
         </div>
     </section>
-    <div class="modal" id="modalCadastro">
+   <div class="modal" id="modalCadastro">
         <div class="card">
             <form id="registerForm">
                 <div class="header-container" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px;">
-                    <h2 style="margin: 0;">Finalizar Pedido</h2>
-                    <span class="price" style="font-size: 1.5rem; font-weight: bold; color: #2ecc71;">R$ 249,00</span>
+                    <div style="display: flex; margin-right: 20px;align-items: center; justify-content: space-between; width: 100%;">
+                        <h2 style="margin: 0; white-space: nowrap;">Finalizar Pedido</h2>
+                    </div>
+                    <span class="price" style="font-size: 1.5rem; font-weight: bold; color: #2ecc71;">R$&nbsp;249,00</span>
                 </div>
 
                 <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail apenas para enviar o comprovante da compra com a chave de licença. Não enviamos spam.</span></span>
@@ -295,7 +297,7 @@
                 <label for="confirmPass">Confirmar Senha *</label>
                 <input type="password" id="confirmPass" required placeholder="Repita a senha">
 
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Prosseguir para PagSeguro</button>
+                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com <img src="../imagens/pagseguro.png" alt="PagSeguro Logo" style="margin-left: 20px; width: 130px; height: auto;"></button>
                 <div id="msg" class="error"></div>
             </form>
         </div>
@@ -346,10 +348,6 @@
         function iniciarCompra() {
             abrirCadastro();
         }
-        function trocarParaCadastro() {
-            document.getElementById('modalLogin').style.display = 'none';
-            abrirCadastro();
-        }
 
         // Opcional: fechar ao clicar fora
         window.onclick = function(event) {
@@ -397,13 +395,27 @@
             const cpf = document.getElementById('cpf').value;
             const msgDiv = document.getElementById('msg');
             
+            // Limpa a mensagem anterior, caso exista
+            msgDiv.innerText = "";
+            
             if (!validarCPF(cpf)) {
                 e.preventDefault(); // Impede o envio
                 msgDiv.innerText = "CPF inválido!";
                 msgDiv.style.color = "red";
+                
+                // Define o tempo para limpar a mensagem (5000ms = 5 segundos)
+                setTimeout(() => {
+                    msgDiv.innerText = "";
+                }, 5000);
+
             } else {
                 msgDiv.innerText = "CPF válido, processando...";
                 msgDiv.style.color = "green";
+                
+                // Se você quiser que a mensagem de "processando" também suma em 5 segundos:
+                setTimeout(() => {
+                    msgDiv.innerText = "";
+                }, 5000);
             }
         });
 
