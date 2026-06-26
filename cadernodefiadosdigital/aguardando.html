@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aguardando pagamento</title>
+  <link rel="stylesheet">
+  <style>
+/* Fundo limpo e iluminado */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.07);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+/* Spinner com azul vibrante mas equilibrado */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f1f5f9;
+    border-top: 4px solid #3b82f6; /* Azul que dá vida, mas não é neon */
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin: 0 auto 25px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h1 {
+    color: #0f172a;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Badge com cor de "sucesso suave" */
+.order-badge {
+    background: #eff6ff; /* Fundo azul bem clarinho */
+    color: #1d4ed8;      /* Azul um pouco mais intenso */
+    padding: 8px 18px;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #dbeafe;
+}
+
+#orderId {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+  </style>
+</head>
+<body>
+<div class="info-box">
+  <div class="card center">
+    <div class="spinner"></div>
+    <h1>Aguardando pagamento...</h1>
+    <p>Estamos aguardando o status do seu pedido.</p>
+    <div class="order-badge">Pedido: #<span id="orderId">...</span></div>
+    <div id="msg"></div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
+<script>
+  // Exemplo de como preencher o ID no seu main.js
+  const urlParams = new URLSearchParams(window.location.search);
+  document.getElementById('orderId').innerText = urlParams.get('id') || "Carregando...";
+</script>
