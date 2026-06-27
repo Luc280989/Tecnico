@@ -295,7 +295,7 @@
                 </label>
                 <input type="email" id="email" required value="lucasteixeira2809@gmail.com" placeholder="exemplo@email.com">
 
-                <label for="cpf">CPF * <span class="info-tooltip">? <span class="tooltip-text">O CPF é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
+                <label for="tax_id">CPF * <span class="info-tooltip">? <span class="tooltip-text">O CPF é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
                 </label>
                 <input type="text" id="tax_id" required value="380.334.658-40" placeholder="000.000.000-00" maxlength="14">
 
@@ -342,7 +342,7 @@
         }
 
         // Sobre o CPF
-        const inputCpf = document.getElementById('cpf');
+        const inputCpf = document.getElementById('tax_id');
         inputCpf.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '');
             value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -411,7 +411,7 @@
                 if (response.ok) {
                     window.location.href = result.checkout_url;
                 } else {
-                    const mensagem = result.error || "Ocorreu um erro inesperado.";
+                    const mensagem = result.error + (result.details ? " - " + result.details : "") || "Ocorreu um erro inesperado.";
                     exibirMensagem(msgDiv, mensagem, "red");
                 }
             } catch (err) {
