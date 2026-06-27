@@ -291,13 +291,6 @@
                 </label>
                 <input type="text" id="cpf" required value="380.334.658-40" placeholder="000.000.000-00" maxlength="14">
 
-                <label for="loginPass">Definir uma Senha * <span class="info-tooltip">? <span class="tooltip-text">A senha é necessária para criar sua conta no site. Assim, você poderá recuperar sua chave de licença quando precisar.</span></span>
-                </label>
-                <input type="password" id="loginPass" required value="123" placeholder="Crie uma senha forte">
-
-                <label for="confirmPass">Confirmar Senha *</label>
-                <input type="password" id="confirmPass" required value="123" placeholder="Repita a senha">
-
                 <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com <img src="../imagens/pagseguro.png" alt="PagSeguro Logo" style="margin-left: 20px; width: 130px; height: auto;"></button>
                 <div id="msg" class="error"></div>
             </form>
@@ -307,14 +300,20 @@
     <div class="modal" id="modalLogin">
         <div class="card">
             <form id="loginForm">
-                <h2>Entre na sua conta</h2>
+                <h2>Entre com seu e-mail</h2>
                 <label>E-mail *
                     <input type="email" id="loginEmail" required placeholder="Seu e-mail cadastrado">
                 </label>
-                <label>Senha *
-                    <input type="password" id="loginSenha" required placeholder="Sua senha">
-                </label>
-                <button class="btn btn-primary" type="submit" onclick="processarLogin(event)" style="margin-top:18px;width:100%;">Entrar</button>
+                <button class="btn btn-primary" type="submit" onclick="processarChave(event)" style="margin-top:18px;width:100%;">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modalInfoChaves">
+        <div class="card">
+            <form id="loginForm">
+                <h3>Chaves enviadas</h3>
+                <p>As chaves de licença foram enviadas para o seu e-mail.</p>
             </form>
         </div>
     </div>
@@ -389,29 +388,6 @@
             if (resto !== parseInt(cpf.substring(10, 11))) return false;
 
             return true;
-        }
-
-        // Function to open dashboard
-
-        // 1. Função que processa o clique do formulário
-        function processarLogin(event) {
-            event.preventDefault(); // Impede o envio do form e o recarregamento da página
-
-            const email = document.getElementById('loginEmail').value;
-            const senha = document.getElementById('loginSenha').value;
-
-            if (email && senha) {
-                // Fecha o modal de login
-                document.getElementById('modalLogin').style.display = 'none';
-                
-                // Simula os dados do usuário após login bem-sucedido
-                const dadosUsuario = { nome: "Usuário", chave: "A574A-B1013-F142D" };
-                
-                // Chama a função que exibe o dashboard
-                exibirDashboard(dadosUsuario);
-            } else {
-                alert("Preencha todos os campos!");
-            }
         }
 
         // 2. Função que apenas prepara e mostra o modal de dashboard
