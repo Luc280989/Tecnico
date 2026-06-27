@@ -287,7 +287,7 @@
                         </div>
                     </div>
                 </div>
-                <label for="nome">Nome * <span class="info-tooltip">? <span class="tooltip-text">O Nome é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
+                <label for="nome">Nome * <span class="info-tooltip">? <span class="tooltip-text">O nome é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
                 </label>
                 <input type="text" id="nome" required value="Lucas" placeholder="João da Silva">
                 
@@ -372,13 +372,19 @@
 
         // Função para exibir mensagem no Modal registerForm
         function exibirMensagem(element, texto, cor) {
-            if (!element) return;
+                if (!element) return;
             
+            // Define o conteúdo e estilo
             element.textContent = texto;
             element.style.color = cor;
             element.style.marginTop = "10px";
             element.style.fontWeight = "bold";
 
+            // Define o timer para limpar após 5 segundos (5000 milissegundos)
+            setTimeout(() => {
+                element.textContent = "";
+                element.style.marginTop = "0px"; // Opcional: remove o espaço se houver
+            }, 5000);
         }
 
         // Função para processar o formulário de compra
@@ -402,16 +408,31 @@
                     body: JSON.stringify(data)
                 });
                 const result = await response.json();
-                if (response.ok) window.location.href = result.checkout_url;
-                else alert(result.error);
+                if (response.ok) {
+                    window.location.href = result.checkout_url;
+                } else {
+                    const mensagem = result.error || "Ocorreu um erro inesperado.";
+                    exibirMensagem(msgDiv, mensagem, "red");
+                }
             } catch (err) {
-                alert("Erro: " + err.message);
+                const mensagemErro = err.response?.data?.error || err.message || "Ocorreu um erro desconhecido.";
+                exibirMensagem(msgDiv, mensagemErro, "red");
             }
         });
 
-        function exibirMensagem(el, msg, cor) {
-            el.textContent = msg;
-            el.style.color = cor;
+        function exibirMensagem(element, texto, cor) {
+            if (!element) return;
+            
+            // Define o conteúdo e estilo
+            element.textContent = texto;
+            element.style.color = cor;
+            element.style.marginTop = "10px";
+
+            // Define o timer para limpar após 5 segundos (5000 milissegundos)
+            setTimeout(() => {
+                element.textContent = "";
+                element.style.marginTop = "0px"; // Opcional: remove o espaço se houver
+            }, 5000);
         }
 
         // Pega preço do produto
