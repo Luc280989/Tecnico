@@ -538,7 +538,7 @@
             priceDisplay.innerText = valorFormatado;
             
         } catch (error) {
-            console.error('Falha ao carregar o preço:', error);
+            alert('Falha ao carregar o preço: ' + error.message);
             priceDisplay.innerText = "Erro ao carregar";
         }
     });
