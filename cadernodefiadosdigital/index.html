@@ -373,8 +373,13 @@
                 const result = await response.json();
                 
                 if (response.ok) {
-                    console.log("Redirecionando...");
-                    window.location.href = 'aprovado.html';
+                    // Salva no LocalStorage
+                    localStorage.setItem('pagamento_pix', JSON.stringify({
+                        pix: result.pix,          // A imagem base64
+                        payload: result.payload,  // O código copia e cola
+                        ref: result.externalReference
+                    }));
+                    window.location.href = 'novopedido.html';
                 
                 } else {
                  
@@ -383,8 +388,10 @@
                 
                 }
             } catch (err) {
+
                 const mensagemErro = err.response?.data?.error || err.message || "Ocorreu um erro desconhecido.";
                 exibirMensagem(msgDiv, mensagemErro, "red");
+
             }
         });
 

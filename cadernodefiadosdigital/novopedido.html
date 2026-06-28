@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pagamento | Caderno de Fiados</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
+        h2 { color: #2c3e50; }
+        #qr-code-img { width: 100%; max-width: 250px; margin: 20px 0; border: 1px solid #eee; border-radius: 8px; }
+        .pix-area { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px dashed #ced4da; margin-bottom: 20px; font-size: 0.9rem; word-break: break-all; }
+        button { background: #27ae60; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
+        button:hover { background: #219150; }
+        .status { margin-top: 15px; color: #7f8c8d; font-size: 0.85rem; }
+        /* O spinner */
+        .status-container {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;    /* Centraliza verticalmente */
+            margin-top: 15px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #ccc;
+            border-top: 2px solid #27ae60;
+            border-radius: 50%;
+            margin-left: 8px; /* Espaçamento entre o texto e o spinner */
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Pagamento via Pix</h2>
+    <p>Escaneie o QR Code ou copie o código abaixo:</p>
+    
+    <img id="qr-code-img" src="" alt="Carregando QR Code...">
+    
+    <div class="pix-area" id="copia-e-cola">Carregando código...</div>
+    
+    <button onclick="copiarPix()">Copiar Código Pix</button>
+    
+    <div class="status-container">
+        <span>Aguardando pagamento</span>
+        <span class="spinner"></span>
+    </div>
+</div>
+
+<script>
+    // 1. Recuperar dados
+    const dados = JSON.parse(localStorage.getItem('pagamento_pix'));
+
+    if (!dados) {
+        alert("Nenhum pedido encontrado. Redirecionando...");
+        window.location.href = 'index.html';
+    } else {
+        // 2. Exibir Imagem (Adicionando o prefixo base64 se necessário)
+        const img = document.getElementById('qr-code-img');
+        img.src = dados.pix.startsWith('data:image') ? dados.pix : `data:image/png;base64,${dados.pix}`;
+
+        // 3. Exibir código Copia e Cola
+        document.getElementById('copia-e-cola').innerText = dados.payload;
+    }
+
+    // 4. Função de copiar
+    function copiarPix() {
+        const texto = document.getElementById('copia-e-cola').innerText;
+        navigator.clipboard.writeText(texto).then(() => {
+            const btn = document.querySelector('button');
+            btn.innerText = 'Copiado!';
+            btn.style.background = '#3498db';
+            setTimeout(() => {
+                btn.innerText = 'Copiar Código Pix';
+                btn.style.background = '#27ae60';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
