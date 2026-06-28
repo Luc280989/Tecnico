@@ -291,9 +291,9 @@
                 <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail para o envio da chave de licença. Não enviamos spam.</span></span>
                 </label>
                 <input type="email" id="email" required value="lucaschristian1989@yahoo.com.br" placeholder="exemplo@email.com">
-
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com <img src="../imagens/asaas.png" alt="PagSeguro Logo" style="margin-left: 20px; width: 100px; height: auto;"></button>
+                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com<img src="../imagens/asaas.png" alt="PagSeguro Logo" style="margin-left: 8px; width: 100px; height: auto;"></button>
                 <div id="msg" class="error"></div>
+
             </form>
         </div>
     </div>
@@ -334,35 +334,6 @@
             }
         }
 
-        // Sobre o CPF
-        const inputCpf = document.getElementById('tax_id');
-        inputCpf.addEventListener('input', (e) => {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-            e.target.value = value;
-        });
-        function validarCPF(cpf) {
-            cpf = cpf.replace(/\D/g, '');
-            if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-
-            let soma = 0;
-            let resto;
-            for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
-            resto = (soma * 10) % 11;
-            if (resto === 10 || resto === 11) resto = 0;
-            if (resto !== parseInt(cpf.substring(9, 10))) return false;
-
-            soma = 0;
-            for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
-            resto = (soma * 10) % 11;
-            if (resto === 10 || resto === 11) resto = 0;
-            if (resto !== parseInt(cpf.substring(10, 11))) return false;
-
-            return true;
-        }
-
         // Função para exibir mensagem no Modal registerForm
         function exibirMensagem(element, texto, cor) {
                 if (!element) return;
@@ -386,10 +357,7 @@
             const msgDiv = document.getElementById('msg');
             
             const data = {
-                nome: document.getElementById('nome').value,
                 email: document.getElementById('email').value,
-                tax_id: document.getElementById('tax_id').value.replace(/\D/g, ''),
-                
             };
 
             exibirMensagem(msgDiv, "Processando...", "green");
