@@ -287,19 +287,12 @@
                         </div>
                     </div>
                 </div>
-                <label for="nome">Nome * <span class="info-tooltip">? <span class="tooltip-text">O nome é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
-                </label>
-                <input type="text" id="nome" required value="Lucas" placeholder="João da Silva">
                 
-                <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail para validar o pagamento no sistema PagSeguro e para o envio da chave de licença. Não enviamos spam.</span></span>
+                <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail para o envio da chave de licença. Não enviamos spam.</span></span>
                 </label>
                 <input type="email" id="email" required value="lucaschristian1989@yahoo.com.br" placeholder="exemplo@email.com">
 
-                <label for="tax_id">CPF * <span class="info-tooltip">? <span class="tooltip-text">O CPF é necessário para validar a segurança do pagamento no sistema PagSeguro. Não guardamos esses dados.</span></span>
-                </label>
-                <input type="text" id="tax_id" required value="380.334.658-40" placeholder="000.000.000-00" maxlength="14">
-
-                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com <img src="../imagens/pagseguro.png" alt="PagSeguro Logo" style="margin-left: 20px; width: 100px; height: auto;"></button>
+                <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com <img src="../imagens/asaas.png" alt="PagSeguro Logo" style="margin-left: 20px; width: 100px; height: auto;"></button>
                 <div id="msg" class="error"></div>
             </form>
         </div>
@@ -401,10 +394,8 @@
 
             exibirMensagem(msgDiv, "Processando...", "green");
 
-            // https://backend-g123.onrender.com/create-order
-            // https://127.0.0.1:3000/create-order
             try {
-                const response = await fetch('http://127.0.0.1:3000/create-order', {
+                const response = await fetch('https://backend-g123.onrender.com/create-order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -440,30 +431,34 @@
         // Pega preço do produto
         document.addEventListener('DOMContentLoaded', async () => {
             const priceDisplay = document.getElementById('price-display');
-            
+
             try {
                 const response = await fetch('https://backend-g123.onrender.com/preco');
-                
-                if (!response.ok) throw new Error('Erro na rede');
-                
-                // Como o retorno é apenas 24900, o data já é o número
-                const centavos = await response.json(); 
-                
-                // Verifica se centavos é um número válido antes de formatar
-                if (typeof centavos !== 'number') {
+
+                if (!response.ok) {
+                    throw new Error('Erro na rede');
+                }
+
+                // Lê o valor como texto e converte para número
+                const centavos = Number(await response.text());
+
+                if (Number.isNaN(centavos)) {
                     throw new Error('Formato de preço inválido');
                 }
-                
+
                 const valorFormatado = (centavos / 100).toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL'
                 });
-                
+
                 priceDisplay.innerText = valorFormatado;
-                
+
             } catch (error) {
                 console.error('Falha ao carregar o preço:', error);
-                priceDisplay.innerText = "Erro ao carregar";
+
+                if (priceDisplay) {
+                    priceDisplay.innerText = 'Erro ao carregar';
+                }
             }
         });
     </script>
