@@ -94,7 +94,7 @@
     if (dados) {
         const intervaloVerificacao = setInterval(async () => {
             try {
-                const response = await fetch('https://backend-g123.onrender.com/order-status', {
+                const response = await fetch('https://backend-g123.onrender.com/djfnge358cds043sa', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: dados.email })
@@ -112,7 +112,7 @@
             } catch (error) {
                 console.error("Erro ao verificar status:", error);
             }
-        }, 2000); // 2000ms = 2 segundos
+        }, 3000); // 3000ms = 3 segundos
     } else {
         console.error("E-mail não encontrado no localStorage.");
     }
