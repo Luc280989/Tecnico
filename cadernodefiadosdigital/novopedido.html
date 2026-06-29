@@ -105,6 +105,8 @@
                 if (response.ok) {
                     const pedido = await response.json();
                     
+                    console.log("Pedido:", pedido);
+                    
                     // Verifica se o status é "concluded"
                     if (pedido.status === 'concluded') {
                         clearInterval(intervaloVerificacao); // Para o loop
