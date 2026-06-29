@@ -77,28 +77,18 @@
         const intervaloVerificacao = setInterval(async () => {
             console.log("Verificando status...");
             try {
-                const responseId = await fetch('https://backend-g123.onrender.com/get-id-ultimo-pedido', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: dados.email })
-                });
 
-                if(!responseId.id){
-                    console.log("ID não encontrado");
-                    return;
-                }
-                
                 const responseStatus = await fetch('https://backend-g123.onrender.com/order-status', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: id })
+                    body: JSON.stringify({ id: dados.pedidoId })
                 });
 
                 if (responseStatus.status === 'concluded') {
                     window.location.href = 'aprovado.html';
                 }
                 else{
-                    console.log("Status não é 'concluded' - " + responseStatus.status + " - " + responseId.id);
+                    console.log("Status não é 'concluded' - " + responseStatus.status);
                 }
 
             } catch (error) {

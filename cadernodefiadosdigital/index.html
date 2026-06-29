@@ -290,7 +290,7 @@
                 
                 <label for="email">E-mail * <span class="info-tooltip">? <span class="tooltip-text">Usamos seu e-mail para o envio da chave de licença. Não enviamos spam.</span></span>
                 </label>
-                <input type="email" id="email" required value="lucaschristian1989@yahoo.com.br" placeholder="exemplo@email.com">
+                <input type="email" id="email" required value="lucasteixeira2809@gmail.com" placeholder="exemplo@email.com">
                 <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%; background-color:#28A745;margin-right: 20px;">Pagar com<img src="../imagens/asaas.png" alt="PagSeguro Logo" style="margin-left: 8px; width: 100px; height: auto;"></button>
                 <div id="msg" class="error"></div>
 
@@ -378,7 +378,8 @@
                         pix: result.pix,          // A imagem base64
                         payload: result.payload,  // O código copia e cola
                         ref: result.externalReference,
-                        email: data.email
+                        email: data.email,
+                        pedidoId: result.pedidoId
                     }));
                     window.open('novopedido.html', '_blank');
                 
@@ -445,7 +446,6 @@
             }
         });
     </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script> -->
 </body>
 </html>
 
