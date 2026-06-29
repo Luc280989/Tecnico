@@ -90,6 +90,9 @@
                         window.location.href = 'aprovado.html';
                     }
                 }
+                else{
+                    console.log("Status não encontrado ou não é 'concluded' ", response);
+                }
             } catch (error) {
                 console.error("Erro ao verificar status:", error);
             }
