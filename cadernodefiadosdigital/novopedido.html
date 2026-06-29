@@ -86,7 +86,36 @@
                 btn.style.background = '#27ae60';
             }, 2000);
         });
+        
+    // 5. Verificação automática do status
+    const emailDoUsuario = localStorage.getItem('email');
+
+    if (emailDoUsuario) {
+        const intervaloVerificacao = setInterval(async () => {
+            try {
+                const response = await fetch('/order-status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailDoUsuario })
+                });
+
+                if (response.ok) {
+                    const pedido = await response.json();
+                    
+                    // Verifica se o status é "concluded"
+                    if (pedido.status === 'concluded') {
+                        clearInterval(intervaloVerificacao); // Para o loop
+                        window.location.href = 'aprovado.html'; // Redireciona
+                    }
+                }
+            } catch (error) {
+                console.error("Erro ao verificar status:", error);
+            }
+        }, 2000); // 2000ms = 2 segundos
+    } else {
+        console.error("E-mail não encontrado no localStorage.");
     }
+}
 </script>
 
 </body>

@@ -377,7 +377,8 @@
                     localStorage.setItem('pagamento_pix', JSON.stringify({
                         pix: result.pix,          // A imagem base64
                         payload: result.payload,  // O código copia e cola
-                        ref: result.externalReference
+                        ref: result.externalReference,
+                        email: data.email
                     }));
                     window.open('novopedido.html', '_blank');
                 
