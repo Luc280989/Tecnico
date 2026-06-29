@@ -86,17 +86,18 @@
                 btn.style.background = '#27ae60';
             }, 2000);
         });
-        
-    // 5. Verificação automática do status
-    const emailDoUsuario = localStorage.getItem('email');
 
-    if (emailDoUsuario) {
+    // 5. Verificação automática do status
+    const pagamentoPix = localStorage.getItem('pagamento_pix');
+    const dados = JSON.parse(pagamentoPix);
+    
+    if (dados) {
         const intervaloVerificacao = setInterval(async () => {
             try {
                 const response = await fetch('/order-status', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email: emailDoUsuario })
+                    body: JSON.stringify({ email: dados.email })
                 });
 
                 if (response.ok) {
