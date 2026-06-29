@@ -83,7 +83,7 @@
                     body: JSON.stringify({ email: dados.email })
                 });
 
-                const status = await fetch('https://backend-g123.onrender.com/get-status-order', {
+                const status = await fetch('https://backend-g123.onrender.com/order-status', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: id })
