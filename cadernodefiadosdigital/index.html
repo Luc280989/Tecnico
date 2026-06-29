@@ -428,7 +428,7 @@
                     throw new Error('Formato de preço inválido');
                 }
 
-                const valorFormatado = (centavos / 100).toLocaleString('pt-BR', {
+                const valorFormatado = (centavos).toLocaleString('pt-BR', {
                     style: 'currency',
                     currency: 'BRL'
                 });
