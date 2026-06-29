@@ -92,7 +92,7 @@
             if (data.estado === 'concluded') {
                 window.location.href = 'aprovado.html';
             } else {
-                console.log("Status atual é: " + data.estado);
+                console.log("Status atual é: " + JSON.stringify(data.estado) + " - " + data.id);
             }
         } else {
             console.error("Erro na requisição: " + response.status);
