@@ -84,11 +84,11 @@
                     body: JSON.stringify({ id: dados.pedidoId })
                 });
 
-                if (responseStatus.status === 'concluded') {
+                if (responseStatus === 'concluded') {
                     window.location.href = 'aprovado.html';
                 }
                 else{
-                    console.log("Status não é 'concluded' - " + dados.pedidoId);
+                    console.log("Status não é 'concluded' - " + responseStatus + " - " + dados.pedidoId);
                 }
 
             } catch (error) {
