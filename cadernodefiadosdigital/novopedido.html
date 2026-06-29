@@ -89,9 +89,12 @@
                         clearInterval(intervaloVerificacao);
                         window.location.href = 'aprovado.html';
                     }
+                    else{
+                        console.log("Status não é 'concluded' " + pedido.status);
+                    }
                 }
                 else{
-                    console.log("Status não encontrado ou não é 'concluded' ", response);
+                    console.log("Status não encontrado ou não é 'concluded' " + ' - ' + response.status);
                 }
             } catch (error) {
                 console.error("Erro ao verificar status:", error);
