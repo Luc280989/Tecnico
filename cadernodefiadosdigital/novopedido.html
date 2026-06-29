@@ -76,24 +76,30 @@
         // --- INÍCIO DA VERIFICAÇÃO AUTOMÁTICA (FORA DE QUALQUER FUNÇÃO) ---
         const intervaloVerificacao = setInterval(async () => {
             console.log("Verificando status...");
-            try {
+           try {
+    const response = await fetch('https://backend-g123.onrender.com/order-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: dados.pedidoId })
+    });
 
-                const responseStatus = await fetch('https://backend-g123.onrender.com/order-status', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id: dados.pedidoId })
-                });
+    if (response.ok) {
+            // AQUI ESTÁ O SEGREDO: Transformar a resposta em objeto JSON
+            const data = await response.json(); 
+            
+            console.log("Resposta do servidor:", data); // Verifique no console o que está chegando
 
-                if (responseStatus.estado === 'concluded') {
-                    window.location.href = 'aprovado.html';
-                }
-                else{
-                    console.log("Status não é 'concluded' - " + responseStatus.estado + " - " + dados.pedidoId);
-                }
-
-            } catch (error) {
-                console.error("Erro ao verificar status:", error);
+            if (data.estado === 'concluded') {
+                window.location.href = 'aprovado.html';
+            } else {
+                console.log("Status atual é: " + data.estado);
             }
+        } else {
+            console.error("Erro na requisição: " + response.status);
+        }
+    } catch (error) {
+        console.error("Erro ao verificar status:", error);
+    }
         }, 3000);
         // --- FIM DA VERIFICAÇÃO AUTOMÁTICA ---
     }
