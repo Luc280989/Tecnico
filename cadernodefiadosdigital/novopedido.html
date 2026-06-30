@@ -75,8 +75,9 @@
 
         // --- INÍCIO DA VERIFICAÇÃO AUTOMÁTICA (FORA DE QUALQUER FUNÇÃO) ---
         const intervaloVerificacao = setInterval(async () => {
-            console.log("Verificando status...");
-           try {
+            
+        console.log("Verificando status...");
+    try {
     const response = await fetch('https://backend-g123.onrender.com/order-status', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
