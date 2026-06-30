@@ -89,11 +89,11 @@
             const data = await response.json(); 
 
             if (data.estado === 'concluded') {
-                window.location.href = 'aprovado.html';
                 localStorage.setItem('pagamento_pix', JSON.stringify({
                     ...dados,
                     chave: data.chave
                 }));
+                window.location.href = 'aprovado.html';
             } else {
                 console.log("Status atual é: " + JSON.stringify(data.estado) + " - id: " + dados.pedidoId);
             }
