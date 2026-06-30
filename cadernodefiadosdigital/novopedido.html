@@ -87,8 +87,6 @@
     if (response.ok) {
             // AQUI ESTÁ O SEGREDO: Transformar a resposta em objeto JSON
             const data = await response.json(); 
-            
-            console.log("Resposta do servidor:", data); // Verifique no console o que está chegando
 
             if (data.estado === 'concluded') {
                 window.location.href = 'aprovado.html';
