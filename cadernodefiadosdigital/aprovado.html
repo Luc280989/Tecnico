@@ -87,12 +87,16 @@
   <div class="center">
     <h1>Pagamento aprovado! 🎉</h1>
     <p>Sua chave enviada por e-mail é:</p>
-    <div class="key-box" id="approvedKey">A574AF-B1013T-F142DG-5TGSHJ</div>
+    <div class="key-box" id="approvedKey"/>
     <button id="btnCopiar" class="btn" onclick="copiarChave()">Copiar Chave</button>
   </div>
 </div>
 
 <script>
+
+    const dados = JSON.parse(localStorage.getItem('pagamento_pix'));
+    document.getElementById("approvedKey").innerText = dados.chave;
+
     function startConfetti() {
         const canvas = document.getElementById("confetti");
         if (!canvas) return;
