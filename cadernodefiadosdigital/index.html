@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        var manutencao = true;
+        if (manutencao) {
+            window.location.href = '../manutencao.html';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caderno de Fiados Digital</title>
     <style>
         /* O ícone do ponto de interrogação */
         .info-tooltip {
@@ -219,7 +228,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="../imagens/tela principal - visão geral selecionado.png" alt="Visão Geral">
+            <img src="../imagens/tela_principal.png" alt="Visão Geral">
         </div>
     </section>
 
@@ -232,11 +241,11 @@
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image"><img src="../imagens/tela principal - Lista de Fiados Selecionado.jpg" alt="Lista de Fiados"></div>
+        <div class="feature-image"><img src="../imagens/lista_fiados.jpg" alt="Lista de Fiados"></div>
     </section>
 
     <section class="feature">
-        <div class="feature-image"><img src="../imagens/tela principal - Lista de Fiados - Mensagem de Cobrança clicado.jpg" alt="Mensagem de Cobrança"></div>
+        <div class="feature-image"><img src="../imagens/mensagem_cobranca.jpg" alt="Mensagem de Cobrança"></div>
         <div class="feature-text">
             <h2>Cobranças Via WhatsApp e E-mail</h2>
             <p>Clique duas vezes no número de celular para abrir o WhatsApp com mensagem de cobrança automática, contendo dados do cliente e valor em aberto. O mesmo se aplica ao e-mail.</p>
@@ -268,11 +277,11 @@
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image"><img src="../imagens/fiados urgentes.jpg" alt="Alertas de Fiados Urgentes"></div>
+        <div class="feature-image"><img src="../imagens/fiados_urgentes.jpg" alt="Alertas de Fiados Urgentes"></div>
     </section>
 
     <section class="feature alternate">
-        <div class="feature-image"><img src="../imagens/tela principal - Configurações Selecionado.jpg" alt="Configurações e Backup"></div>
+        <div class="feature-image"><img src="../imagens/configuracoes.jpg" alt="Configurações e Backup"></div>
         <div class="feature-text">
             <h2>Segurança com Backup e Restauração</h2>
             <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente para nunca perder seu histórico de vendas fiado.</p>
