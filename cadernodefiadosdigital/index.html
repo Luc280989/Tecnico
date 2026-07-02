@@ -2,7 +2,7 @@
 <html>
 <head>
     <script>
-        var manutencao = true;
+        var manutencao = false;
         if (manutencao) {
             window.location.href = '../manutencao.html';
         }
@@ -109,7 +109,7 @@
         .feature.alternate { background: var(--light); flex-direction: row-reverse; }
         .feature-text { flex: 1; }
         .feature-image { flex: 1; text-align: center; }
-        .feature-image img { width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .feature-image img { width: 100%; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .trophy-large { font-size: 8rem; }
 
         .ctas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
@@ -235,7 +235,7 @@
     <section class="feature alternate">
         <div class="feature-text">
             <h2>Gestão de Fiados Inteligente</h2>
-            <p>Registre um fiado, liquide total ou parcialmente, ou quite todos os débitos de um cliente de uma vez. Visualize tendências, históricos e muito mais.</p>
+            <p>Registre um fiado, liquide total ou parcialmente, ou quite todos os débitos de um cliente de uma vez. Visualize tendências, gráficos e históricos.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
@@ -248,7 +248,7 @@
         <div class="feature-image"><img src="../imagens/mensagem_cobranca.jpg" alt="Mensagem de Cobrança"></div>
         <div class="feature-text">
             <h2>Cobranças Via WhatsApp e E-mail</h2>
-            <p>Clique duas vezes no número de celular para abrir o WhatsApp com mensagem de cobrança automática, contendo dados do cliente e valor em aberto. O mesmo se aplica ao e-mail.</p>
+            <p>Clique duas vezes no número de celular ou e-mail para abrir o WhatsApp ou o Outlook com mensagem de cobrança automática, contendo dados do cliente e valor em aberto.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
@@ -284,7 +284,7 @@
         <div class="feature-image"><img src="../imagens/configuracoes.jpg" alt="Configurações e Backup"></div>
         <div class="feature-text">
             <h2>Segurança com Backup e Restauração</h2>
-            <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente para nunca perder seu histórico de vendas fiado.</p>
+            <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente e nunca perca seu histórico de vendas fiado.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
