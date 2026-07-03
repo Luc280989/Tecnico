@@ -11,6 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caderno de Fiados Digital</title>
     <style>
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Cor de fundo */
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease; /* Efeito de transição suave */
+        }
+
+        /* Classe para ocultar o loader */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        #content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #content.show {
+            opacity: 1;
+        }
         /* O ícone do ponto de interrogação */
         .info-tooltip {
             display: inline-block;
@@ -191,25 +218,7 @@
 
             .btn { width: 100%; }
         }
-        #loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff; /* Cor de fundo */
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease; /* Efeito de transição suave */
-        }
-
-        /* Classe para ocultar o loader */
-        .fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
+        
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -224,7 +233,7 @@
     <link rel="stylesheet">
 </head>
 <body>
-<div id="loader-wrapper">
+<div id="loader-wrapper" style="display: flex !important;">
   <div class="loader">Carregando...</div>
 </div>
 <div id="content">
@@ -541,18 +550,21 @@
                 }
             }
         });
-        window.addEventListener("load", function() {
-            
-        // Remove o loader após o carregamento
-        const loader = document.getElementById("loader-wrapper");
-        
-        // Adiciona a classe que faz desaparecer o loader
-        loader.classList.add("fade-out");
 
-        // Opcional: Remove o elemento do DOM após a transição
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500); 
+        // Remove loader após carregamento
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loader-wrapper");
+            const content = document.getElementById("content");
+
+            // Esconde o loader
+            loader.classList.add("fade-out");
+            
+            // Mostra o conteúdo suavemente
+            content.classList.add("show");
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); 
         });
     </script>
 </body>
