@@ -11,33 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caderno de Fiados Digital</title>
     <style>
+        /* Spinner Container */
         #loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff; /* Cor de fundo */
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease; /* Efeito de transição suave */
-        }
-
-        /* Classe para ocultar o loader */
-        .fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-        #content {
-            opacity: 0;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #ffffff; z-index: 99999;
+            display: flex; justify-content: center; align-items: center;
             transition: opacity 0.5s ease;
         }
 
-        #content.show {
-            opacity: 1;
+        /* O Spinner em si */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3; /* Cinza claro */
+            border-top: 5px solid var(--primary); /* Cor do seu site */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
+
+        /* Animação do giro */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-out { opacity: 0; visibility: hidden; }
+        #content { opacity: 0; transition: opacity 0.5s ease; }
+        #content.show { opacity: 1; }
         /* O ícone do ponto de interrogação */
         .info-tooltip {
             display: inline-block;
@@ -233,8 +233,8 @@
     <link rel="stylesheet">
 </head>
 <body>
-<div id="loader-wrapper" style="display: flex !important;">
-  <div class="loader">Carregando...</div>
+<div id="loader-wrapper" style="display: flex;">
+    <div class="spinner"></div>
 </div>
 <div id="content">
     <header class="navbar">
