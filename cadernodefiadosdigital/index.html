@@ -390,39 +390,11 @@
     <script>
         function baixarAplicativo() {
             window.location.href = 'Caderno de Fiados Digital_Setup.exe';
-            incrementar('download');
+            incrementar('downloads');
         }
-        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('compra'); }
+        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('compras'); }
         function abrirChaves() { document.getElementById('modalChaves').style.display = 'flex'; incrementar('chaves'); }
         function clicarPix() { incrementar('pix'); }
-
-        async function incrementar(type) {
-            const tiposValidos = ['pix', 'chaves', 'downloads', 'compras'];
-
-            if (!tiposValidos.includes(type)) {
-                console.error("Tipo inválido:", type);
-                return;
-            }
-
-            try {
-                // Substitua 'http://localhost:3000' pela URL real onde sua API estiver hospedada
-                const response = await fetch(`https://backend-g123.onrender.com/incrementar/${type}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error('Erro na comunicação com o servidor');
-                }
-
-                const data = await response.json();
-                console.log("Sucesso:", data.message);
-            } catch (error) {
-                console.error("Falha ao incrementar:", error);
-            }
-        }
         
         // Fechar ao clicar fora
         window.onclick = function(event) {
@@ -584,20 +556,31 @@
         });
 
         window.addEventListener("load", function() {
-        const loader = document.getElementById("loader-wrapper");
-        const content = document.getElementById("content");
+            const loader = document.getElementById("loader-wrapper");
+            const content = document.getElementById("content");
 
-        // 1. Aplica o fade-out no fundo (que é da mesma cor do seu hero)
-        loader.classList.add("fade-out");
-        
-        // 2. Aplica o fade-in no conteúdo
-        content.classList.add("show");
+            // Função para remover o loader
+            function esconderLoader() {
+                loader.classList.add("fade-out");
+                content.classList.add("show");
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 1500);
+            }
 
-        // 3. Remove o loader do DOM totalmente após a animação
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 1500); 
-    });
+            // Tenta esconder o loader quando a página carregar
+            esconderLoader();
+
+            // FALLBACK DE SEGURANÇA:
+            // Se por algum motivo (erro de rede, etc) o carregamento travar,
+            // o loader vai sumir sozinho após 5 segundos, garantindo que o usuário veja o site.
+            setTimeout(() => {
+                if (loader.style.display !== 'none') {
+                    console.warn("Loader removido por timeout de segurança.");
+                    esconderLoader();
+                }
+            }, 5000); 
+        });
     </script>
 </body>
 </html>
