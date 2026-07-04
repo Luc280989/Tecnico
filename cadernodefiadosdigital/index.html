@@ -389,14 +389,59 @@
 </div>
 
     <script>
+    
+        const fs = require('fs');
+        const path = 'metrics.txt';
+
         function baixarAplicativo() {
             window.location.href = 'Caderno de Fiados Digital_Setup.exe';
+            incrementar('download');
         }
+        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('compra'); }
+        function abrirChaves() { document.getElementById('modalChaves').style.display = 'flex'; incrementar('chaves'); }
 
-        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; }
+        function incrementar(type) {
+            // 1. Lê o arquivo
+            fs.readFile(path, 'utf8', (err, data) => {
+                if (err) return console.error("Erro ao ler o arquivo:", err);
 
-        function abrirChaves() { document.getElementById('modalChaves').style.display = 'flex'; }
+                // 2. Transforma o texto em um objeto JavaScript
+                const lines = data.split('\n');
+                const metrics = {};
+                
+                lines.forEach(line => {
+                    const [key, value] = line.split('=').map(item => item.trim());
+                    if (key) metrics[key] = parseInt(value) || 0;
+                });
 
+                // 3. Incrementa o valor baseado no tipo
+                // Mapeamos o seu 'type' para a chave correta do arquivo
+                const map = {
+                    'compras': 'compras',
+                    'downloads': 'downloads',
+                    'chaves': 'chaves',
+                    'pix': 'pix'
+                };
+
+                const keyToUpdate = map[type];
+                if (keyToUpdate !== undefined) {
+                    metrics[keyToUpdate]++;
+                } else {
+                    console.log("Tipo inválido");
+                    return;
+                }
+
+                // 4. Reconstrói o formato original e salva no arquivo
+                const newContent = Object.entries(metrics)
+                    .map(([key, value]) => `${key} = ${value}`)
+                    .join('\n');
+
+                fs.writeFile(path, newContent, (err) => {
+                    if (err) console.error("Erro ao salvar:", err);
+                    else console.log(`${keyToUpdate} atualizado para ${metrics[keyToUpdate]}`);
+                });
+            });
+        }
         // Fechar ao clicar fora
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
