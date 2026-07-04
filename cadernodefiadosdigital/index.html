@@ -388,7 +388,6 @@
     </footer>
 </div>
     <script>
-        const fs = require('fs');
         function baixarAplicativo() {
             window.location.href = 'Caderno de Fiados Digital_Setup.exe';
             incrementar('download');
@@ -396,13 +395,6 @@
         function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('compra'); }
         function abrirChaves() { document.getElementById('modalChaves').style.display = 'flex'; incrementar('chaves'); }
         function clicarPix() { incrementar('pix'); }
-
-        const { createClient } = require('@supabase/supabase-js');
-
-        // Configuração do Supabase
-        const supabaseUrl = 'https://xlfawaucrcfghvougfvh.supabase.co';
-        const supabaseKey = 'sb_secret_R8Swwzz4S2D9QQZtakcz8g_nWVpvIzj';
-        const supabase = createClient(supabaseUrl, supabaseKey);
 
         async function incrementar(type) {
             const tiposValidos = ['pix', 'chaves', 'downloads', 'compras'];
