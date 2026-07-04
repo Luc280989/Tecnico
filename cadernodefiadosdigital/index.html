@@ -16,7 +16,7 @@
         background-color: rgba(26, 37, 47, 1); 
         z-index: 99999;
         display: flex; justify-content: center; align-items: center;
-        transition: opacity 1.5s ease;
+        transition: opacity 1s ease;
         }
 
         /* Spinner branco para contrastar no escuro */
@@ -36,7 +36,7 @@
         /* O conteúdo começa invisível */
         #content { 
             opacity: 0; 
-            transition: opacity 1.5s ease; 
+            transition: opacity 1s ease; 
         }
         
         /* Quando a classe 'show' é aplicada, ele emerge */
@@ -414,7 +414,6 @@
             }
 
             try {
-                // Substitua 'http://localhost:3000' pela URL real onde sua API estiver hospedada
                 const response = await fetch(`https://backend-g123.onrender.com/incrementar/${type}`, {
                     method: 'POST',
                     headers: {
@@ -589,6 +588,8 @@
             const loader = document.getElementById("loader-wrapper");
             const content = document.getElementById("content");
 
+            carregouPagina();
+            
             // Função para remover o loader
             function esconderLoader() {
                 loader.classList.add("fade-out");
