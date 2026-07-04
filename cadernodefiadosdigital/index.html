@@ -381,10 +381,31 @@
         </div>
     </div>
 
+    <div class="modal" id="modalPrivacidade">
+        <div class="card" style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; text-align: left;">
+            <h2 style="color: var(--primary); border-bottom: 2px solid var(--light); padding-bottom: 10px;">Política de Privacidade</h2>
+            <p style="font-size: 0.9rem; color: #666;">Última atualização: 03 de julho de 2026</p>
+            
+            <p>No <strong>Caderno de Fiados Digital</strong>, valorizamos sua transparência.</p>
+            
+            <h3>1. O que coletamos?</h3>
+            <p>Apenas o seu <strong>e-mail</strong>, coletado apenas no momento da compra ou recuperação de chave.</p>
+            
+            <h3>2. Finalidade</h3>
+            <p>Utilizamos o e-mail exclusivamente para envio da sua licença e suporte técnico.</p>
+            
+            <h3>3. Segurança</h3>
+            <p>Não compartilhamos seus dados com terceiros. Seus dados operacionais do software são locais (SQLite).</p>
+            
+            <button class="btn btn-primary" onclick="fecharPrivacidade()" style="width: 100%; margin-top: 20px;">Fechar</button>
+        </div>
+    </div>
+
     <footer style="align-items: center; text-align: center; padding: 20px; background-color: var(--bg-dark);">
         <p style="color: var(--light); margin-top: 0px;">&copy; 2026 Caderno de Fiados Digital. Todos os direitos reservados.</p>
         <p style="color: var(--light);">Suporte: <a href="mailto:suporte@lucasteixeira.dev.br" style="color: #fff;">suporte@lucasteixeira.dev.br</a></p>
         <p style="color: var(--light);margin-bottom: 0px;">Desenvolvido por <a href="https://github.com/Luc280989" style="color: #fff;">Lucas Teixeira</a></p>
+        <p style="color: var(--light);margin-bottom: 0px;"><a href="#" onclick="abrirPrivacidade()" style="color: #fff;">Política de Privacidade</a></p>
     </footer>
 </div>
     <script>
@@ -583,6 +604,14 @@
                 }
             }
         });
+
+        function abrirPrivacidade() {
+            document.getElementById('modalPrivacidade').style.display = 'flex';
+        }
+
+        function fecharPrivacidade() {
+            document.getElementById('modalPrivacidade').style.display = 'none';
+        }
 
         window.addEventListener("load", function() {
             const loader = document.getElementById("loader-wrapper");
