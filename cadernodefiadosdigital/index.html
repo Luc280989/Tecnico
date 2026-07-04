@@ -405,35 +405,30 @@
         const supabase = createClient(supabaseUrl, supabaseKey);
 
         async function incrementar(type) {
+            const tiposValidos = ['pix', 'chaves', 'downloads', 'compras'];
+
+            if (!tiposValidos.includes(type)) {
+                console.error("Tipo inválido:", type);
+                return;
+            }
+
             try {
-                // O Supabase permite atualizar e incrementar de forma atômica
-                // Assume que sua tabela tem uma coluna 'name' (com os valores 'compras', 'downloads', etc)
-                // e uma coluna 'valor' do tipo int.
-                
-                const { data, error } = await supabase
-                    .from('metrics')
-                    .update({ valor: supabase.rpc('increment', { row_id: type }) }) // Ver nota abaixo
-                    .eq('name', type);
+                // Substitua 'http://localhost:3000' pela URL real onde sua API estiver hospedada
+                const response = await fetch(`https://backend-g123.onrender.com/incrementar/${type}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
 
-                // Alternativa simples se a coluna for apenas um registro único:
-                const { data: currentData, error: fetchError } = await supabase
-                    .from('metrics')
-                    .select('valor')
-                    .eq('name', type)
-                    .single();
+                if (!response.ok) {
+                    throw new Error('Erro na comunicação com o servidor');
+                }
 
-                if (fetchError) throw fetchError;
-
-                const { error: updateError } = await supabase
-                    .from('metrics')
-                    .update({ valor: currentData.valor + 1 })
-                    .eq('name', type);
-
-                if (updateError) throw updateError;
-
-                console.log(`Sucesso: ${type} incrementado.`);
-            } catch (err) {
-                console.error("Erro ao comunicar com Supabase:", err.message);
+                const data = await response.json();
+                console.log("Sucesso:", data.message);
+            } catch (error) {
+                console.error("Falha ao incrementar:", error);
             }
         }
         
