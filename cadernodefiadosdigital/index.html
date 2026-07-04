@@ -422,7 +422,7 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Erro na comunicação com o servidor');
+                    throw new Error('Erro na comunicação com o servidor' + response.statusText);
                 }
 
                 const data = await response.json();
