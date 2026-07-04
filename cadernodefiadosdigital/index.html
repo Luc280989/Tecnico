@@ -427,7 +427,7 @@
 </div>
     <script>
         function baixarAplicativo() { window.location.href = 'Caderno de Fiados Digital_Setup.exe'; incrementar('downloads'); }
-        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('compras'); }
+        function iniciarCompra() { document.getElementById('modalForm').style.display = 'flex'; incrementar('modalcompra'); }
         function abrirChaves() { document.getElementById('modalChaves').style.display = 'flex'; incrementar('chaves'); }
         function clicarPix() { incrementar('pix'); }
         function carregouPagina() { incrementar('carregou'); }
@@ -441,7 +441,7 @@
 
         // Função para incrementar métricas
         async function incrementar(type) {
-            const tiposValidos = ['pix', 'chaves', 'downloads', 'compras', 'carregou'];
+            const tiposValidos = ['pix', 'chaves', 'downloads', 'modalcompra', 'carregou'];
 
             if (!tiposValidos.includes(type)) {
                 console.error("Tipo inválido:", type);
