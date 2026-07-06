@@ -230,7 +230,16 @@
             }
 
             .btn { width: 100%; }
+
+            /* Esconde os blocos de emoji nas últimas 4 seções no mobile */
+            .trophy-large.emoji-block { display: none; }
+
+            /* Mostra o span inline do emoji ao lado do h2 no mobile */
+            .emoji-inline { display: inline !important; }
         }
+
+        /* No desktop o span inline fica oculto */
+        .emoji-inline { display: none; }
         
     </style>
     <meta charset="UTF-8">
@@ -335,56 +344,56 @@
         <div class="feature-image"><img src="../imagens/fiados_urgentes.jpg" alt="Alertas de Fiados Urgentes"></div>
     </section>
 
-    <section class="feature alternate" style="background-color: #f5d3cf;">
+    <section class="feature alternate" style="background-color: #e4d5ff;">
         <div class="feature-image"><img src="../imagens/acessibilidade.png" alt="Acessibilidade"></div>
         <div class="feature-text">
-            <h2>Acessibilidade</h2>
+            <h2>Acessibilidade&nbsp;<span class="emoji-inline">👩‍💻</span></h2>
             <p>Funciona inteiramente com ou sem mouse, em telas HD, Full HD, e 4K. Sistema intuitivo e fácil de usar.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image trophy-large">👩‍💻</div>
+        <div class="feature-image trophy-large emoji-block">👩‍💻</div>
     </section>
 
-    <section class="feature alternate" style="background-color: #fff9e6;">
+    <section class="feature alternate" style="background-color: #c0f8e8;">
         <div class="feature-image"><img src="../imagens/internet.png" alt="Funciona sem Internet"></div>
         <div class="feature-text">
-            <h2>Funciona sem Internet</h2>
+            <h2>Funciona sem Internet&nbsp;<span class="emoji-inline">✅</span></h2>
             <p>O aplicativo funciona offline. Nenhuma necessidade de conexão com a internet para registrar fiados, gerenciar clientes ou visualizar relatórios.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image trophy-large">✅</div>
+        <div class="feature-image trophy-large emoji-block">✅</div>
     </section>
     
     <section class="feature alternate" style="background-color: #f5d3cf;">
         <div class="feature-image"><img src="../imagens/configuracoes.jpg" alt="Configurações e Backup"></div>
         <div class="feature-text">
-            <h2>Segurança com Backup e Restauração</h2>
+            <h2>Segurança com Backup e Restauração&nbsp;<span class="emoji-inline">🛠️</span></h2>
             <p>Seus dados são armazenados localmente em SQLite, garantindo conformidade LGPD. Realize backups e restaurações facilmente e nunca perca seu histórico de vendas fiado.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image trophy-large">🛠️</div>
+        <div class="feature-image trophy-large emoji-block">🛠️</div>
     </section>
 
     <section class="feature alternate" style="background-color: #fff9e6;">
         <div class="feature-image"><img src="../imagens/bom_pagador.png" alt="Selo Bom Pagador"></div>
         <div class="feature-text">
-            <h2>Selo Bom Pagador</h2>
+            <h2>Selo Bom Pagador&nbsp;<span class="emoji-inline">🏆</span></h2>
             <p>Reconheça os bons pagadores. Atribua o "Selo Bom Pagador" manualmente ou deixe que o sistema atribua automaticamente conforme critérios configuráveis.</p>
             <div class="ctas">
                 <button class="btn btn-primary" onclick="baixarAplicativo()">Baixar Teste <img src="../imagens/windows.png" alt="Download" style="height: 20px; width: auto; margin-left: 10px;"></button>
                 <button class="btn btn-secondary" onclick="iniciarCompra()">Comprar Chave <img src="../imagens/carrinho.png" alt="Comprar" style="height: 20px; width: auto; margin-left: 10px;"></button>
             </div>
         </div>
-        <div class="feature-image trophy-large">🏆</div>
+        <div class="feature-image trophy-large emoji-block">🏆</div>
     </section>
     
     <div class="modal" id="modalForm">
